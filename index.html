@@ -11,9 +11,10 @@
    arrival → record timeline → the turn → your home →
    the map of Riyadh → method stations → quiet → signature. */
 :root{
-  --forest:#162E21; --forest-deep:#0F2018;
+  --forest:#162E21; --forest-deep:#0F2018; --forest-warm:#1C3A2A;
   --cream:#FBF9F5; --bone:#F7F3EC; --sand:#EDE4D6;
   --taupe:#9F876F; --sage:#BEC3A3; --ink:#221F1B;
+  --champagne:#E3D3B3; --champagne-lt:#F2E8D5; --gold:#C4A468; --bronze:#A88756;
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Karla',Arial,sans-serif;
   --ease:cubic-bezier(.22,.9,.24,1);
@@ -23,7 +24,16 @@ html{scrollbar-width:thin;scrollbar-color:var(--taupe) var(--bone)}
 html.lenis,html.lenis body{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
 body{background:var(--bone);color:var(--ink);font-family:var(--serif);font-weight:400;
-  font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+/* the aurora — a fixed, continuously blended field the whole site sits in */
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 55% at 12% 8%,  rgba(242,232,213,.95), transparent 62%),
+    radial-gradient(ellipse 60% 50% at 88% 22%, rgba(227,211,179,.85), transparent 64%),
+    radial-gradient(ellipse 80% 60% at 50% 62%, rgba(237,228,214,.9),  transparent 70%),
+    radial-gradient(ellipse 65% 55% at 8%  88%, rgba(196,164,104,.22), transparent 66%),
+    radial-gradient(ellipse 70% 60% at 92% 96%, rgba(168,135,86,.20),  transparent 68%),
+    linear-gradient(168deg, #FAF6EE 0%, #F4EBDB 38%, #EFE3CC 68%, #E8DAC0 100%)}
 ::selection{background:var(--forest);color:var(--cream)}
 a{color:inherit}
 :focus-visible{outline:1px solid var(--forest);outline-offset:4px}
@@ -59,9 +69,11 @@ header{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:s
 
 /* ═══ 01 arrival ═══ */
 .arrive{min-height:100vh;min-height:100svh;position:relative;display:flex;align-items:center;
-  background:linear-gradient(160deg,var(--bone) 55%,#F0E7D8 100%);overflow:hidden}
-.arrive-glow{position:absolute;right:-8vw;top:-14vh;width:60vw;height:80vh;pointer-events:none;
-  background:radial-gradient(ellipse at 60% 40%, rgba(159,135,111,.18), transparent 68%)}
+  background:transparent;overflow:hidden}
+.arrive-glow{position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 55% 60% at 78% 38%, rgba(196,164,104,.20), transparent 66%),
+    radial-gradient(ellipse 60% 50% at 10% 20%, rgba(251,249,245,.75), transparent 62%)}
 .arrive-one{position:absolute;right:-3vw;bottom:-4vh;font-weight:300;line-height:.75;
   font-size:clamp(170px,24vw,360px);letter-spacing:.02em;color:transparent;-webkit-text-stroke:1.3px var(--forest);
   opacity:.10;user-select:none;pointer-events:none}
@@ -85,14 +97,19 @@ header{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:s
 @keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
 /* ═══ 02 the record — plates hung on the line ═══ */
-.record{position:relative;height:100vh;height:100svh;overflow:hidden;
-  background:linear-gradient(175deg,var(--cream),#F1E9DB 90%)}
+.record{position:relative;height:100vh;height:100svh;overflow:hidden;background:transparent}
+.record::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 55% at 20% 12%, rgba(252,249,242,.9), transparent 64%),
+    radial-gradient(ellipse 65% 60% at 88% 78%, rgba(196,164,104,.16), transparent 66%)}
+.record-head, .rail{z-index:2}
 .record-head{position:absolute;top:clamp(120px,15vh,168px);left:clamp(24px,4.5vw,64px);z-index:5;max-width:560px}
-.record-head .rule{width:64px;height:1.5px;background:var(--forest);opacity:.5;margin-top:12px}
+.record-head .rule{width:72px;height:1.5px;background:linear-gradient(90deg,var(--gold),rgba(196,164,104,0));margin-top:12px}
 .record-head .record-intro{margin-top:18px;font-family:var(--serif);font-style:italic;font-weight:300;
   font-size:clamp(24px,2.3vw,36px);line-height:1.15;color:var(--ink)}
 .rail{position:absolute;top:42%;left:0;display:flex;align-items:flex-start;will-change:transform}
-.rail-line{position:absolute;top:0;left:-100vw;right:-100vw;height:2px;background:var(--forest)}
+.rail-line{position:absolute;top:0;left:-100vw;right:-100vw;height:1.5px;
+  background:linear-gradient(90deg,rgba(22,46,33,0),var(--forest) 8%,var(--forest) 92%,rgba(22,46,33,0))}
 .station{position:relative;flex:0 0 auto;width:clamp(250px,24vw,340px);margin-right:clamp(48px,6vw,96px);padding-top:0}
 .station .tick{position:absolute;top:-7px;left:0;width:14px;height:14px;border-radius:50%;background:var(--cream);border:2px solid var(--forest)}
 .station .yr{margin:26px 0 4px;font-style:italic;font-weight:300;font-size:clamp(34px,3vw,46px);line-height:1;font-variant-numeric:lining-nums}
@@ -112,8 +129,18 @@ header{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:s
 .station .plate:not(.empty) .note{display:none}
 
 /* ═══ 03 the turn ═══ */
-.turn{position:relative;background:var(--forest-deep);color:var(--cream);padding:clamp(110px,17vh,190px) 0;overflow:hidden}
-.turn .horizon{position:absolute;left:0;right:0;top:50%;height:2px;background:var(--cream);opacity:.9}
+.turn{position:relative;background:transparent;color:var(--cream);padding:clamp(130px,19vh,210px) 0;overflow:hidden}
+.turn::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 50% at 24% 18%, rgba(196,164,104,.28), transparent 62%),
+    radial-gradient(ellipse 70% 60% at 82% 86%, rgba(168,135,86,.22), transparent 66%),
+    linear-gradient(168deg, #16301F 0%, #0F2018 45%, #12271C 100%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);
+  mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%)}
+.turn .wrap, .turn .horizon{position:relative;z-index:1}
+.turn .horizon{position:absolute;left:0;right:0;top:50%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--champagne) 18%,var(--gold) 50%,var(--champagne) 82%,transparent);
+  opacity:.85;box-shadow:0 0 24px rgba(196,164,104,.4)}
 .turn .wrap{display:grid;gap:clamp(56px,10vh,110px)}
 .turn p{font-size:clamp(26px,3vw,44px);max-width:18em}
 .turn p.up{align-self:end}
@@ -121,9 +148,26 @@ header{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:s
 .turn .k{color:var(--sage)}
 
 /* ═══ 04 your home ═══ */
-.home{background:var(--bone);padding:clamp(100px,15vh,180px) 0;position:relative}
-.home .vline{position:absolute;top:0;bottom:0;left:clamp(24px,4.5vw,64px);width:2px;background:var(--forest);transform-origin:top}
+.home{background:transparent;padding:clamp(100px,15vh,180px) 0;position:relative}
+.home::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 70% at 82% 45%, rgba(196,164,104,.15), transparent 64%)}
+.home .wrap{position:relative;z-index:1}
+.home .vline{position:absolute;top:0;bottom:0;left:clamp(24px,4.5vw,64px);width:1.5px;z-index:1;
+  background:linear-gradient(180deg,rgba(22,46,33,0),var(--forest) 12%,var(--bronze) 88%,rgba(168,135,86,0));transform-origin:top}
 .home .wrap{padding-left:clamp(60px,9vw,130px)}
+.home-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(40px,5vw,90px);align-items:start}
+.home-photo{position:relative;margin-top:clamp(20px,4vh,52px)}
+.home-photo figure{position:relative;aspect-ratio:3/4;overflow:hidden;
+  border:1px solid rgba(196,164,104,.45);box-shadow:18px 18px 0 rgba(168,135,86,.14)}
+.home-photo img{width:100%;height:100%;object-fit:cover;object-position:52% 42%;
+  filter:sepia(.08) saturate(.94) contrast(1.03)}
+.home-photo figure::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(200deg, rgba(196,164,104,.12) 0%, transparent 42%, rgba(15,32,24,.22) 100%)}
+.home-photo figcaption{margin-top:12px;font-family:var(--sans);font-size:9.5px;font-weight:600;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--taupe)}
+.coach-portrait{flex:0 0 auto;width:108px;height:108px;border-radius:50%;overflow:hidden;
+  border:1px solid rgba(196,164,104,.5);box-shadow:0 6px 24px rgba(168,135,86,.22)}
+.coach-portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;filter:sepia(.08) saturate(.95)}
 .home h2{font-size:clamp(32px,3.8vw,56px);max-width:15em;margin:26px 0 18px}
 .home>.wrap>p{font-size:clamp(19px,1.6vw,23px);max-width:28em;color:rgba(34,31,27,.8)}
 .fits{margin-top:clamp(40px,6vh,60px);max-width:860px}
@@ -142,8 +186,13 @@ header{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:s
   font-size:clamp(19px,1.7vw,24px);color:rgba(34,31,27,.85);line-height:1.5;max-width:30em}
 
 /* ═══ 05 the map of riyadh ═══ */
-.mapsec{position:relative;height:100vh;height:100svh;overflow:hidden;
-  background:linear-gradient(168deg,#F4EDE0, #EBDFC9 92%)}
+.mapsec{position:relative;height:100vh;height:100svh;overflow:hidden;background:transparent}
+.mapsec::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 20%, rgba(250,246,238,.85), transparent 66%),
+    radial-gradient(ellipse 70% 65% at 20% 92%, rgba(196,164,104,.22), transparent 68%),
+    radial-gradient(ellipse 60% 55% at 90% 60%, rgba(168,135,86,.18), transparent 64%)}
+.map-stage{z-index:2}
 .mapsec-head{position:absolute;top:clamp(72px,10vh,110px);left:clamp(24px,4.5vw,64px);z-index:5;max-width:520px}
 .mapsec-head .city-line{margin-top:16px;font-family:var(--serif);font-style:italic;font-weight:300;
   font-size:clamp(22px,2.1vw,32px);line-height:1.2;color:var(--ink)}
@@ -162,9 +211,15 @@ header{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:s
 .mission .display em{color:var(--forest)}
 
 /* ═══ 06 method stations ═══ */
-.method{background:linear-gradient(172deg,var(--sand),#E6D9C2 90%);padding:clamp(90px,13vh,150px) 0;position:relative}
+.method{background:transparent;padding:clamp(90px,13vh,150px) 0;position:relative}
+.method::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    linear-gradient(180deg, rgba(232,218,192,0) 0%, rgba(228,212,183,.75) 22%, rgba(224,206,174,.85) 78%, rgba(232,218,192,0) 100%),
+    radial-gradient(ellipse 60% 50% at 78% 30%, rgba(196,164,104,.22), transparent 66%)}
+.method .wrap{position:relative;z-index:1}
 .method h2{font-size:clamp(30px,3.2vw,48px);max-width:14em;margin-top:22px}
-.method-line{position:relative;height:2px;background:var(--forest);margin:clamp(40px,6vh,64px) 0 0;transform-origin:left}
+.method-line{position:relative;height:1.5px;margin:clamp(40px,6vh,64px) 0 0;transform-origin:left;
+  background:linear-gradient(90deg,var(--forest),var(--bronze) 60%,rgba(168,135,86,.2))}
 .msteps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3.5vw,56px)}
 .mstep{position:relative;padding-top:46px;transition:transform .5s var(--ease)}
 .mstep:hover{transform:translateY(-4px)}
@@ -177,37 +232,56 @@ header{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:s
   font-size:clamp(21px,2vw,30px);color:var(--forest);max-width:26em}
 
 /* ═══ 07 quiet ═══ */
-.quiet{background:var(--bone);padding:clamp(90px,14vh,160px) 0;position:relative;text-align:center}
-.quiet .thin{height:1px;background:var(--forest);opacity:.22;margin-bottom:clamp(48px,8vh,72px)}
+.quiet{background:transparent;padding:clamp(90px,14vh,160px) 0;position:relative;text-align:center}
+.quiet::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 70% 80% at 50% 50%, rgba(252,250,245,.85), transparent 68%)}
+.quiet .wrap, .quiet .thin{position:relative;z-index:1}
+.quiet .thin{height:1px;margin-bottom:clamp(48px,8vh,72px);
+  background:linear-gradient(90deg,transparent,var(--bronze) 30%,var(--gold) 50%,var(--bronze) 70%,transparent);opacity:.5}
 .quiet p{font-style:italic;font-size:clamp(20px,2vw,28px);color:rgba(34,31,27,.8);margin:10px 0}
 .quiet .k{display:block;margin-bottom:26px}
 
 /* ═══ 08 the introduction ═══ */
-.intro{background:var(--cream);padding:clamp(100px,15vh,180px) 0}
+.intro{position:relative;background:transparent;color:var(--cream);padding:clamp(120px,18vh,210px) 0;overflow:hidden}
+.intro::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 50% 40% at 50% 4%, rgba(196,164,104,.30), transparent 68%),
+    radial-gradient(ellipse 60% 50% at 12% 82%, rgba(168,135,86,.20), transparent 66%),
+    linear-gradient(172deg, #12271C 0%, #0F2018 55%, #16301F 100%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 9%,#000 100%);
+  mask-image:linear-gradient(180deg,transparent 0,#000 9%,#000 100%)}
+.intro .wrap{position:relative;z-index:1}
+.intro .k{color:var(--champagne);opacity:.85}
+.intro h2{color:var(--cream)}
 .intro-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(48px,7vw,120px);align-items:start}
 .intro h2{font-size:clamp(32px,3.6vw,52px);max-width:13em;margin-top:24px}
-.intro-note{margin-top:26px;font-size:17.5px;color:rgba(34,31,27,.7);max-width:26em}
+.intro-note{margin-top:26px;font-size:17.5px;color:rgba(227,211,179,.8);max-width:26em}
 form{display:flex;flex-direction:column;gap:34px;padding-top:8px}
 .field{display:flex;flex-direction:column;gap:8px}
-.field label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--taupe)}
-.field input{background:transparent;border:0;border-bottom:1.5px solid rgba(22,46,33,.4);
-  font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ink);padding:6px 0 10px;transition:border-color .4s var(--ease)}
-.field input:focus{outline:none;border-color:var(--forest)}
-.field.err input{border-color:#A9603C}
-.field .err-msg{display:none;font-family:var(--sans);font-size:11px;letter-spacing:.04em;color:#A9603C}
+.field label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--champagne)}
+.field input{background:transparent;border:0;border-bottom:1px solid rgba(196,164,104,.5);
+  font-family:var(--serif);font-style:italic;font-size:22px;color:var(--cream);padding:6px 0 10px;transition:border-color .4s var(--ease)}
+.field input:focus{outline:none;border-color:var(--gold)}
+.field.err input{border-color:#D08A5E}
+.field .err-msg{display:none;font-family:var(--sans);font-size:11px;letter-spacing:.04em;color:#D08A5E}
 .field.err .err-msg{display:block}
-.submit{align-self:flex-start;cursor:pointer;background:var(--forest);color:var(--cream);border:1.5px solid var(--forest);
-  padding:19px 42px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
-  transition:background .45s var(--ease),color .45s var(--ease)}
-.submit:hover{background:transparent;color:var(--forest)}
+.submit{align-self:flex-start;cursor:pointer;color:var(--forest-deep);border:1px solid var(--gold);
+  background:linear-gradient(135deg,var(--champagne-lt),var(--champagne) 45%,var(--gold) 100%);
+  padding:19px 44px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
+  transition:filter .45s var(--ease),box-shadow .45s var(--ease)}
+.submit:hover{filter:brightness(1.07);box-shadow:0 6px 28px rgba(196,164,104,.35)}
 .submit:active{transform:translateY(1px)}
 .form-done{display:none;padding-top:8px}
-.form-done .fullstop{width:12px;height:12px;border-radius:50%;background:var(--forest);margin-bottom:20px}
-.form-done .display{font-size:clamp(26px,2.6vw,38px)}
-.form-done p{margin-top:12px;color:rgba(34,31,27,.7);font-size:17px}
+.form-done .fullstop{width:12px;height:12px;border-radius:50%;background:var(--gold);margin-bottom:20px;box-shadow:0 0 20px rgba(196,164,104,.5)}
+.form-done .display{font-size:clamp(26px,2.6vw,38px);color:var(--cream)}
+.form-done p{margin-top:12px;color:var(--champagne);font-size:17px}
 
 /* ═══ footer ═══ */
-footer{background:var(--cream);border-top:1.5px solid var(--forest);padding:clamp(34px,6vh,52px) 0}
+footer{background:linear-gradient(180deg,#16301F,#0F2018);color:var(--cream);
+  border-top:1px solid rgba(196,164,104,.35);padding:clamp(34px,6vh,52px) 0}
+footer .mark{color:var(--cream)}
+footer .foot-meta{color:var(--champagne);opacity:.75}
+footer .terminus{background:var(--gold)}
 .foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .foot .mark-row{display:flex;align-items:center;gap:14px}
 .foot .terminus{width:9px;height:9px;border-radius:50%;background:var(--forest)}
@@ -323,19 +397,30 @@ footer{background:var(--cream);border-top:1.5px solid var(--forest);padding:clam
     <div class="wrap">
       <span class="k">Your home</span>
       <h2 class="display" data-words>The best place to train is the one you wake up in.</h2>
-      <p data-fade>A spare room, a garage, a garden, a full home gym — it doesn’t matter. We design around
-        whatever your home gives us, and we travel with everything it doesn’t.</p>
-      <div class="fits">
-        <div class="fit" data-fitrow><span class="n" aria-hidden="true">i.</span><p>You want serious coaching without ever driving to a gym.</p><span class="u"></span></div>
-        <div class="fit" data-fitrow><span class="n" aria-hidden="true">ii.</span><p>Your time is protected — the session comes to you, on your schedule.</p><span class="u"></span></div>
-        <div class="fit" data-fitrow><span class="n" aria-hidden="true">iii.</span><p>You value discretion more than spectacle.</p><span class="u"></span></div>
+      <div class="home-grid">
+        <div>
+          <p data-fade>A spare room, a garage, a garden, a full home gym — it doesn’t matter. We design around
+            whatever your home gives us, and we travel with everything it doesn’t.</p>
+          <div class="fits">
+            <div class="fit" data-fitrow><span class="n" aria-hidden="true">i.</span><p>You want serious coaching without ever driving to a gym.</p><span class="u"></span></div>
+            <div class="fit" data-fitrow><span class="n" aria-hidden="true">ii.</span><p>Your time is protected — the session comes to you, on your schedule.</p><span class="u"></span></div>
+            <div class="fit" data-fitrow><span class="n" aria-hidden="true">iii.</span><p>You value discretion more than spectacle.</p><span class="u"></span></div>
+          </div>
+        </div>
+        <div class="home-photo" data-fade>
+          <figure>
+            <img src="assets/archive/riyadh-session.jpg" alt="A private coaching session on a Riyadh terrace, the city skyline behind">
+          </figure>
+          <figcaption>A morning session · Riyadh</figcaption>
+        </div>
       </div>
       <div class="coach-strip" data-fade>
+        <div class="coach-portrait"><img src="assets/archive/founders-portrait.jpg" alt="Aaron and Bianca Cook"></div>
         <div class="c"><b>2×</b><span>Olympic medals</span></div>
         <div class="c"><b>3×</b><span>World titles</span></div>
         <div class="c"><b>No.1</b><span>World ranking</span></div>
         <span class="who">Aaron and Bianca Cook coach every session themselves — the same discipline that survived
-          Olympic finals, applied quietly to your Tuesday morning. Nothing is templated. Nothing is delegated.</span>
+          Olympic finals, applied quietly to your Tuesday morning.</span>
       </div>
     </div>
   </section>
