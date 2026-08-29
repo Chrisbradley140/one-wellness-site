@@ -46,9 +46,7 @@ svg.seg path,svg.seg line,svg.spine path,svg.spine line{fill:none;stroke:var(--f
   transition:transform .9s var(--ease);transform:translateY(0)}
 #loader.gone{transform:translateY(-101%)}
 #loader .lm{position:relative;font-weight:300;font-size:clamp(64px,10vw,120px);letter-spacing:.04em;
-  color:transparent;-webkit-text-stroke:1.2px var(--forest)}
-#loader svg{position:absolute;left:-12%;top:55%;width:124%;height:2px;overflow:visible}
-#loader svg line{stroke:var(--forest);stroke-width:2}
+  color:transparent;-webkit-text-stroke:1.2px var(--forest);opacity:0}
 
 /* nav */
 header{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:space-between;align-items:center;
@@ -60,12 +58,25 @@ header{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:s
 .nav-cta:hover{opacity:.55}
 
 /* ═══ 01 arrival ═══ */
-.arrive{min-height:100vh;min-height:100svh;position:relative;display:flex;align-items:center;background:var(--bone);overflow:hidden}
-.arrive .spine{position:absolute;inset:0;width:100%;height:100%}
-.arrive-one{position:absolute;right:3vw;top:44%;transform:translateY(-50%);font-weight:300;line-height:.8;
-  font-size:clamp(150px,26vw,380px);letter-spacing:.02em;color:transparent;-webkit-text-stroke:1.5px var(--forest);opacity:var(--one-op,1);
-  user-select:none;pointer-events:none}
-.arrive-copy{position:relative;z-index:2;padding:0 clamp(24px,4.5vw,64px);max-width:640px}
+.arrive{min-height:100vh;min-height:100svh;position:relative;display:flex;align-items:center;
+  background:linear-gradient(160deg,var(--bone) 55%,#F0E7D8 100%);overflow:hidden}
+.arrive-glow{position:absolute;right:-8vw;top:-14vh;width:60vw;height:80vh;pointer-events:none;
+  background:radial-gradient(ellipse at 60% 40%, rgba(159,135,111,.18), transparent 68%)}
+.arrive-one{position:absolute;right:-3vw;bottom:-4vh;font-weight:300;line-height:.75;
+  font-size:clamp(170px,24vw,360px);letter-spacing:.02em;color:transparent;-webkit-text-stroke:1.3px var(--forest);
+  opacity:.10;user-select:none;pointer-events:none}
+.arrive-grid{position:relative;z-index:2;width:100%;max-width:1400px;margin:0 auto;
+  padding:110px clamp(24px,4.5vw,64px) 60px;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);
+  gap:clamp(40px,6vw,100px);align-items:center}
+.arrive-photo{position:relative;justify-self:end;width:min(100%,440px)}
+.arrive-photo figure{position:relative;aspect-ratio:3/4;overflow:hidden;border:1px solid rgba(22,46,33,.3);
+  box-shadow:16px 16px 0 rgba(159,135,111,.16)}
+.arrive-photo img{width:100%;height:100%;object-fit:cover;object-position:60% 20%;
+  filter:sepia(.06) saturate(.9) contrast(1.03)}
+.arrive-photo figcaption{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;
+  padding:10px 14px;font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--cream);background:rgba(15,32,24,.55)}
+.arrive-copy{position:relative;max-width:640px}
 .arrive-copy .k{display:block;margin-bottom:24px}
 .arrive-copy h1{font-size:clamp(40px,4.6vw,66px)}
 .arrive-copy p{margin-top:22px;font-family:var(--sans);font-size:13.5px;line-height:1.8;letter-spacing:.04em;color:rgba(34,31,27,.65);max-width:30em}
@@ -74,10 +85,13 @@ header{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:s
 @keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
 /* ═══ 02 the record — plates hung on the line ═══ */
-.record{position:relative;height:100vh;height:100svh;overflow:hidden;background:var(--cream)}
-.record-head{position:absolute;top:clamp(84px,12vh,130px);left:clamp(24px,4.5vw,64px);z-index:5}
+.record{position:relative;height:100vh;height:100svh;overflow:hidden;
+  background:linear-gradient(175deg,var(--cream),#F1E9DB 90%)}
+.record-head{position:absolute;top:clamp(76px,11vh,120px);left:clamp(24px,4.5vw,64px);z-index:5;max-width:560px}
 .record-head .rule{width:64px;height:1.5px;background:var(--forest);opacity:.5;margin-top:12px}
-.rail{position:absolute;top:38%;left:0;display:flex;align-items:flex-start;will-change:transform}
+.record-head .record-intro{margin-top:18px;font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:clamp(24px,2.3vw,36px);line-height:1.15;color:var(--ink)}
+.rail{position:absolute;top:42%;left:0;display:flex;align-items:flex-start;will-change:transform}
 .rail-line{position:absolute;top:0;left:-100vw;right:-100vw;height:2px;background:var(--forest)}
 .station{position:relative;flex:0 0 auto;width:clamp(250px,24vw,340px);margin-right:clamp(48px,6vw,96px);padding-top:0}
 .station .tick{position:absolute;top:-7px;left:0;width:14px;height:14px;border-radius:50%;background:var(--cream);border:2px solid var(--forest)}
@@ -125,8 +139,11 @@ header{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:s
 .coach-strip .who{flex-basis:100%;font-family:var(--sans);font-size:12.5px;letter-spacing:.04em;color:rgba(34,31,27,.65);line-height:1.7;max-width:46em}
 
 /* ═══ 05 the map of riyadh ═══ */
-.mapsec{position:relative;height:100vh;height:100svh;overflow:hidden;background:var(--cream)}
-.mapsec-head{position:absolute;top:clamp(84px,12vh,130px);left:clamp(24px,4.5vw,64px);z-index:5}
+.mapsec{position:relative;height:100vh;height:100svh;overflow:hidden;
+  background:linear-gradient(168deg,#F4EDE0, #EBDFC9 92%)}
+.mapsec-head{position:absolute;top:clamp(72px,10vh,110px);left:clamp(24px,4.5vw,64px);z-index:5;max-width:520px}
+.mapsec-head .city-line{margin-top:16px;font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:clamp(22px,2.1vw,32px);line-height:1.2;color:var(--ink)}
 .map-stage{position:absolute;inset:0}
 .map-stage svg{width:100%;height:100%}
 .map-grid line{stroke:rgba(34,31,27,.06);stroke-width:1}
@@ -142,15 +159,19 @@ header{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:s
 .mission .display em{color:var(--forest)}
 
 /* ═══ 06 method stations ═══ */
-.method{background:var(--sand);padding:clamp(100px,15vh,180px) 0;position:relative}
-.method-line{position:relative;height:2px;background:var(--forest);margin:clamp(48px,8vh,80px) 0 34px;transform-origin:left}
+.method{background:linear-gradient(172deg,var(--sand),#E6D9C2 90%);padding:clamp(90px,13vh,150px) 0;position:relative}
+.method h2{font-size:clamp(30px,3.2vw,48px);max-width:14em;margin-top:22px}
+.method-line{position:relative;height:2px;background:var(--forest);margin:clamp(40px,6vh,64px) 0 0;transform-origin:left}
 .msteps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3.5vw,56px)}
-.mstep{position:relative}
-.mstep .tick{position:absolute;top:calc(-34px - clamp(48px,8vh,80px) - 8px + clamp(48px,8vh,80px));left:0}
-.mstep .dot{position:absolute;top:-42px;left:0;width:14px;height:14px;border-radius:50%;background:var(--sand);border:2px solid var(--forest)}
-.mstep b{display:block;font-style:italic;font-weight:300;font-size:15px;color:var(--taupe);margin-bottom:10px}
-.mstep h3{font-style:italic;font-weight:400;font-size:clamp(23px,1.9vw,30px);margin-bottom:10px}
-.mstep p{font-size:16.5px;color:rgba(34,31,27,.72)}
+.mstep{position:relative;padding-top:46px;transition:transform .5s var(--ease)}
+.mstep:hover{transform:translateY(-4px)}
+.mstep .dot{position:absolute;top:-8px;left:2px;width:15px;height:15px;border-radius:50%;background:var(--sand);border:2.5px solid var(--forest)}
+.mstep b{display:block;font-style:italic;font-weight:300;font-size:clamp(48px,4.5vw,70px);line-height:1;
+  color:var(--taupe);margin-bottom:14px;font-variant-numeric:lining-nums}
+.mstep h3{font-style:italic;font-weight:400;font-size:clamp(25px,2.1vw,33px);margin-bottom:12px;color:var(--forest)}
+.mstep p{font-size:17px;line-height:1.65;color:rgba(34,31,27,.78);max-width:24em}
+.method-close{margin-top:clamp(48px,8vh,80px);font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:clamp(21px,2vw,30px);color:var(--forest);max-width:26em}
 
 /* ═══ 07 quiet ═══ */
 .quiet{background:var(--bone);padding:clamp(90px,14vh,160px) 0;position:relative;text-align:center}
@@ -210,7 +231,7 @@ footer{background:var(--cream);border-top:1.5px solid var(--forest);padding:clam
 <div class="grain" aria-hidden="true"></div>
 
 <div id="loader" aria-hidden="true">
-  <div class="lm">ONE<svg preserveAspectRatio="none"><line id="loaderLine" x1="0" y1="1" x2="100%" y2="1"/></svg></div>
+  <div class="lm">ONE</div>
 </div>
 
 <header>
@@ -222,15 +243,22 @@ footer{background:var(--cream);border-top:1.5px solid var(--forest);padding:clam
 
   <!-- 01 ARRIVAL -->
   <section class="arrive" aria-label="ONE Wellness — Riyadh">
-    <svg class="spine" viewBox="0 0 1440 800" preserveAspectRatio="none" aria-hidden="true">
-      <path id="spine1" d="M -10 250 L 545 250 L 545 480 L 890 480 L 890 335 L 1450 335"/>
-    </svg>
+    <div class="arrive-glow" aria-hidden="true"></div>
     <div class="arrive-one" aria-hidden="true">ONE</div>
-    <div class="arrive-copy">
-      <span class="k">One Wellness · Riyadh</span>
-      <h1 class="display" data-words>Trained by the world’s best, in your own home.</h1>
-      <p data-fade>Private coaching from two people who spent twenty years at the top of world sport.
-        We come to you, anywhere in Riyadh. By introduction only.</p>
+    <div class="arrive-grid">
+      <div class="arrive-copy">
+        <span class="k" style="display:block;margin-bottom:24px">One Wellness · Riyadh</span>
+        <h1 class="display" data-words>Trained by the world’s best, in your own home.</h1>
+        <p data-fade style="margin-top:22px;font-family:var(--sans);font-size:13.5px;line-height:1.8;letter-spacing:.04em;color:rgba(34,31,27,.65);max-width:30em">
+          Private coaching from two people who spent twenty years at the top of world sport.
+          We come to you, anywhere in Riyadh. By introduction only.</p>
+      </div>
+      <div class="arrive-photo" data-hero-photo>
+        <figure>
+          <img src="assets/archive/03.jpg" alt="Bianca Cook celebrating with the Union Jack after winning Olympic bronze in Tokyo">
+          <figcaption><span>Tokyo 2020</span><span>Olympic bronze</span></figcaption>
+        </figure>
+      </div>
     </div>
     <div class="arrive-cue" aria-hidden="true"><span class="k" style="letter-spacing:.4em">Scroll</span><i></i></div>
   </section>
@@ -238,8 +266,9 @@ footer{background:var(--cream);border-top:1.5px solid var(--forest);padding:clam
   <!-- 02 THE RECORD -->
   <section class="record" aria-label="The record">
     <div class="record-head">
-      <span class="k">The record — the line ends in Riyadh</span>
+      <span class="k">The record</span>
       <div class="rule"></div>
+      <p class="record-intro" data-fade>Two decades at the top of world sport — and the story ends in Riyadh.</p>
     </div>
     <div class="rail" id="rail">
       <div class="rail-line" aria-hidden="true"></div>
@@ -312,6 +341,7 @@ footer{background:var(--cream);border-top:1.5px solid var(--forest);padding:clam
   <section class="mapsec" aria-label="The map — we come to you across Riyadh">
     <div class="mapsec-head">
       <span class="k">The city — we come to you</span>
+      <p class="city-line" data-fade>We know Riyadh at five in the morning — quiet, cool, and wide awake before anyone else.</p>
     </div>
     <div class="map-stage">
       <svg viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
@@ -350,16 +380,18 @@ footer{background:var(--cream);border-top:1.5px solid var(--forest);padding:clam
   <!-- 06 THE METHOD -->
   <section class="method">
     <div class="wrap">
-      <span class="k">The method — three stations</span>
+      <span class="k">The method</span>
+      <h2 class="display" data-words>Beginning is the easy part. We handle the rest.</h2>
       <div class="method-line" data-mline aria-hidden="true"></div>
       <div class="msteps">
         <div class="mstep" data-fade><span class="dot" aria-hidden="true"></span><b>01</b><h3>The introduction</h3>
-          <p>A reference from an existing client, and a conversation. Capacity stays deliberately small.</p></div>
+          <p>A reference from someone we already coach, then an unhurried conversation about what you actually want. We keep our client list short on purpose.</p></div>
         <div class="mstep" data-fade><span class="dot" aria-hidden="true"></span><b>02</b><h3>The home visit</h3>
-          <p>We come to you, look at your space and your history, and listen more than we talk.</p></div>
+          <p>We come to you — your space, your equipment, your history, your mornings. We listen far more than we talk, then design around your real life.</p></div>
         <div class="mstep" data-fade><span class="dot" aria-hidden="true"></span><b>03</b><h3>The programme</h3>
-          <p>Coaching begins — at home, around your week, reviewed together every month.</p></div>
+          <p>Coaching begins at home, around your week. Every session in person, every month reviewed together — and adjusted the moment life changes.</p></div>
       </div>
+      <p class="method-close" data-fade>From the first conversation to your hundredth session, it stays personal — and it stays yours.</p>
     </div>
   </section>
 
@@ -500,23 +532,21 @@ footer{background:var(--cream);border-top:1.5px solid var(--forest);padding:clam
     if (l){ l.classList.add('gone'); setTimeout(function(){ l.remove(); ScrollTrigger.refresh(); }, 950); }
   }, 3000);
 
-  /* loader: line draws through the mark, then the curtain lifts */
-  var ll = document.getElementById('loaderLine');
-  gsap.fromTo(ll, {attr:{x2:0}}, {attr:{x2:'100%'}, duration:.8, ease:'power2.inOut',
-    onComplete:function(){
+  /* loader: the mark breathes in, then the curtain lifts */
+  gsap.to('#loader .lm', {opacity:1, duration:.55, ease:'power2.out', onComplete:function(){
+    setTimeout(function(){
       loader.classList.add('gone');
       setTimeout(function(){ loader.remove(); ScrollTrigger.refresh(); }, 950);
-    }});
+    }, 250);
+  }});
 
-  /* 01 arrival: spine draws, words rise */
-  var spine1 = document.getElementById('spine1');
-  drawSetup(spine1);
-  gsap.timeline({delay:.9})
-    .to(spine1, {strokeDashoffset:0, duration:1.6, ease:'power2.inOut'}, 0)
-    .to('.arrive h1 .word-mask > span', {y:0, duration:1.05, ease:calm, stagger:.06}, .4)
-    .fromTo('.arrive-copy p', {opacity:0, y:16}, {opacity:1, y:0, duration:.9, ease:calm}, 1.1)
-    .fromTo('.arrive-cue', {opacity:0}, {opacity:.6, duration:.8, ease:calm}, 1.4)
-    .fromTo('.arrive-one', {opacity:0}, {opacity:matchMedia('(max-width:1250px)').matches ? .22 : 1, duration:1.4, ease:calm}, .5);
+  /* 01 arrival: words rise, the photograph arrives */
+  gsap.timeline({delay:.7})
+    .to('.arrive h1 .word-mask > span', {y:0, duration:1.05, ease:calm, stagger:.06}, .15)
+    .fromTo('.arrive-copy p', {opacity:0, y:16}, {opacity:1, y:0, duration:.9, ease:calm}, .8)
+    .fromTo('[data-hero-photo]', {opacity:0, y:30}, {opacity:1, y:0, duration:1.2, ease:calm}, .45)
+    .fromTo('.arrive-cue', {opacity:0}, {opacity:.6, duration:.8, ease:calm}, 1.2)
+    .fromTo('.arrive-one', {opacity:0}, {opacity:.10, duration:1.4, ease:calm}, .5);
 
   /* generic reveals */
   document.querySelectorAll('[data-words]').forEach(function(el){
@@ -544,9 +574,9 @@ footer{background:var(--cream);border-top:1.5px solid var(--forest);padding:clam
   /* 02 the record: pinned rail scrub */
   var rail = document.getElementById('rail');
   function railTravel(){ return Math.max(0, rail.scrollWidth - window.innerWidth + window.innerWidth * .12); }
-  gsap.fromTo(rail, {x: window.innerWidth * .3}, {x:function(){ return -railTravel(); }, ease:'none',
+  gsap.fromTo(rail, {x: window.innerWidth * .06}, {x:function(){ return -railTravel(); }, ease:'none',
     scrollTrigger:{trigger:'.record', start:'top top',
-      end:function(){ return '+=' + (railTravel() + window.innerHeight * .35); },
+      end:function(){ return '+=' + (railTravel() + window.innerHeight * .1); },
       pin:true, scrub:.5, invalidateOnRefresh:true, anticipatePin:1}});
 
   /* 05 the map: pinned — route draws, pins pop, mission resolves */
