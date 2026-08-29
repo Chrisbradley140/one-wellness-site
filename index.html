@@ -38,8 +38,8 @@ a{color:inherit}
 .wrap{max-width:1400px;margin:0 auto;padding:0 clamp(24px,4.5vw,64px)}
 
 /* line segments */
-svg.seg{display:block;width:100%;overflow:visible}
-svg.seg path,svg.seg line{fill:none;stroke:var(--forest);stroke-width:2;vector-effect:non-scaling-stroke}
+svg.seg,svg.spine{display:block;overflow:visible}
+svg.seg path,svg.seg line,svg.spine path,svg.spine line{fill:none;stroke:var(--forest);stroke-width:2;vector-effect:non-scaling-stroke}
 
 /* loader */
 #loader{position:fixed;inset:0;z-index:100;background:var(--bone);display:flex;align-items:center;justify-content:center;
