@@ -465,6 +465,20 @@ footer{background:var(--cream);border-top:1.5px solid var(--forest);padding:clam
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add(function(t){ lenis.raf(t * 1000); });
   gsap.ticker.lagSmoothing(0);
+  /* dead-man switch: if smooth scroll fails to move the page, hand back native scroll */
+  var wheelTried = false;
+  window.addEventListener('wheel', function(){
+    if (wheelTried) return; wheelTried = true;
+    var y0 = window.scrollY;
+    setTimeout(function(){
+      if (Math.abs(window.scrollY - y0) < 2 && document.documentElement.scrollHeight > window.innerHeight + 50){
+        try { lenis.destroy(); } catch(e) {}
+        document.documentElement.classList.remove('lenis','lenis-smooth');
+        ScrollTrigger.refresh();
+      }
+    }, 700);
+  }, {passive:true});
+
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
     a.addEventListener('click', function(e){
       var t = document.querySelector(a.getAttribute('href'));
@@ -479,6 +493,12 @@ footer{background:var(--cream);border-top:1.5px solid var(--forest);padding:clam
     path.style.strokeDashoffset = L;
     return L;
   }
+
+  /* failsafe: the loader must never outstay its welcome */
+  setTimeout(function(){
+    var l = document.getElementById('loader');
+    if (l){ l.classList.add('gone'); setTimeout(function(){ l.remove(); ScrollTrigger.refresh(); }, 950); }
+  }, 3000);
 
   /* loader: line draws through the mark, then the curtain lifts */
   var ll = document.getElementById('loaderLine');
