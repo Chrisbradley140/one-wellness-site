@@ -87,7 +87,7 @@ header{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:s
 /* ═══ 02 the record — plates hung on the line ═══ */
 .record{position:relative;height:100vh;height:100svh;overflow:hidden;
   background:linear-gradient(175deg,var(--cream),#F1E9DB 90%)}
-.record-head{position:absolute;top:clamp(76px,11vh,120px);left:clamp(24px,4.5vw,64px);z-index:5;max-width:560px}
+.record-head{position:absolute;top:clamp(120px,15vh,168px);left:clamp(24px,4.5vw,64px);z-index:5;max-width:560px}
 .record-head .rule{width:64px;height:1.5px;background:var(--forest);opacity:.5;margin-top:12px}
 .record-head .record-intro{margin-top:18px;font-family:var(--serif);font-style:italic;font-weight:300;
   font-size:clamp(24px,2.3vw,36px);line-height:1.15;color:var(--ink)}
@@ -460,7 +460,7 @@ footer{background:var(--cream);border-top:1.5px solid var(--forest);padding:clam
 <script src="vendor/lenis.min.js"></script>
 <script>
 (function(){
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches || location.search.indexOf('flat') > -1;
   gsap.registerPlugin(ScrollTrigger);
 
   /* word split (accessible) */
@@ -488,7 +488,8 @@ footer{background:var(--cream);border-top:1.5px solid var(--forest);padding:clam
 
   if (reduced){
     loader.classList.add('gone');
-    document.querySelectorAll('.pin').forEach(function(p){ p.style.opacity = 1; });
+    document.querySelectorAll('.word-mask > span').forEach(function(sp){ sp.style.transform = 'none'; });
+    document.querySelectorAll('.pin').forEach(function(p){ p.style.opacity = 1; p.style.transform = 'none'; });
     hookForm();
     return;
   }
