@@ -1,0 +1,574 @@
+<meta charset="utf-8">
+<title>ONE Wellness</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Olympic-level coaching, delivered at home across Riyadh. By introduction only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Karla:wght@400;500;600&display=swap">
+
+<style>
+/* ═══════ ONE Wellness — ONE LINE ═══════
+   One continuous forest line runs the site:
+   arrival → record timeline → the turn → your home →
+   the map of Riyadh → method stations → quiet → signature. */
+:root{
+  --forest:#162E21; --forest-deep:#0F2018;
+  --cream:#FBF9F5; --bone:#F7F3EC; --sand:#EDE4D6;
+  --taupe:#9F876F; --sage:#BEC3A3; --ink:#221F1B;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Karla',Arial,sans-serif;
+  --ease:cubic-bezier(.22,.9,.24,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scrollbar-width:thin;scrollbar-color:var(--taupe) var(--bone)}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--bone);color:var(--ink);font-family:var(--serif);font-weight:400;
+  font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--forest);color:var(--cream)}
+a{color:inherit}
+:focus-visible{outline:1px solid var(--forest);outline-offset:4px}
+
+.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:70;opacity:.032;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.k{font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--taupe)}
+.display{font-family:var(--serif);font-weight:300;font-style:italic;line-height:1.06;letter-spacing:-.01em;text-wrap:balance}
+.word-mask{display:inline-block;overflow:hidden;vertical-align:bottom;padding:.06em .02em .14em;margin:-.06em -.02em -.14em}
+.word-mask>span{display:inline-block;transform:translateY(118%);will-change:transform}
+.wrap{max-width:1400px;margin:0 auto;padding:0 clamp(24px,4.5vw,64px)}
+
+/* line segments */
+svg.seg{display:block;width:100%;overflow:visible}
+svg.seg path,svg.seg line{fill:none;stroke:var(--forest);stroke-width:2;vector-effect:non-scaling-stroke}
+
+/* loader */
+#loader{position:fixed;inset:0;z-index:100;background:var(--bone);display:flex;align-items:center;justify-content:center;
+  transition:transform .9s var(--ease);transform:translateY(0)}
+#loader.gone{transform:translateY(-101%)}
+#loader .lm{position:relative;font-weight:300;font-size:clamp(64px,10vw,120px);letter-spacing:.04em;
+  color:transparent;-webkit-text-stroke:1.2px var(--forest)}
+#loader svg{position:absolute;left:-12%;top:55%;width:124%;height:2px;overflow:visible}
+#loader svg line{stroke:var(--forest);stroke-width:2}
+
+/* nav */
+header{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:space-between;align-items:center;
+  padding:24px clamp(24px,4.5vw,64px)}
+.mark{font-family:var(--serif);font-weight:400;font-size:24px;letter-spacing:.06em;text-decoration:none;line-height:1;color:var(--ink)}
+.mark small{display:block;font-family:var(--sans);font-size:8px;font-weight:600;letter-spacing:.42em;margin-top:2px;color:var(--taupe)}
+.nav-cta{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
+  text-decoration:none;color:var(--forest);padding-bottom:5px;border-bottom:1.5px solid var(--forest);transition:opacity .4s var(--ease)}
+.nav-cta:hover{opacity:.55}
+
+/* ═══ 01 arrival ═══ */
+.arrive{min-height:100vh;min-height:100svh;position:relative;display:flex;align-items:center;background:var(--bone);overflow:hidden}
+.arrive .spine{position:absolute;inset:0;width:100%;height:100%}
+.arrive-one{position:absolute;right:3vw;top:44%;transform:translateY(-50%);font-weight:300;line-height:.8;
+  font-size:clamp(150px,29vw,420px);letter-spacing:.02em;color:transparent;-webkit-text-stroke:1.5px var(--forest);
+  user-select:none;pointer-events:none}
+.arrive-copy{position:relative;z-index:2;padding:0 clamp(24px,4.5vw,64px);max-width:640px}
+.arrive-copy .k{display:block;margin-bottom:24px}
+.arrive-copy h1{font-size:clamp(40px,4.6vw,66px)}
+.arrive-copy p{margin-top:22px;font-family:var(--sans);font-size:13.5px;line-height:1.8;letter-spacing:.04em;color:rgba(34,31,27,.65);max-width:30em}
+.arrive-cue{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;opacity:.6}
+.arrive-cue i{width:1.5px;height:52px;background:linear-gradient(var(--forest),transparent);display:block;animation:cue 2.6s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ═══ 02 the record — plates hung on the line ═══ */
+.record{position:relative;height:100vh;height:100svh;overflow:hidden;background:var(--cream)}
+.record-head{position:absolute;top:clamp(84px,12vh,130px);left:clamp(24px,4.5vw,64px);z-index:5}
+.record-head .rule{width:64px;height:1.5px;background:var(--forest);opacity:.5;margin-top:12px}
+.rail{position:absolute;top:38%;left:0;display:flex;align-items:flex-start;will-change:transform}
+.rail-line{position:absolute;top:0;left:-100vw;right:-100vw;height:2px;background:var(--forest)}
+.station{position:relative;flex:0 0 auto;width:clamp(250px,24vw,340px);margin-right:clamp(48px,6vw,96px);padding-top:0}
+.station .tick{position:absolute;top:-7px;left:0;width:14px;height:14px;border-radius:50%;background:var(--cream);border:2px solid var(--forest)}
+.station .yr{margin:26px 0 4px;font-style:italic;font-weight:300;font-size:clamp(34px,3vw,46px);line-height:1;font-variant-numeric:lining-nums}
+.station .cap{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--taupe)}
+.station .drop{position:absolute;top:7px;left:56%;width:1.5px;height:56px;background:var(--forest);opacity:.5}
+.station .plate{margin-top:14px;margin-left:14%;width:86%;aspect-ratio:3/4;position:relative;overflow:hidden;
+  border:1px solid rgba(22,46,33,.35);background:
+  radial-gradient(ellipse 75% 55% at 50% 30%, rgba(251,249,245,.9), transparent 75%), linear-gradient(178deg,#EFE8DB,#E2D7C3 92%)}
+.station .plate img,.station .plate video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.6) sepia(.12) contrast(1.06)}
+.station .plate.empty img{display:none}
+.station .ghost{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-style:italic;font-weight:300;font-size:clamp(48px,4.5vw,72px);color:rgba(22,46,33,.16);pointer-events:none}
+.station .plate:not(.empty)+.ghost{display:none}
+.station .note{position:absolute;left:0;right:0;bottom:10px;text-align:center;
+  font-family:var(--sans);font-size:8.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:rgba(22,46,33,.4)}
+.station .plate:not(.empty)~.note{display:none}
+.station .plate:not(.empty) .note{display:none}
+
+/* ═══ 03 the turn ═══ */
+.turn{position:relative;background:var(--forest-deep);color:var(--cream);padding:clamp(110px,17vh,190px) 0;overflow:hidden}
+.turn .horizon{position:absolute;left:0;right:0;top:50%;height:2px;background:var(--cream);opacity:.9}
+.turn .wrap{display:grid;gap:clamp(56px,10vh,110px)}
+.turn p{font-size:clamp(26px,3vw,44px);max-width:18em}
+.turn p.up{align-self:end}
+.turn p.down{justify-self:end;text-align:right;max-width:16em}
+.turn .k{color:var(--sage)}
+
+/* ═══ 04 your home ═══ */
+.home{background:var(--bone);padding:clamp(100px,15vh,180px) 0;position:relative}
+.home .vline{position:absolute;top:0;bottom:0;left:clamp(24px,4.5vw,64px);width:2px;background:var(--forest);transform-origin:top}
+.home .wrap{padding-left:clamp(60px,9vw,130px)}
+.home h2{font-size:clamp(32px,3.8vw,56px);max-width:15em;margin:26px 0 18px}
+.home>.wrap>p{font-size:clamp(19px,1.6vw,23px);max-width:28em;color:rgba(34,31,27,.8)}
+.fits{margin-top:clamp(44px,7vh,72px);max-width:820px}
+.fit{position:relative;padding:20px 0 20px 0}
+.fit p{font-style:italic;font-size:clamp(19px,1.8vw,25px)}
+.fit .k{font-size:9.5px}
+.fit .u{position:absolute;left:0;bottom:0;height:1.5px;width:100%;background:var(--forest);opacity:.35;transform-origin:left}
+.coach-strip{margin-top:clamp(56px,9vh,90px);display:flex;gap:clamp(24px,4vw,56px);align-items:center;flex-wrap:wrap;
+  border-top:1.5px solid var(--forest);padding-top:26px;max-width:820px}
+.coach-strip .c{display:flex;align-items:baseline;gap:12px}
+.coach-strip b{font-style:italic;font-weight:300;font-size:clamp(28px,2.4vw,40px);font-variant-numeric:lining-nums;color:var(--forest)}
+.coach-strip span{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--taupe)}
+.coach-strip .who{flex-basis:100%;font-family:var(--sans);font-size:12.5px;letter-spacing:.04em;color:rgba(34,31,27,.65);line-height:1.7;max-width:46em}
+
+/* ═══ 05 the map of riyadh ═══ */
+.mapsec{position:relative;height:100vh;height:100svh;overflow:hidden;background:var(--cream)}
+.mapsec-head{position:absolute;top:clamp(84px,12vh,130px);left:clamp(24px,4.5vw,64px);z-index:5}
+.map-stage{position:absolute;inset:0}
+.map-stage svg{width:100%;height:100%}
+.map-grid line{stroke:rgba(34,31,27,.06);stroke-width:1}
+#route{stroke:var(--forest);stroke-width:2.5;fill:none}
+.pin{opacity:0;transform-origin:center}
+.pin circle.dot{fill:var(--forest)}
+.pin circle.halo{fill:none;stroke:var(--forest);stroke-opacity:.3;stroke-width:1}
+.pin text{font-family:var(--sans);font-weight:600;letter-spacing:.18em;text-transform:uppercase;fill:var(--ink)}
+.pin text.co{font-weight:500;letter-spacing:.12em;fill:var(--taupe)}
+.compass{font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:.2em;fill:var(--taupe)}
+.mission{position:absolute;left:0;right:0;bottom:clamp(48px,9vh,100px);z-index:6;text-align:center;padding:0 24px}
+.mission .display{font-size:clamp(26px,3.4vw,50px);max-width:22em;margin:0 auto;color:var(--ink)}
+.mission .display em{color:var(--forest)}
+
+/* ═══ 06 method stations ═══ */
+.method{background:var(--sand);padding:clamp(100px,15vh,180px) 0;position:relative}
+.method-line{position:relative;height:2px;background:var(--forest);margin:clamp(48px,8vh,80px) 0 34px;transform-origin:left}
+.msteps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3.5vw,56px)}
+.mstep{position:relative}
+.mstep .tick{position:absolute;top:calc(-34px - clamp(48px,8vh,80px) - 8px + clamp(48px,8vh,80px));left:0}
+.mstep .dot{position:absolute;top:-42px;left:0;width:14px;height:14px;border-radius:50%;background:var(--sand);border:2px solid var(--forest)}
+.mstep b{display:block;font-style:italic;font-weight:300;font-size:15px;color:var(--taupe);margin-bottom:10px}
+.mstep h3{font-style:italic;font-weight:400;font-size:clamp(23px,1.9vw,30px);margin-bottom:10px}
+.mstep p{font-size:16.5px;color:rgba(34,31,27,.72)}
+
+/* ═══ 07 quiet ═══ */
+.quiet{background:var(--bone);padding:clamp(90px,14vh,160px) 0;position:relative;text-align:center}
+.quiet .thin{height:1px;background:var(--forest);opacity:.22;margin-bottom:clamp(48px,8vh,72px)}
+.quiet p{font-style:italic;font-size:clamp(20px,2vw,28px);color:rgba(34,31,27,.8);margin:10px 0}
+.quiet .k{display:block;margin-bottom:26px}
+
+/* ═══ 08 the introduction ═══ */
+.intro{background:var(--cream);padding:clamp(100px,15vh,180px) 0}
+.intro-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(48px,7vw,120px);align-items:start}
+.intro h2{font-size:clamp(32px,3.6vw,52px);max-width:13em;margin-top:24px}
+.intro-note{margin-top:26px;font-size:17.5px;color:rgba(34,31,27,.7);max-width:26em}
+form{display:flex;flex-direction:column;gap:34px;padding-top:8px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--taupe)}
+.field input{background:transparent;border:0;border-bottom:1.5px solid rgba(22,46,33,.4);
+  font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ink);padding:6px 0 10px;transition:border-color .4s var(--ease)}
+.field input:focus{outline:none;border-color:var(--forest)}
+.field.err input{border-color:#A9603C}
+.field .err-msg{display:none;font-family:var(--sans);font-size:11px;letter-spacing:.04em;color:#A9603C}
+.field.err .err-msg{display:block}
+.submit{align-self:flex-start;cursor:pointer;background:var(--forest);color:var(--cream);border:1.5px solid var(--forest);
+  padding:19px 42px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
+  transition:background .45s var(--ease),color .45s var(--ease)}
+.submit:hover{background:transparent;color:var(--forest)}
+.submit:active{transform:translateY(1px)}
+.form-done{display:none;padding-top:8px}
+.form-done .fullstop{width:12px;height:12px;border-radius:50%;background:var(--forest);margin-bottom:20px}
+.form-done .display{font-size:clamp(26px,2.6vw,38px)}
+.form-done p{margin-top:12px;color:rgba(34,31,27,.7);font-size:17px}
+
+/* ═══ footer ═══ */
+footer{background:var(--cream);border-top:1.5px solid var(--forest);padding:clamp(34px,6vh,52px) 0}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.foot .mark-row{display:flex;align-items:center;gap:14px}
+.foot .terminus{width:9px;height:9px;border-radius:50%;background:var(--forest)}
+.foot-meta{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--taupe)}
+
+@media (max-width:900px){
+  body{font-size:17px}
+  .arrive-one{opacity:.3}
+  .intro-grid{grid-template-columns:1fr}
+  .msteps{grid-template-columns:1fr;gap:36px}
+  .mstep .dot{display:none}
+  .turn p.down{justify-self:start;text-align:left}
+  .mission .display{font-size:24px}
+}
+@media (prefers-reduced-motion:reduce){
+  .grain,.arrive-cue i{animation:none}
+  .word-mask>span{transform:none!important}
+  *{transition-duration:.01ms!important}
+}
+</style>
+
+<div class="grain" aria-hidden="true"></div>
+
+<div id="loader" aria-hidden="true">
+  <div class="lm">ONE<svg preserveAspectRatio="none"><line id="loaderLine" x1="0" y1="1" x2="100%" y2="1"/></svg></div>
+</div>
+
+<header>
+  <a class="mark" href="#top" aria-label="ONE Wellness — home">ONE<small>WELLNESS</small></a>
+  <a class="nav-cta" href="#introduction">Request an introduction</a>
+</header>
+
+<main id="top">
+
+  <!-- 01 ARRIVAL -->
+  <section class="arrive" aria-label="ONE Wellness — Riyadh">
+    <svg class="spine" viewBox="0 0 1440 800" preserveAspectRatio="none" aria-hidden="true">
+      <path id="spine1" d="M -10 250 L 545 250 L 545 480 L 890 480 L 890 335 L 1450 335"/>
+    </svg>
+    <div class="arrive-one" aria-hidden="true">ONE</div>
+    <div class="arrive-copy">
+      <span class="k">One Wellness · Riyadh</span>
+      <h1 class="display" data-words>Trained by the world’s best, in your own home.</h1>
+      <p data-fade>Private coaching from two people who spent twenty years at the top of world sport.
+        We come to you, anywhere in Riyadh. By introduction only.</p>
+    </div>
+    <div class="arrive-cue" aria-hidden="true"><span class="k" style="letter-spacing:.4em">Scroll</span><i></i></div>
+  </section>
+
+  <!-- 02 THE RECORD -->
+  <section class="record" aria-label="The record">
+    <div class="record-head">
+      <span class="k">The record — the line ends in Riyadh</span>
+      <div class="rule"></div>
+    </div>
+    <div class="rail" id="rail">
+      <div class="rail-line" aria-hidden="true"></div>
+      <div class="station">
+        <span class="tick"></span><span class="drop" aria-hidden="true"></span>
+        <div class="yr">2016</div><div class="cap">Rio — Olympic bronze</div>
+        <figure class="plate"><img src="assets/archive/01.jpg" alt="Bianca Cook on the podium at Rio 2016 with her Olympic bronze medal" onerror="this.parentElement.classList.add('empty')"><span class="note">Archive · awaiting photo</span></figure>
+      </div>
+      <div class="station">
+        <span class="tick"></span><span class="drop" aria-hidden="true"></span>
+        <div class="yr">2017</div><div class="cap">Muju — World Championships</div>
+        <figure class="plate"><img src="assets/archive/02.jpg" alt="Aaron Cook with his World Championship medal at Muju 2017" onerror="this.parentElement.classList.add('empty')"><span class="note">Archive · awaiting photo</span></figure>
+      </div>
+      <div class="station">
+        <span class="tick"></span><span class="drop" aria-hidden="true"></span>
+        <div class="yr">2020</div><div class="cap">Tokyo — Olympic bronze</div>
+        <figure class="plate"><img src="assets/archive/03.jpg" alt="Bianca Cook celebrating with the Union Jack after winning Olympic bronze in Tokyo" onerror="this.parentElement.classList.add('empty')"><span class="note">Archive · awaiting photo</span></figure>
+      </div>
+      <div class="station">
+        <span class="tick"></span><span class="drop" aria-hidden="true"></span>
+        <div class="yr">Always</div><div class="cap">The daily work</div>
+        <figure class="plate"><img src="assets/archive/04.jpg" alt="Aaron Cook, head bowed, holding his headgear before competing" onerror="this.parentElement.classList.add('empty')"><span class="note">Archive · awaiting photo</span></figure>
+      </div>
+      <div class="station">
+        <span class="tick"></span><span class="drop" aria-hidden="true"></span>
+        <div class="yr">Motion</div><div class="cap">Two careers, eighteen seconds</div>
+        <figure class="plate"><video src="assets/archive/reel.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Highlight reel of Bianca Cook competing"></video></figure>
+      </div>
+      <div class="station">
+        <span class="tick"></span><span class="drop" aria-hidden="true"></span>
+        <div class="yr">2023</div><div class="cap">Riyadh — Saudi Games</div>
+        <figure class="plate"><img src="assets/archive/05.jpg" alt="Aaron Cook with his Saudi Games medal in Riyadh, 2023" onerror="this.parentElement.classList.add('empty')"><span class="note">Archive · awaiting photo</span></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 THE TURN -->
+  <section class="turn" aria-label="The turn">
+    <div class="horizon" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="display up" data-words>For twenty years, the world watched us compete.</p>
+      <p class="display down" data-words>Then we crossed a line — and made it yours.</p>
+    </div>
+  </section>
+
+  <!-- 04 YOUR HOME -->
+  <section class="home">
+    <div class="vline" data-vline aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="k">Your home</span>
+      <h2 class="display" data-words>The best place to train is the one you wake up in.</h2>
+      <p data-fade>A spare room, a garage, a garden, a full home gym — it doesn’t matter. We design around
+        whatever your home gives us, and we travel with everything it doesn’t.</p>
+      <div class="fits">
+        <div class="fit" data-fitrow><span class="k">Right fit</span><p>You want serious coaching without ever driving to a gym.</p><span class="u"></span></div>
+        <div class="fit" data-fitrow><span class="k">Right fit</span><p>Your time is protected — the session comes to you, on your schedule.</p><span class="u"></span></div>
+        <div class="fit" data-fitrow><span class="k">Right fit</span><p>You value discretion more than spectacle.</p><span class="u"></span></div>
+      </div>
+      <div class="coach-strip" data-fade>
+        <div class="c"><b>2×</b><span>Olympic medals</span></div>
+        <div class="c"><b>3×</b><span>World titles</span></div>
+        <div class="c"><b>No.1</b><span>World ranking</span></div>
+        <span class="who">Aaron and Bianca Cook coach every session themselves — the same discipline that survived
+          Olympic finals, applied quietly to your Tuesday morning. Nothing is templated. Nothing is delegated.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 THE MAP OF RIYADH -->
+  <section class="mapsec" aria-label="The map — we come to you across Riyadh">
+    <div class="mapsec-head">
+      <span class="k">The city — we come to you</span>
+    </div>
+    <div class="map-stage">
+      <svg viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
+        <g class="map-grid" aria-hidden="true">
+          <line x1="180" y1="0" x2="180" y2="800"/><line x1="360" y1="0" x2="360" y2="800"/>
+          <line x1="540" y1="0" x2="540" y2="800"/><line x1="720" y1="0" x2="720" y2="800"/>
+          <line x1="900" y1="0" x2="900" y2="800"/><line x1="1080" y1="0" x2="1080" y2="800"/>
+          <line x1="1260" y1="0" x2="1260" y2="800"/>
+          <line x1="0" y1="160" x2="1440" y2="160"/><line x1="0" y1="320" x2="1440" y2="320"/>
+          <line x1="0" y1="480" x2="1440" y2="480"/><line x1="0" y1="640" x2="1440" y2="640"/>
+        </g>
+        <text class="compass" x="1370" y="60">N ↑</text>
+        <text class="compass" x="60" y="756">RIYADH · 24.71° N — 46.67° E</text>
+        <path id="route" d="M -10 300 C 100 300 140 250 205 240 C 280 228 330 330 405 395
+          C 470 452 520 330 565 300 C 630 258 680 195 745 185 C 815 175 850 240 900 280
+          C 960 328 1010 400 1070 420 C 1150 448 1240 430 1450 452" aria-hidden="true"/>
+        <g class="pin" data-pin><circle class="halo" cx="205" cy="240" r="20"/><circle class="dot" cx="205" cy="240" r="7"/>
+          <text x="230" y="234" font-size="13">Diriyah</text><text class="co" x="230" y="252" font-size="9.5">24.73 N · 46.57 E</text></g>
+        <g class="pin" data-pin><circle class="halo" cx="405" cy="395" r="20"/><circle class="dot" cx="405" cy="395" r="7"/>
+          <text x="430" y="389" font-size="13">Diplomatic Quarter</text><text class="co" x="430" y="407" font-size="9.5">24.68 N · 46.62 E</text></g>
+        <g class="pin" data-pin><circle class="halo" cx="565" cy="300" r="20"/><circle class="dot" cx="565" cy="300" r="7"/>
+          <text x="590" y="294" font-size="13">Hittin</text><text class="co" x="590" y="312" font-size="9.5">24.76 N · 46.60 E</text></g>
+        <g class="pin" data-pin><circle class="halo" cx="745" cy="185" r="20"/><circle class="dot" cx="745" cy="185" r="7"/>
+          <text x="770" y="179" font-size="13">Al Malqa</text><text class="co" x="770" y="197" font-size="9.5">24.80 N · 46.61 E</text></g>
+        <g class="pin" data-pin><circle class="halo" cx="900" cy="280" r="20"/><circle class="dot" cx="900" cy="280" r="7"/>
+          <text x="925" y="274" font-size="13">Al Nakheel</text><text class="co" x="925" y="292" font-size="9.5">24.75 N · 46.64 E</text></g>
+        <g class="pin" data-pin><circle class="halo" cx="1070" cy="420" r="20"/><circle class="dot" cx="1070" cy="420" r="7"/>
+          <text x="1095" y="414" font-size="13">Al Olaya</text><text class="co" x="1095" y="432" font-size="9.5">24.69 N · 46.68 E</text></g>
+      </svg>
+    </div>
+    <div class="mission">
+      <p class="display" id="missionText" data-words>We are on a mission to make the people of Riyadh <em>fitter, healthier and happier.</em></p>
+    </div>
+  </section>
+
+  <!-- 06 THE METHOD -->
+  <section class="method">
+    <div class="wrap">
+      <span class="k">The method — three stations</span>
+      <div class="method-line" data-mline aria-hidden="true"></div>
+      <div class="msteps">
+        <div class="mstep" data-fade><span class="dot" aria-hidden="true"></span><b>01</b><h3>The introduction</h3>
+          <p>A reference from an existing client, and a conversation. Capacity stays deliberately small.</p></div>
+        <div class="mstep" data-fade><span class="dot" aria-hidden="true"></span><b>02</b><h3>The home visit</h3>
+          <p>We come to you, look at your space and your history, and listen more than we talk.</p></div>
+        <div class="mstep" data-fade><span class="dot" aria-hidden="true"></span><b>03</b><h3>The programme</h3>
+          <p>Coaching begins — at home, around your week, reviewed together every month.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 QUIET -->
+  <section class="quiet">
+    <div class="thin" aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="k">Discretion, assured</span>
+      <p data-fade>We arrive quietly, on time, alone.</p>
+      <p data-fade>We never photograph your home, and we never post.</p>
+      <p data-fade>Your name stays yours.</p>
+    </div>
+  </section>
+
+  <!-- 08 THE INTRODUCTION -->
+  <section class="intro" id="introduction">
+    <div class="wrap">
+      <div class="intro-grid">
+        <div>
+          <span class="k">By introduction only</span>
+          <h2 class="display" data-words>The line ends with your name on it.</h2>
+          <p class="intro-note" data-fade>Tell us who introduced you and what you are trying to achieve.
+            Every enquiry is read and answered personally by Aaron or Bianca, within two days.</p>
+        </div>
+        <div>
+          <form id="introForm" novalidate>
+            <div class="field">
+              <label for="f-name">Your name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name">
+              <span class="err-msg">Please tell us your name.</span>
+            </div>
+            <div class="field">
+              <label for="f-contact">Phone or email</label>
+              <input id="f-contact" name="contact" type="text" autocomplete="email">
+              <span class="err-msg">We need one way to reach you.</span>
+            </div>
+            <div class="field">
+              <label for="f-intro">Introduced by</label>
+              <input id="f-intro" name="introduced" type="text">
+              <span class="err-msg">Introductions come through existing clients.</span>
+            </div>
+            <button class="submit" type="submit">Request an introduction</button>
+          </form>
+          <div class="form-done" id="formDone" role="status">
+            <div class="fullstop" aria-hidden="true"></div>
+            <p class="display">Thank you. Full stop.</p>
+            <p>Aaron or Bianca will reply within two days.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="mark-row"><span class="mark" aria-hidden="true">ONE<small>WELLNESS</small></span><span class="terminus" aria-hidden="true"></span></div>
+    <span class="foot-meta">Riyadh · Kingdom of Saudi Arabia</span>
+    <span class="foot-meta">Discretion assured · © 2026</span>
+  </div>
+</footer>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* word split (accessible) */
+  document.querySelectorAll('[data-words]').forEach(function(el){
+    var text = el.textContent.trim();
+    el.setAttribute('aria-label', text);
+    var nodes = Array.prototype.slice.call(el.childNodes);
+    el.textContent = '';
+    var frag = document.createDocumentFragment();
+    nodes.forEach(function(node){
+      var isEm = node.nodeType === 1 && node.tagName === 'EM';
+      (node.textContent || '').split(/\s+/).filter(Boolean).forEach(function(w){
+        var mask = document.createElement('span');
+        mask.className = 'word-mask'; mask.setAttribute('aria-hidden','true');
+        var inner = document.createElement('span'); inner.textContent = w;
+        if (isEm){ var em = document.createElement('em'); em.appendChild(inner); mask.appendChild(em); }
+        else mask.appendChild(inner);
+        frag.appendChild(mask); frag.appendChild(document.createTextNode(' '));
+      });
+    });
+    el.appendChild(frag);
+  });
+
+  var loader = document.getElementById('loader');
+
+  if (reduced){
+    loader.classList.add('gone');
+    document.querySelectorAll('.pin').forEach(function(p){ p.style.opacity = 1; });
+    hookForm();
+    return;
+  }
+
+  var lenis = new Lenis({ lerp: 0.085, smoothWheel: true });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(function(t){ lenis.raf(t * 1000); });
+  gsap.ticker.lagSmoothing(0);
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var t = document.querySelector(a.getAttribute('href'));
+      if (t){ e.preventDefault(); lenis.scrollTo(t, {duration: 1.6}); }
+    });
+  });
+
+  var calm = 'power3.out';
+  function drawSetup(path){
+    var L = path.getTotalLength();
+    path.style.strokeDasharray = L;
+    path.style.strokeDashoffset = L;
+    return L;
+  }
+
+  /* loader: line draws through the mark, then the curtain lifts */
+  var ll = document.getElementById('loaderLine');
+  gsap.fromTo(ll, {attr:{x2:0}}, {attr:{x2:'100%'}, duration:.8, ease:'power2.inOut',
+    onComplete:function(){
+      loader.classList.add('gone');
+      setTimeout(function(){ loader.remove(); ScrollTrigger.refresh(); }, 950);
+    }});
+
+  /* 01 arrival: spine draws, words rise */
+  var spine1 = document.getElementById('spine1');
+  drawSetup(spine1);
+  gsap.timeline({delay:.9})
+    .to(spine1, {strokeDashoffset:0, duration:1.6, ease:'power2.inOut'}, 0)
+    .to('.arrive h1 .word-mask > span', {y:0, duration:1.05, ease:calm, stagger:.06}, .4)
+    .fromTo('.arrive-copy p', {opacity:0, y:16}, {opacity:1, y:0, duration:.9, ease:calm}, 1.1)
+    .fromTo('.arrive-cue', {opacity:0}, {opacity:.6, duration:.8, ease:calm}, 1.4)
+    .fromTo('.arrive-one', {opacity:0}, {opacity:1, duration:1.4, ease:calm}, .5);
+
+  /* generic reveals */
+  document.querySelectorAll('[data-words]').forEach(function(el){
+    if (el.closest('.arrive') || el.closest('.mission')) return;
+    gsap.to(el.querySelectorAll('.word-mask > span'), {y:0, duration:1, ease:calm, stagger:.045,
+      scrollTrigger:{trigger:el, start:'top 80%'}});
+  });
+  document.querySelectorAll('[data-fade]').forEach(function(el){
+    gsap.fromTo(el, {opacity:0, y:22}, {opacity:1, y:0, duration:1, ease:calm,
+      scrollTrigger:{trigger:el, start:'top 86%'}});
+  });
+  document.querySelectorAll('[data-fitrow]').forEach(function(el){
+    gsap.fromTo(el.querySelector('.u'), {scaleX:0}, {scaleX:1, duration:1.1, ease:calm,
+      scrollTrigger:{trigger:el, start:'top 84%'}});
+  });
+  document.querySelectorAll('[data-vline]').forEach(function(el){
+    gsap.fromTo(el, {scaleY:0}, {scaleY:1, ease:'none',
+      scrollTrigger:{trigger:el.parentElement, start:'top 80%', end:'bottom 60%', scrub:.5}});
+  });
+  document.querySelectorAll('[data-mline]').forEach(function(el){
+    gsap.fromTo(el, {scaleX:0}, {scaleX:1, duration:1.4, ease:'power2.inOut',
+      scrollTrigger:{trigger:el, start:'top 82%'}});
+  });
+
+  /* 02 the record: pinned rail scrub */
+  var rail = document.getElementById('rail');
+  function railTravel(){ return Math.max(0, rail.scrollWidth - window.innerWidth + window.innerWidth * .12); }
+  gsap.fromTo(rail, {x: window.innerWidth * .3}, {x:function(){ return -railTravel(); }, ease:'none',
+    scrollTrigger:{trigger:'.record', start:'top top',
+      end:function(){ return '+=' + (railTravel() + window.innerHeight * .35); },
+      pin:true, scrub:.5, invalidateOnRefresh:true, anticipatePin:1}});
+
+  /* 05 the map: pinned — route draws, pins pop, mission resolves */
+  var route = document.getElementById('route');
+  var RL = drawSetup(route);
+  var pins = gsap.utils.toArray('.pin');
+  var pinAt = [.13, .3, .42, .55, .68, .8];   /* fractions of route length */
+  var mapTL = gsap.timeline({
+    scrollTrigger:{trigger:'.mapsec', start:'top top', end:'+=250%', pin:true, scrub:.5, anticipatePin:1}
+  });
+  mapTL.to(route, {strokeDashoffset:0, duration:1, ease:'none'}, 0);
+  pins.forEach(function(p, i){
+    gsap.set(p, {scale:.2, transformOrigin:'center'});
+    mapTL.to(p, {opacity:1, scale:1, duration:.05, ease:'back.out(2.2)'}, pinAt[i]);
+  });
+  mapTL.to('.map-grid, #route', {opacity:.32, duration:.1}, 1.02);
+  mapTL.to('#missionText .word-mask > span', {y:0, duration:.22, ease:calm, stagger:.012}, 1.02);
+  /* mission words need split state even though excluded from generic reveal */
+  gsap.set('#missionText .word-mask > span', {y:'118%'});
+
+  hookForm();
+  function hookForm(){
+    var form = document.getElementById('introForm');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var ok = true;
+      ['f-name','f-contact','f-intro'].forEach(function(id){
+        var input = document.getElementById(id), field = input.closest('.field');
+        if (!input.value.trim()){ field.classList.add('err'); ok = false; }
+        else field.classList.remove('err');
+      });
+      if (!ok) return;
+      form.style.display = 'none';
+      var done = document.getElementById('formDone');
+      done.style.display = 'block';
+      if (window.gsap && !reduced){
+        gsap.from(done, {opacity:0, y:16, duration:.8, ease:'power3.out'});
+        gsap.from(done.querySelector('.fullstop'), {scale:0, duration:.5, ease:'back.out(2)', delay:.3});
+      }
+    });
+    ['f-name','f-contact','f-intro'].forEach(function(id){
+      var input = document.getElementById(id);
+      input.addEventListener('input', function(){ input.closest('.field').classList.remove('err'); });
+    });
+  }
+})();
+</script>
