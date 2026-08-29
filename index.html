@@ -496,7 +496,7 @@ footer{background:var(--cream);border-top:1.5px solid var(--forest);padding:clam
     .to('.arrive h1 .word-mask > span', {y:0, duration:1.05, ease:calm, stagger:.06}, .4)
     .fromTo('.arrive-copy p', {opacity:0, y:16}, {opacity:1, y:0, duration:.9, ease:calm}, 1.1)
     .fromTo('.arrive-cue', {opacity:0}, {opacity:.6, duration:.8, ease:calm}, 1.4)
-    .fromTo('.arrive-one', {opacity:0}, {opacity:1, duration:1.4, ease:calm}, .5);
+    .fromTo('.arrive-one', {opacity:0}, {opacity:matchMedia('(max-width:1250px)').matches ? .22 : 1, duration:1.4, ease:calm}, .5);
 
   /* generic reveals */
   document.querySelectorAll('[data-words]').forEach(function(el){
