@@ -1,0 +1,584 @@
+<meta charset="utf-8">
+<title>Online Coaching — ONE Wellness</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="1-1 online coaching with Aaron or Bianca Cook, anywhere in the world, delivered through your phone. Join the waiting list.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Karla:wght@400;500;600&display=swap">
+
+<style>
+/* ═══════ ONE Wellness — ONLINE COACHING ═══════
+   Sister page to the homepage. Same system, own idea:
+   the homepage brings us to your door; this one lives in your pocket. */
+:root{
+  --forest:#162E21; --forest-deep:#0F2018; --forest-warm:#1C3A2A;
+  --cream:#FBF9F5; --bone:#F7F3EC; --sand:#EDE4D6;
+  --taupe:#9F876F; --sage:#BEC3A3; --ink:#221F1B;
+  --champagne:#E3D3B3; --champagne-lt:#F2E8D5; --gold:#C4A468; --bronze:#A88756;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Karla',Arial,sans-serif;
+  --ease:cubic-bezier(.22,.9,.24,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;border-radius:0}
+html{scrollbar-width:thin;scrollbar-color:var(--taupe) var(--bone);scroll-behavior:smooth}
+body{background:var(--bone);color:var(--ink);font-family:var(--serif);font-weight:400;
+  font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 55% at 12% 8%,  rgba(242,232,213,.95), transparent 62%),
+    radial-gradient(ellipse 60% 50% at 88% 22%, rgba(227,211,179,.85), transparent 64%),
+    radial-gradient(ellipse 80% 60% at 50% 62%, rgba(237,228,214,.9),  transparent 70%),
+    radial-gradient(ellipse 65% 55% at 8%  88%, rgba(196,164,104,.22), transparent 66%),
+    radial-gradient(ellipse 70% 60% at 92% 96%, rgba(168,135,86,.20),  transparent 68%),
+    linear-gradient(168deg, #FAF6EE 0%, #F4EBDB 38%, #EFE3CC 68%, #E8DAC0 100%)}
+::selection{background:var(--forest);color:var(--cream)}
+a{color:inherit}
+:focus-visible{outline:1px solid var(--forest);outline-offset:4px}
+img,video{max-width:100%;display:block}
+
+.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:70;opacity:.032;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.k{font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--taupe)}
+.display{font-family:var(--serif);font-weight:300;font-style:italic;line-height:1.06;letter-spacing:-.01em;text-wrap:balance}
+.word-mask{display:inline-block;overflow:hidden;vertical-align:bottom;padding:.06em .02em .14em;margin:-.06em -.02em -.14em}
+.word-mask>span{display:inline-block;transform:translateY(118%);will-change:transform}
+.wrap{max-width:1400px;margin:0 auto;padding:0 clamp(24px,4.5vw,64px)}
+
+/* nav */
+header{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:space-between;align-items:center;
+  padding:24px clamp(24px,4.5vw,64px);transition:transform .45s var(--ease)}
+header::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;
+  transition:opacity .45s var(--ease);
+  background:linear-gradient(180deg, rgba(250,246,238,.94) 0%, rgba(250,246,238,.72) 62%, rgba(250,246,238,0) 100%);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+header.scrolled::before{opacity:1}
+header.scrolled.on-dark::before{background:linear-gradient(180deg, rgba(15,32,24,.92) 0%, rgba(15,32,24,.66) 62%, rgba(15,32,24,0) 100%)}
+header.tucked{transform:translateY(-104%)}
+.mark{font-family:var(--serif);font-weight:400;font-size:24px;letter-spacing:.06em;text-decoration:none;line-height:1;
+  color:var(--ink);transition:color .5s var(--ease)}
+.mark small{display:block;font-family:var(--sans);font-size:8px;font-weight:600;letter-spacing:.42em;margin-top:2px;
+  color:var(--taupe);transition:color .5s var(--ease)}
+.nav-cta{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
+  text-decoration:none;color:var(--forest);padding-bottom:5px;border-bottom:1.5px solid var(--forest);
+  transition:opacity .4s var(--ease), color .5s var(--ease), border-color .5s var(--ease)}
+.nav-cta:hover{opacity:.55}
+.nav-cta .short{display:none}
+header.on-dark .mark{color:var(--cream)}
+header.on-dark .mark small{color:var(--champagne)}
+header.on-dark .nav-cta{color:var(--champagne);border-color:var(--gold)}
+
+/* ═══ 01 hero — the phone is the idea ═══ */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;
+  background:var(--forest-deep);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 55% 50% at 74% 34%, rgba(196,164,104,.32), transparent 66%),
+    radial-gradient(ellipse 70% 55% at 10% 78%, rgba(168,135,86,.22), transparent 68%),
+    linear-gradient(162deg, #16301F 0%, #0F2018 54%, #14291D 100%)}
+.hero-grid{position:relative;z-index:2;width:100%;max-width:1400px;margin:0 auto;
+  padding:130px clamp(24px,4.5vw,64px) 100px;
+  display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(40px,6vw,96px);align-items:center}
+.hero-copy .k{display:block;margin-bottom:24px;color:var(--champagne)}
+.hero-copy h1{font-size:clamp(38px,4.6vw,68px);color:var(--cream)}
+.hero-copy p{margin-top:26px;font-family:var(--sans);font-size:14px;line-height:1.85;letter-spacing:.03em;
+  color:rgba(247,243,236,.78);max-width:36em}
+.hero-actions{margin-top:38px;display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.btn-gold{display:inline-block;cursor:pointer;text-decoration:none;color:var(--forest-deep);
+  border:1px solid var(--gold);background:linear-gradient(135deg,var(--champagne-lt),var(--champagne) 45%,var(--gold) 100%);
+  padding:19px 42px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
+  transition:filter .45s var(--ease),box-shadow .45s var(--ease)}
+.btn-gold:hover{filter:brightness(1.07);box-shadow:0 6px 28px rgba(196,164,104,.35)}
+.hero-note{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--sage)}
+
+/* the phone */
+.phone-wrap{justify-self:center;position:relative}
+.phone{position:relative;width:min(300px,72vw);aspect-ratio:9/19.2;padding:10px;
+  background:linear-gradient(160deg,#2A2A26,#131311 60%,#23231F);
+  border-radius:44px;box-shadow:0 40px 80px -24px rgba(0,0,0,.7), 0 0 0 1px rgba(227,211,179,.16)}
+.phone-screen{position:relative;width:100%;height:100%;border-radius:34px;overflow:hidden;background:#0B140F}
+.phone-screen video{width:100%;height:100%;object-fit:cover;filter:saturate(1.12) contrast(1.05)}
+.phone-notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:34%;height:22px;
+  background:#131311;border-radius:0 0 14px 14px;z-index:3}
+.phone-glow{position:absolute;inset:-14% -22%;z-index:-1;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 45%, rgba(196,164,104,.30), transparent 68%)}
+.phone-cap{margin-top:20px;text-align:center;font-family:var(--sans);font-size:9.5px;font-weight:600;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--sage)}
+
+/* ═══ 02 the difference ═══ */
+.diff{position:relative;padding:clamp(96px,15vh,170px) 0}
+.diff::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 70% at 82% 40%, rgba(196,164,104,.14), transparent 64%)}
+.diff .wrap{position:relative;z-index:1}
+.diff h2{font-size:clamp(30px,3.6vw,52px);max-width:15em;margin:22px 0 clamp(40px,6vh,64px)}
+.diff-rows{border-top:1.5px solid rgba(34,31,27,.18);max-width:960px}
+.diff-row{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(20px,3vw,52px);
+  align-items:baseline;padding:clamp(22px,3vh,32px) 0;border-bottom:1px solid rgba(34,31,27,.16)}
+.diff-row h3{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(22px,2.1vw,30px);color:var(--forest)}
+.diff-row p{font-size:17.5px;color:rgba(34,31,27,.78);max-width:30em}
+
+/* ═══ 03 choose your coach ═══ */
+.coaches{position:relative;padding:clamp(90px,14vh,160px) 0}
+.coaches::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(180deg, rgba(232,218,192,0) 0%, rgba(228,212,183,.7) 22%, rgba(224,206,174,.8) 78%, rgba(232,218,192,0) 100%)}
+.coaches .wrap{position:relative;z-index:1}
+.coach-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,3vw,44px);margin-top:clamp(36px,6vh,56px)}
+.coach{position:relative;overflow:hidden;isolation:isolate;color:var(--cream);
+  box-shadow:0 24px 50px -20px rgba(15,32,24,.55);transition:transform .55s var(--ease)}
+.coach:hover{transform:translateY(-6px)}
+.coach img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;
+  filter:saturate(1.22) contrast(1.14) brightness(1.03)}
+.coach::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg, rgba(15,32,24,.04) 0%, rgba(15,32,24,.16) 38%, rgba(15,32,24,.72) 78%, rgba(15,32,24,.94) 100%)}
+.coach-inner{aspect-ratio:4/5;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:clamp(24px,3vw,38px)}
+.coach h3{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(30px,3vw,44px);line-height:1}
+.coach .role{margin-top:10px;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--champagne)}
+.coach p{margin-top:14px;font-family:var(--sans);font-size:13.5px;line-height:1.75;color:rgba(247,243,236,.82);max-width:26em}
+
+/* ═══ 04 what's included ═══ */
+.incl{position:relative;padding:clamp(90px,14vh,160px) 0}
+.incl .wrap{position:relative;z-index:1}
+.incl h2{font-size:clamp(28px,3.2vw,46px);max-width:14em;margin:20px 0 clamp(34px,5vh,52px)}
+.incl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.2vw,30px)}
+.incl-card{position:relative;overflow:hidden;isolation:isolate;color:var(--cream);
+  padding:clamp(26px,3vw,38px) clamp(24px,2.6vw,32px) clamp(30px,3.4vw,42px);
+  box-shadow:0 20px 44px -18px rgba(15,32,24,.5);transition:transform .55s var(--ease)}
+.incl-card::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:radial-gradient(ellipse 70% 60% at 78% 12%, rgba(196,164,104,.28), transparent 62%),
+    linear-gradient(158deg,#1E4030 0%,#16301F 46%,#0F2018 100%)}
+.incl-card::after{content:"";position:absolute;left:0;top:0;height:2px;width:100%;
+  background:linear-gradient(90deg,var(--gold),rgba(196,164,104,0))}
+.incl-card:hover{transform:translateY(-6px)}
+.incl-card b{display:block;font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(38px,3.4vw,54px);
+  line-height:1;color:var(--gold);margin-bottom:14px;font-variant-numeric:lining-nums}
+.incl-card h3{font-family:var(--sans);font-weight:600;font-size:clamp(17px,1.4vw,21px);margin-bottom:12px}
+.incl-card p{font-family:var(--sans);font-weight:400;font-size:14.5px;line-height:1.75;color:rgba(247,243,236,.78)}
+
+/* ═══ 05 anywhere ═══ */
+.reach{position:relative;padding:clamp(96px,15vh,170px) 0;overflow:hidden}
+.reach::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 70% 60% at 30% 40%, rgba(196,164,104,.18), transparent 66%)}
+.reach .wrap{position:relative;z-index:1}
+.reach h2{font-size:clamp(30px,3.8vw,56px);max-width:16em;margin:22px 0 clamp(36px,5vh,56px)}
+.zones{display:flex;gap:clamp(20px,3vw,48px);flex-wrap:wrap;border-top:1.5px solid rgba(34,31,27,.2);padding-top:28px}
+.zone{min-width:110px}
+.zone b{display:block;font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(26px,2.4vw,36px);
+  color:var(--forest);font-variant-numeric:lining-nums;line-height:1}
+.zone span{display:block;margin-top:6px;font-family:var(--sans);font-size:9.5px;font-weight:600;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--taupe)}
+.reach-note{margin-top:clamp(30px,4vh,48px);font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:clamp(20px,2vw,28px);color:var(--forest);max-width:26em}
+
+/* ═══ 06 waiting list ═══ */
+.join{position:relative;color:var(--cream);padding:clamp(110px,17vh,190px) 0;overflow:hidden}
+.join::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 50% 40% at 50% 4%, rgba(196,164,104,.30), transparent 68%),
+    radial-gradient(ellipse 60% 50% at 12% 82%, rgba(168,135,86,.20), transparent 66%),
+    linear-gradient(172deg,#12271C 0%,#0F2018 55%,#16301F 100%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 9%,#000 100%);
+  mask-image:linear-gradient(180deg,transparent 0,#000 9%,#000 100%)}
+.join .wrap{position:relative;z-index:1}
+.join .k{color:var(--champagne);opacity:.85}
+.join-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(48px,7vw,110px);align-items:start}
+.join h2{font-size:clamp(32px,3.8vw,54px);color:var(--cream);max-width:11em;margin-top:22px}
+.join-note{margin-top:26px;font-size:17.5px;color:rgba(227,211,179,.82);max-width:26em}
+.join-list{margin-top:30px;display:grid;gap:12px}
+.join-list li{list-style:none;display:flex;gap:12px;align-items:baseline;
+  font-family:var(--sans);font-size:13.5px;line-height:1.7;color:rgba(247,243,236,.8)}
+.join-list li::before{content:"";flex:0 0 auto;width:6px;height:6px;border-radius:50%;background:var(--gold);transform:translateY(-2px)}
+form{display:flex;flex-direction:column;gap:30px;padding-top:8px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--champagne)}
+.field input,.field select{background:transparent;border:0;border-bottom:1px solid rgba(196,164,104,.5);
+  font-family:var(--serif);font-style:italic;font-size:21px;color:var(--cream);padding:6px 0 11px;
+  transition:border-color .4s var(--ease);appearance:none}
+.field select option{background:#12271C;color:var(--cream);font-family:var(--sans);font-style:normal;font-size:15px}
+.field input:focus,.field select:focus{outline:none;border-color:var(--gold)}
+.field.err input,.field.err select{border-color:#D08A5E}
+.field .err-msg{display:none;font-family:var(--sans);font-size:11px;letter-spacing:.04em;color:#D08A5E}
+.field.err .err-msg{display:block}
+.submit{align-self:flex-start;cursor:pointer;color:var(--forest-deep);border:1px solid var(--gold);
+  background:linear-gradient(135deg,var(--champagne-lt),var(--champagne) 45%,var(--gold) 100%);
+  padding:19px 44px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
+  transition:filter .45s var(--ease),box-shadow .45s var(--ease)}
+.submit:hover{filter:brightness(1.07);box-shadow:0 6px 28px rgba(196,164,104,.35)}
+.form-done{display:none;padding-top:8px}
+.form-done .dot{width:12px;height:12px;border-radius:50%;background:var(--gold);margin-bottom:20px;
+  box-shadow:0 0 20px rgba(196,164,104,.5)}
+.form-done .display{font-size:clamp(26px,2.6vw,38px);color:var(--cream)}
+.form-done p{margin-top:12px;color:var(--champagne);font-size:17px}
+
+footer{background:linear-gradient(180deg,#16301F,#0F2018);color:var(--cream);
+  border-top:1px solid rgba(196,164,104,.35);padding:clamp(34px,6vh,52px) 0}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.foot .mark{font-size:21px;color:var(--cream)}
+.foot .mark small{color:var(--champagne)}
+.foot-meta{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--champagne);opacity:.75}
+.foot a{text-decoration:none;border-bottom:1px solid rgba(196,164,104,.5);padding-bottom:3px}
+
+/* ══════════ RESPONSIVE ══════════ */
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .join-grid{grid-template-columns:1fr;gap:46px}
+  .incl-grid{grid-template-columns:1fr}
+  .diff-row{grid-template-columns:1fr;gap:10px}
+}
+@media (max-width:760px){
+  body{font-size:16.5px;line-height:1.62}
+  .wrap{padding:0 22px}
+  header{padding:16px 20px}
+  .mark{font-size:20px;min-height:44px;display:flex;flex-direction:column;justify-content:center}
+  .mark small{font-size:7px;letter-spacing:.34em}
+  .nav-cta{font-size:9.5px;letter-spacing:.18em;min-height:44px;display:inline-flex;align-items:center;padding:0 0 4px}
+  .nav-cta .full{display:none}
+  .nav-cta .short{display:inline}
+  .hero-grid{padding:104px 22px 84px;gap:40px}
+  .hero-copy h1{font-size:clamp(30px,8.4vw,38px);line-height:1.1}
+  .hero-copy p{font-size:13px;margin-top:20px}
+  .hero-actions{margin-top:30px;gap:18px}
+  .btn-gold{width:100%;text-align:center;padding:20px 24px;font-size:10.5px;letter-spacing:.24em}
+  .phone{width:min(212px,56vw)}
+  .phone-cap{margin-top:14px;font-size:8.5px}
+  .diff{padding:80px 0}
+  .diff h2, .incl h2, .reach h2{font-size:29px}
+  .diff-row p{font-size:16.5px}
+  .coach-grid{grid-template-columns:1fr;gap:18px}
+  .coach-inner{aspect-ratio:3/4}
+  .incl{padding:76px 0}
+  .reach{padding:80px 0}
+  .zones{gap:22px 30px}
+  .join{padding:88px 0}
+  .join h2{font-size:29px}
+  .submit{width:100%;text-align:center;padding:20px 24px}
+  .field input,.field select{font-size:19px}
+  .foot{flex-direction:column;align-items:flex-start;gap:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  .grain{animation:none}
+  .word-mask>span{transform:none!important}
+  *{transition-duration:.01ms!important}
+}
+</style>
+
+<div class="grain" aria-hidden="true"></div>
+
+<header>
+  <a class="mark" href="/" aria-label="ONE Wellness — home">ONE<small>WELLNESS</small></a>
+  <a class="nav-cta" href="#join"><span class="full">Join the waiting list</span><span class="short">Waiting list</span></a>
+</header>
+
+<main>
+
+  <!-- 01 HERO -->
+  <section class="hero" aria-label="Online coaching with ONE Wellness">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="k">Online coaching · Worldwide</span>
+        <h1 class="display" data-words>Coached by an Olympian. From anywhere in the world.</h1>
+        <p data-fade>One-to-one online coaching with Aaron or Bianca Cook — programmed around your body,
+          your equipment and your week, and delivered straight to your phone. Opening to a small first
+          intake; the waiting list is now open.</p>
+        <div class="hero-actions" data-fade>
+          <a class="btn-gold" href="#join">Join the waiting list</a>
+          <span class="hero-note">No cost to join · Limited first intake</span>
+        </div>
+      </div>
+      <div class="phone-wrap" data-fade>
+        <div class="phone-glow" aria-hidden="true"></div>
+        <div class="phone">
+          <div class="phone-notch" aria-hidden="true"></div>
+          <div class="phone-screen">
+            <video src="assets/archive/reel.mp4" autoplay muted loop playsinline preload="metadata"
+                   aria-label="Bianca Cook competing"></video>
+          </div>
+        </div>
+        <div class="phone-cap">Your coach, in your pocket</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 THE DIFFERENCE -->
+  <section class="diff">
+    <div class="wrap">
+      <span class="k">What it is</span>
+      <h2 class="display" data-words>Not a PDF plan. A coach who knows your name.</h2>
+      <div class="diff-rows">
+        <div class="diff-row" data-fade>
+          <h3>Built for you</h3>
+          <p>Your programme is written from scratch around the equipment you actually have — a full gym, a set of
+            dumbbells, or nothing but the floor — and rewritten as you progress.</p>
+        </div>
+        <div class="diff-row" data-fade>
+          <h3>Coached, not sent</h3>
+          <p>You film your lifts, they review the footage and come back with corrections. The same eye that
+            worked at Olympic level, applied to your technique.</p>
+        </div>
+        <div class="diff-row" data-fade>
+          <h3>A real conversation</h3>
+          <p>Direct messaging with Aaron or Bianca, plus a scheduled video call each month to look at what is
+            working and what needs to change.</p>
+        </div>
+        <div class="diff-row" data-fade>
+          <h3>Whole life, not just training</h3>
+          <p>Nutrition that fits your household and your travel, and the daily habits — sleep, steps, recovery —
+            that decide whether any of it holds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 CHOOSE YOUR COACH -->
+  <section class="coaches">
+    <div class="wrap">
+      <span class="k">Choose your coach</span>
+      <h2 class="display" data-words style="font-size:clamp(28px,3.2vw,46px);max-width:14em;margin:20px 0 0">
+        Two decades at the top of world sport. One of them is yours.</h2>
+      <div class="coach-grid">
+        <article class="coach">
+          <img src="assets/archive/03.jpg" alt="Bianca Cook competing for Great Britain" loading="lazy" decoding="async">
+          <div class="coach-inner" data-fade>
+            <h3>Bianca Cook</h3>
+            <span class="role">Olympic medallist · World champion</span>
+            <p>Two Olympic bronze medals and three world titles. Strong on building durable strength and the
+              confidence to train hard without breaking.</p>
+          </div>
+        </article>
+        <article class="coach">
+          <img src="assets/archive/02.jpg" alt="Aaron Cook with his World Championship medal" loading="lazy" decoding="async">
+          <div class="coach-inner" data-fade>
+            <h3>Aaron Cook</h3>
+            <span class="role">World medallist · World No.1</span>
+            <p>A former world No.1 with two decades of competition behind him. Strong on technique, footwork
+              and getting sharp when time is short.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 WHAT'S INCLUDED -->
+  <section class="incl">
+    <div class="wrap">
+      <span class="k">What's included</span>
+      <h2 class="display" data-words>Everything you need, nothing you'll ignore.</h2>
+      <div class="incl-grid">
+        <div class="incl-card" data-fade>
+          <b>01</b><h3>Your programme</h3>
+          <p>Written for your goal, your equipment and the days you can actually train — updated every block,
+            never copied from anyone else's.</p>
+        </div>
+        <div class="incl-card" data-fade>
+          <b>02</b><h3>Form review</h3>
+          <p>Send your lifts and drills; get them back marked up with what to change and why, in plain language.</p>
+        </div>
+        <div class="incl-card" data-fade>
+          <b>03</b><h3>Nutrition &amp; habits</h3>
+          <p>Practical guidance that survives travel, family meals and a real schedule — plus the small routines
+            that hold everything together.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 ANYWHERE -->
+  <section class="reach">
+    <div class="wrap">
+      <span class="k">Anywhere</span>
+      <h2 class="display" data-words>Riyadh is home. Your postcode doesn't matter.</h2>
+      <div class="zones" data-fade>
+        <div class="zone"><b>GMT+3</b><span>Riyadh</span></div>
+        <div class="zone"><b>GMT+0</b><span>London</span></div>
+        <div class="zone"><b>GMT+4</b><span>Dubai</span></div>
+        <div class="zone"><b>GMT−5</b><span>New York</span></div>
+        <div class="zone"><b>GMT+8</b><span>Singapore</span></div>
+        <div class="zone"><b>Any</b><span>Wherever you are</span></div>
+      </div>
+      <p class="reach-note" data-fade>Calls are booked around your timezone, not ours. Everything else lives in
+        your pocket and waits for you.</p>
+    </div>
+  </section>
+
+  <!-- 06 WAITING LIST -->
+  <section class="join" id="join">
+    <div class="wrap">
+      <div class="join-grid">
+        <div>
+          <span class="k">The waiting list</span>
+          <h2 class="display" data-words>Be first through the door.</h2>
+          <p class="join-note" data-fade>Online coaching opens to a deliberately small first intake so that
+            every programme is written personally. Join the list and you'll hear before anyone else.</p>
+          <ul class="join-list" data-fade>
+            <li>No cost and no commitment to join</li>
+            <li>First refusal on the opening intake</li>
+            <li>You choose Aaron, Bianca, or let them decide</li>
+          </ul>
+        </div>
+        <div>
+          <form id="joinForm" novalidate data-fade>
+            <div class="field">
+              <label for="f-name">Your name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name">
+              <span class="err-msg">Please tell us your name.</span>
+            </div>
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email">
+              <span class="err-msg">We need a valid email to reach you.</span>
+            </div>
+            <div class="field">
+              <label for="f-where">Where in the world are you?</label>
+              <input id="f-where" name="where" type="text" autocomplete="country-name">
+              <span class="err-msg">Tell us your city or country.</span>
+            </div>
+            <div class="field">
+              <label for="f-coach">Preferred coach</label>
+              <select id="f-coach" name="coach">
+                <option value="">Please choose</option>
+                <option>Either — whoever fits best</option>
+                <option>Bianca Cook</option>
+                <option>Aaron Cook</option>
+              </select>
+              <span class="err-msg">Choose a coach, or pick “either”.</span>
+            </div>
+            <button class="submit" type="submit">Join the waiting list</button>
+          </form>
+          <div class="form-done" id="formDone" role="status">
+            <div class="dot" aria-hidden="true"></div>
+            <p class="display">You're on the list.</p>
+            <p>We'll be in touch before the doors open.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span class="mark" aria-hidden="true">ONE<small>WELLNESS</small></span>
+    <span class="foot-meta"><a href="/">In-home coaching in Riyadh</a></span>
+    <span class="foot-meta">© 2026 ONE Wellness</span>
+  </div>
+</footer>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches || location.search.indexOf('flat') > -1;
+  gsap.registerPlugin(ScrollTrigger);
+  var calm = 'power3.out';
+
+  /* accessible word split */
+  document.querySelectorAll('[data-words]').forEach(function(el){
+    var text = el.textContent.trim();
+    el.setAttribute('aria-label', text);
+    var words = text.split(/\s+/).filter(Boolean);
+    el.textContent = '';
+    var frag = document.createDocumentFragment();
+    words.forEach(function(w){
+      var mask = document.createElement('span');
+      mask.className = 'word-mask'; mask.setAttribute('aria-hidden','true');
+      var inner = document.createElement('span'); inner.textContent = w;
+      mask.appendChild(inner); frag.appendChild(mask);
+      frag.appendChild(document.createTextNode(' '));
+    });
+    el.appendChild(frag);
+  });
+
+  if (reduced){
+    document.querySelectorAll('.word-mask > span').forEach(function(sp){ sp.style.transform = 'none'; });
+    hookForm(); hookHeader();
+    return;
+  }
+
+  /* hero load */
+  gsap.timeline({delay:.2})
+    .to('.hero h1 .word-mask > span', {y:0, duration:1, ease:calm, stagger:.055}, .1)
+    .fromTo('.hero-copy p', {opacity:0, y:16}, {opacity:1, y:0, duration:.9, ease:calm}, .7)
+    .fromTo('.hero-actions', {opacity:0, y:16}, {opacity:1, y:0, duration:.9, ease:calm}, .9)
+    .fromTo('.phone-wrap', {opacity:0, y:34}, {opacity:1, y:0, duration:1.2, ease:calm}, .35);
+
+  /* reveals */
+  document.querySelectorAll('[data-words]').forEach(function(el){
+    if (el.closest('.hero')) return;
+    gsap.to(el.querySelectorAll('.word-mask > span'), {y:0, duration:1, ease:calm, stagger:.045,
+      scrollTrigger:{trigger:el, start:'top 82%'}});
+  });
+  document.querySelectorAll('[data-fade]').forEach(function(el){
+    if (el.closest('.hero')) return;
+    gsap.fromTo(el, {opacity:0, y:24}, {opacity:1, y:0, duration:1, ease:calm,
+      scrollTrigger:{trigger:el, start:'top 88%'}});
+  });
+
+  /* ScrollTrigger fed natively; no smooth-scroll library on this page at all */
+  window.addEventListener('scroll', function(){ ScrollTrigger.update(); }, {passive:true});
+
+  /* failsafe — nothing may ever stay invisible */
+  function rescueReveals(){
+    document.querySelectorAll('[data-fade], .word-mask > span').forEach(function(el){
+      var box = el.closest('[data-fade]') || el;
+      var r = box.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0){
+        if (parseFloat(getComputedStyle(el).opacity) < 0.9) gsap.set(el, {opacity:1, y:0});
+        if (el.parentElement && el.parentElement.classList.contains('word-mask')) gsap.set(el, {y:0});
+      }
+    });
+  }
+  window.addEventListener('load', function(){ ScrollTrigger.refresh(); setTimeout(rescueReveals, 900); });
+  window.addEventListener('scroll', function(){ clearTimeout(window.__r); window.__r = setTimeout(rescueReveals, 700); }, {passive:true});
+
+  hookForm(); hookHeader();
+
+  function hookHeader(){
+    var hd = document.querySelector('header');
+    var darks = document.querySelectorAll('.hero, .join, footer');
+    var band = 58, lastY = 0, tuckable = window.matchMedia('(max-width:760px)').matches;
+    function update(){
+      var y = window.scrollY, dark = false;
+      darks.forEach(function(el){ var r = el.getBoundingClientRect(); if (r.top <= band && r.bottom >= 0) dark = true; });
+      hd.classList.toggle('on-dark', dark);
+      hd.classList.toggle('scrolled', y > 40);
+      if (tuckable){
+        if (y > 160 && y > lastY + 4) hd.classList.add('tucked');
+        else if (y < lastY - 4 || y < 120) hd.classList.remove('tucked');
+      }
+      lastY = y;
+    }
+    window.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update);
+    update();
+  }
+
+  function hookForm(){
+    var form = document.getElementById('joinForm');
+    var ids = ['f-name','f-email','f-where','f-coach'];
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var ok = true;
+      ids.forEach(function(id){
+        var input = document.getElementById(id), field = input.closest('.field'), v = input.value.trim();
+        var bad = !v || (id === 'f-email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v));
+        field.classList.toggle('err', bad);
+        if (bad) ok = false;
+      });
+      if (!ok) return;
+      form.style.display = 'none';
+      var done = document.getElementById('formDone');
+      done.style.display = 'block';
+      if (window.gsap && !reduced){
+        gsap.from(done, {opacity:0, y:16, duration:.8, ease:'power3.out'});
+        gsap.from(done.querySelector('.dot'), {scale:0, duration:.5, ease:'back.out(2)', delay:.25});
+      }
+    });
+    ids.forEach(function(id){
+      var el = document.getElementById(id);
+      el.addEventListener('input', function(){ el.closest('.field').classList.remove('err'); });
+      el.addEventListener('change', function(){ el.closest('.field').classList.remove('err'); });
+    });
+  }
+})();
+</script>
