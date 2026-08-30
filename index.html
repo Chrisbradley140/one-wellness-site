@@ -910,28 +910,55 @@ footer .terminus{background:var(--gold)}
 
   var isPhone   = window.matchMedia('(max-width:760px)').matches;
   var narrowMap = window.matchMedia('(max-width:1024px)').matches;
-  var lenis = new Lenis({ lerp: isPhone ? 0.12 : 0.085, smoothWheel: true, syncTouch: false });
-  lenis.on('scroll', ScrollTrigger.update);
-  gsap.ticker.add(function(t){ lenis.raf(t * 1000); });
-  gsap.ticker.lagSmoothing(0);
-  /* dead-man switch: if smooth scroll fails to move the page, hand back native scroll */
-  var wheelTried = false;
-  window.addEventListener('wheel', function(){
-    if (wheelTried) return; wheelTried = true;
-    var y0 = window.scrollY;
-    setTimeout(function(){
-      if (Math.abs(window.scrollY - y0) < 2 && document.documentElement.scrollHeight > window.innerHeight + 50){
-        try { lenis.destroy(); } catch(e) {}
-        document.documentElement.classList.remove('lenis','lenis-smooth');
-        ScrollTrigger.refresh();
+  /* Smooth scroll is a DESKTOP nicety only. On touch devices native scrolling is
+     better anyway, and running Lenis there starved ScrollTrigger of updates —
+     which left every reveal stuck at opacity 0 below the fold. */
+  var lenis = null;
+  if (!isPhone && !('ontouchstart' in window)){
+    lenis = new Lenis({ lerp: 0.085, smoothWheel: true, syncTouch: false });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(function(t){ lenis.raf(t * 1000); });
+    gsap.ticker.lagSmoothing(0);
+    /* dead-man switch: if smooth scroll fails to move the page, hand back native scroll */
+    var wheelTried = false;
+    window.addEventListener('wheel', function(){
+      if (wheelTried) return; wheelTried = true;
+      var y0 = window.scrollY;
+      setTimeout(function(){
+        if (Math.abs(window.scrollY - y0) < 2 && document.documentElement.scrollHeight > window.innerHeight + 50){
+          try { lenis.destroy(); } catch(e) {}
+          lenis = null;
+          document.documentElement.classList.remove('lenis','lenis-smooth','lenis-scrolling');
+          ScrollTrigger.refresh();
+        }
+      }, 700);
+    }, {passive:true});
+  } else {
+    document.documentElement.classList.remove('lenis','lenis-smooth');
+  }
+  /* always keep ScrollTrigger fed from native scroll too — belt and braces */
+  window.addEventListener('scroll', function(){ ScrollTrigger.update(); }, {passive:true});
+
+  /* failsafe: nothing may stay invisible. If a reveal is on screen and still
+     transparent a moment after load, show it. */
+  function rescueReveals(){
+    document.querySelectorAll('[data-fade], .mcard, .station').forEach(function(el){
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0 && parseFloat(getComputedStyle(el).opacity) < 0.9){
+        gsap.set(el, {opacity:1, y:0, clearProps:'transform'});
       }
-    }, 700);
-  }, {passive:true});
+    });
+  }
+  window.addEventListener('load', function(){ ScrollTrigger.refresh(); setTimeout(rescueReveals, 900); });
+  window.addEventListener('scroll', function(){ clearTimeout(window.__rescue); window.__rescue = setTimeout(rescueReveals, 700); }, {passive:true});
 
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
     a.addEventListener('click', function(e){
       var t = document.querySelector(a.getAttribute('href'));
-      if (t){ e.preventDefault(); lenis.scrollTo(t, {duration: 1.6}); }
+      if (!t) return;
+      e.preventDefault();
+      if (lenis) lenis.scrollTo(t, {duration: 1.6});
+      else window.scrollTo({top: t.getBoundingClientRect().top + window.scrollY - 10, behavior: 'smooth'});
     });
   });
 
@@ -1051,7 +1078,7 @@ footer .terminus{background:var(--gold)}
       }
       lastY = y;
     }
-    lenis.on('scroll', update);
+    if (lenis) lenis.on('scroll', update);
     window.addEventListener('scroll', update, {passive:true});
     window.addEventListener('resize', update);
     update();
