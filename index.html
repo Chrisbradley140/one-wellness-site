@@ -61,6 +61,15 @@ svg.seg path,svg.seg line,svg.spine path,svg.spine line{fill:none;stroke:var(--f
 /* nav */
 header{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:space-between;align-items:center;
   padding:24px clamp(24px,4.5vw,64px)}
+header::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;
+  transition:opacity .45s var(--ease);
+  background:linear-gradient(180deg, rgba(250,246,238,.94) 0%, rgba(250,246,238,.72) 62%, rgba(250,246,238,0) 100%);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+header.scrolled::before{opacity:1}
+header{transition:transform .45s var(--ease)}
+header.tucked{transform:translateY(-104%)}
+header.scrolled.on-dark::before{
+  background:linear-gradient(180deg, rgba(15,32,24,.92) 0%, rgba(15,32,24,.66) 62%, rgba(15,32,24,0) 100%)}
 .mark{font-family:var(--serif);font-weight:400;font-size:24px;letter-spacing:.06em;text-decoration:none;line-height:1;
   color:var(--ink);transition:color .5s var(--ease)}
 .mark small{display:block;font-family:var(--sans);font-size:8px;font-weight:600;letter-spacing:.42em;margin-top:2px;
@@ -69,6 +78,7 @@ header{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:s
   text-decoration:none;color:var(--forest);padding-bottom:5px;border-bottom:1.5px solid var(--forest);
   transition:opacity .4s var(--ease), color .5s var(--ease), border-color .5s var(--ease)}
 .nav-cta:hover{opacity:.55}
+.nav-cta .short{display:none}
 header.on-dark .mark{color:var(--cream)}
 header.on-dark .mark small{color:var(--champagne)}
 header.on-dark .nav-cta{color:var(--champagne);border-color:var(--gold)}
@@ -347,13 +357,153 @@ footer .terminus{background:var(--gold)}
 @media (max-width:1250px){
   .arrive-one{--one-op:.22}
 }
+/* mobile scrapbook grid — desktop hides it, the SVG map takes over */
+.map-mobile{display:none}
+.mcards{display:grid;grid-template-columns:1fr 1fr;gap:18px 14px}
+.mcard{background:#FCFAF4;padding:9px 9px 0;transform:rotate(var(--r,0deg));
+  box-shadow:0 14px 30px -10px rgba(28,22,12,.34)}
+.mcard img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;filter:saturate(1.08) contrast(1.04)}
+.mcard figcaption{padding:9px 2px 12px;text-align:center}
+.mcard b{display:block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:16px;color:var(--ink)}
+.mcard span{display:block;margin-top:3px;font-family:var(--sans);font-size:8px;font-weight:600;
+  letter-spacing:.16em;color:var(--taupe)}
+
 @media (max-width:900px){
   body{font-size:17px}
-  .intro-grid{grid-template-columns:1fr}
-  .msteps{grid-template-columns:1fr;gap:36px}
+  .intro-grid{grid-template-columns:1fr;gap:44px}
+  .msteps{grid-template-columns:1fr;gap:18px}
   .mstep .dot{display:none}
-  .turn p.down{justify-self:start;text-align:left}
-  .mission .display{font-size:24px}
+  .turn p.down{justify-self:center;text-align:center}
+  .home-grid{grid-template-columns:1fr;gap:34px}
+  .pillars{grid-template-columns:1fr;gap:26px}
+  .arrive-grid{grid-template-columns:1fr}
+}
+
+/* tablets & small laptops: the wide SVG map would crop, so use the scrapbook wall */
+@media (max-width:1024px){
+  .mapsec{height:auto;padding:clamp(80px,11vh,120px) 0 clamp(72px,10vh,104px);overflow:visible}
+  .map-stage{display:none}
+  .map-mobile{display:block;padding:0 clamp(22px,4.5vw,64px);margin-top:34px}
+  .mapsec-head{position:static;max-width:none;padding:0 clamp(22px,4.5vw,64px)}
+  .mapsec-head::before{display:none}
+  .mission{position:static;padding:38px clamp(22px,4.5vw,64px) 0;text-align:left}
+  .mission::before{display:none}
+  .mission .display{max-width:26em;margin:0}
+  .mcards{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ══════════ PHONE ══════════ */
+@media (max-width:760px){
+  body{font-size:16.5px;line-height:1.62}
+  .wrap{padding:0 22px}
+
+  /* header: compact, thumb-safe */
+  header{padding:16px 20px}
+  .mark{font-size:20px}
+  .mark small{font-size:7px;letter-spacing:.34em}
+  .nav-cta{font-size:9.5px;letter-spacing:.18em;min-height:44px;display:inline-flex;align-items:center;padding:0 0 4px}
+  .mark{min-height:44px;display:flex;flex-direction:column;justify-content:center}
+  .nav-cta .full{display:none}
+  .nav-cta .short{display:inline}
+
+  /* hero: one column, no video (battery + GPU), rich gradient instead */
+  .arrive{min-height:100svh}
+  .hero-video video{display:none}
+  .hero-video{background:
+    radial-gradient(ellipse 90% 55% at 70% 22%, rgba(196,164,104,.34), transparent 66%),
+    radial-gradient(ellipse 80% 50% at 20% 78%, rgba(168,135,86,.24), transparent 68%),
+    linear-gradient(168deg,#16301F 0%, #0F2018 52%, #14291D 100%)}
+  .arrive-grid{padding:104px 22px 96px;align-items:center}
+  .arrive-copy .k{font-size:9.5px;letter-spacing:.24em;margin-bottom:18px}
+  .arrive-copy h1{font-size:clamp(30px,8.4vw,38px);line-height:1.1}
+  .arrive-intro{margin-top:20px;gap:8px}
+  .arrive-intro .lbl{font-size:9px;letter-spacing:.26em}
+  .arrive-intro .nm{font-size:21px}
+  .arrive-copy p.lede{margin-top:20px;font-size:13px;line-height:1.8}
+  .arrive-one{font-size:44vw;bottom:-2vh;right:-6vw;opacity:.2}
+  .arrive-cue{bottom:22px}
+  .arrive-cue i{height:38px}
+
+  /* the record: pinned rail becomes a vertical timeline */
+  .record{height:auto;padding:96px 0 84px}
+  .record-head{position:static;max-width:none;padding:0 22px;margin-bottom:36px}
+  .record-head .record-intro{font-size:23px}
+  .rail{position:static;transform:none!important;flex-direction:column;gap:34px;padding:0 22px 0 40px}
+  .rail-line{left:18px;right:auto;top:0;bottom:0;width:1.5px;height:auto;
+    background:linear-gradient(180deg,rgba(22,46,33,0),var(--forest) 6%,var(--bronze) 94%,rgba(168,135,86,0))}
+  .station{width:100%;margin-right:0}
+  .station .tick{left:-28px;top:6px}
+  .station .drop{display:none}
+  .station .yr{margin:0 0 4px;font-size:30px}
+  .station .plate{margin-left:0;width:100%;aspect-ratio:4/3;margin-top:12px}
+
+  /* the turn */
+  .turn{padding:76px 0}
+  .turn .wrap{gap:18px}
+  .turn p{font-size:24px;max-width:none}
+  .turn .horizon{left:22px;right:22px}
+
+  /* your home */
+  .home{padding:84px 0 76px}
+  .home .wrap{padding-left:44px;padding-right:22px}
+  .home .vline{left:20px}
+  .home h2{font-size:30px;margin:18px 0 14px}
+  .home>.wrap>.home-grid p{font-size:17px}
+  .fits{margin-top:30px}
+  .fit{padding:16px 0 16px 34px}
+  .fit .n{font-size:21px;top:17px}
+  .fit p{font-size:18px}
+  .home-photo{margin-top:6px}
+  .home-photo figure{aspect-ratio:4/5}
+  .scrapbook{width:74%;margin:26px auto 0}
+  .scrapbook figcaption{font-size:15px}
+  .pillar p{font-size:18px}
+
+  /* the map: swap the pinned SVG for a scrapbook wall */
+  .mapsec{height:auto;padding:88px 0 76px;overflow:visible}
+  .map-stage{display:none}
+  .map-mobile{display:block;padding:0 22px;margin-top:30px}
+  .mapsec-head{position:static;max-width:none;padding:0 22px}
+  .mapsec-head::before{display:none}
+  .mapsec-head .city-line{font-size:23px}
+  .mission{position:static;padding:34px 22px 0;text-align:left}
+  .mission::before{display:none}
+  .mission .display{font-size:26px;max-width:none;margin:0}
+
+  /* method */
+  .method{padding:80px 0 76px}
+  .method h2{font-size:29px;margin-top:16px}
+  .method-line{margin:30px 0 26px}
+  .mstep{padding:26px 24px 30px}
+  .mstep b{font-size:40px;margin-bottom:10px}
+  .mstep h3{font-size:19px}
+  .mstep p{font-size:15px;max-width:none}
+  .method-close{margin-top:34px;font-size:21px}
+
+  /* discretion */
+  .quiet{padding:72px 0}
+  .quiet p{font-size:20px;margin:14px 0}
+  .quiet .thin{margin-bottom:34px}
+
+  /* the introduction */
+  .intro{padding:84px 0 88px}
+  .intro h2{font-size:29px;margin-top:16px}
+  .intro-note{font-size:16.5px;margin-top:20px}
+  form{gap:26px}
+  .field input{font-size:19px;padding:8px 0 12px}
+  .submit{width:100%;text-align:center;padding:20px 24px;font-size:10.5px;letter-spacing:.24em}
+
+  /* footer */
+  footer{padding:34px 0}
+  .foot{flex-direction:column;align-items:flex-start;gap:14px}
+  .foot-meta{font-size:9px;letter-spacing:.22em}
+}
+
+/* fine-tune for the smallest handsets */
+@media (max-width:380px){
+  .mcards{grid-template-columns:1fr}
+  .arrive-copy h1{font-size:29px}
+  .home .wrap{padding-left:38px}
 }
 @media (prefers-reduced-motion:reduce){
   .grain,.arrive-cue i{animation:none}
@@ -370,7 +520,7 @@ footer .terminus{background:var(--gold)}
 
 <header class="on-dark">
   <a class="mark" href="#top" aria-label="ONE Wellness — home">ONE<small>WELLNESS</small></a>
-  <a class="nav-cta" href="#introduction">Request an introduction</a>
+  <a class="nav-cta" href="#introduction"><span class="full">Request an introduction</span><span class="short">Enquire</span></a>
 </header>
 
 <main id="top">
@@ -410,22 +560,22 @@ footer .terminus{background:var(--gold)}
       <div class="station">
         <span class="tick"></span><span class="drop" aria-hidden="true"></span>
         <div class="yr">2016</div><div class="cap">Rio — Olympic bronze</div>
-        <figure class="plate"><img src="assets/archive/01.jpg" alt="Bianca Cook on the podium at Rio 2016 with her Olympic bronze medal" onerror="this.parentElement.classList.add('empty')"><span class="note">Archive · awaiting photo</span></figure>
+        <figure class="plate"><img src="assets/archive/01.jpg" alt="Bianca Cook on the podium at Rio 2016 with her Olympic bronze medal" onerror="this.parentElement.classList.add('empty')" loading="lazy" decoding="async"><span class="note">Archive · awaiting photo</span></figure>
       </div>
       <div class="station">
         <span class="tick"></span><span class="drop" aria-hidden="true"></span>
         <div class="yr">2017</div><div class="cap">Muju — World Championships</div>
-        <figure class="plate"><img src="assets/archive/02.jpg" alt="Aaron Cook with his World Championship medal at Muju 2017" onerror="this.parentElement.classList.add('empty')"><span class="note">Archive · awaiting photo</span></figure>
+        <figure class="plate"><img src="assets/archive/02.jpg" alt="Aaron Cook with his World Championship medal at Muju 2017" onerror="this.parentElement.classList.add('empty')" loading="lazy" decoding="async"><span class="note">Archive · awaiting photo</span></figure>
       </div>
       <div class="station">
         <span class="tick"></span><span class="drop" aria-hidden="true"></span>
         <div class="yr">2020</div><div class="cap">Tokyo — Olympic bronze</div>
-        <figure class="plate"><img src="assets/archive/03.jpg" alt="Bianca Cook celebrating with the Union Jack after winning Olympic bronze in Tokyo" onerror="this.parentElement.classList.add('empty')"><span class="note">Archive · awaiting photo</span></figure>
+        <figure class="plate"><img src="assets/archive/03.jpg" alt="Bianca Cook celebrating with the Union Jack after winning Olympic bronze in Tokyo" onerror="this.parentElement.classList.add('empty')" loading="lazy" decoding="async"><span class="note">Archive · awaiting photo</span></figure>
       </div>
       <div class="station">
         <span class="tick"></span><span class="drop" aria-hidden="true"></span>
         <div class="yr">Always</div><div class="cap">The daily work</div>
-        <figure class="plate"><img src="assets/archive/04.jpg" alt="Aaron Cook, head bowed, holding his headgear before competing" onerror="this.parentElement.classList.add('empty')"><span class="note">Archive · awaiting photo</span></figure>
+        <figure class="plate"><img src="assets/archive/04.jpg" alt="Aaron Cook, head bowed, holding his headgear before competing" onerror="this.parentElement.classList.add('empty')" loading="lazy" decoding="async"><span class="note">Archive · awaiting photo</span></figure>
       </div>
       <div class="station">
         <span class="tick"></span><span class="drop" aria-hidden="true"></span>
@@ -435,7 +585,7 @@ footer .terminus{background:var(--gold)}
       <div class="station">
         <span class="tick"></span><span class="drop" aria-hidden="true"></span>
         <div class="yr">2023</div><div class="cap">Riyadh — Saudi Games</div>
-        <figure class="plate"><img src="assets/archive/05.jpg" alt="Aaron Cook with his Saudi Games medal in Riyadh, 2023" onerror="this.parentElement.classList.add('empty')"><span class="note">Archive · awaiting photo</span></figure>
+        <figure class="plate"><img src="assets/archive/05.jpg" alt="Aaron Cook with his Saudi Games medal in Riyadh, 2023" onerror="this.parentElement.classList.add('empty')" loading="lazy" decoding="async"><span class="note">Archive · awaiting photo</span></figure>
       </div>
     </div>
   </section>
@@ -467,12 +617,12 @@ footer .terminus{background:var(--gold)}
         </div>
         <div class="home-photo" data-fade>
           <figure>
-            <img src="assets/archive/riyadh-session.jpg" alt="A private coaching session on a Riyadh terrace, the city skyline behind">
+            <img src="assets/archive/riyadh-session.jpg" alt="A private coaching session on a Riyadh terrace, the city skyline behind" loading="lazy" decoding="async">
           </figure>
           <figcaption>A morning session · Riyadh</figcaption>
           <div class="scrapbook" data-fade>
             <figure>
-              <img src="assets/archive/founders-portrait.jpg" alt="Aaron and Bianca Cook">
+              <img src="assets/archive/founders-portrait.jpg" alt="Aaron and Bianca Cook" loading="lazy" decoding="async">
               <figcaption>Aaron &amp; Bianca</figcaption>
             </figure>
           </div>
@@ -608,6 +758,34 @@ footer .terminus{background:var(--gold)}
       </g>
       </svg>
     </div>
+    <div class="map-mobile" aria-label="The districts we cover">
+      <div class="mcards">
+        <figure class="mcard" data-fade style="--r:-2.4deg">
+          <img src="assets/archive/landmarks/diriyah.jpg" alt="Diriyah, Riyadh" loading="lazy">
+          <figcaption><b>Diriyah</b><span>24.73 N · 46.57 E</span></figcaption>
+        </figure>
+        <figure class="mcard" data-fade style="--r:1.8deg">
+          <img src="assets/archive/landmarks/dq.jpg" alt="Diplomatic Quarter, Riyadh" loading="lazy">
+          <figcaption><b>Diplomatic Quarter</b><span>24.68 N · 46.62 E</span></figcaption>
+        </figure>
+        <figure class="mcard" data-fade style="--r:-1.6deg">
+          <img src="assets/archive/landmarks/hittin.jpg" alt="Hittin, Riyadh" loading="lazy">
+          <figcaption><b>Hittin</b><span>24.76 N · 46.60 E</span></figcaption>
+        </figure>
+        <figure class="mcard" data-fade style="--r:2.2deg">
+          <img src="assets/archive/landmarks/malqa.jpg" alt="Al Malqa, Riyadh" loading="lazy">
+          <figcaption><b>Al Malqa</b><span>24.80 N · 46.61 E</span></figcaption>
+        </figure>
+        <figure class="mcard" data-fade style="--r:-2.0deg">
+          <img src="assets/archive/landmarks/nakheel.jpg" alt="Al Nakheel, Riyadh" loading="lazy">
+          <figcaption><b>Al Nakheel</b><span>24.75 N · 46.64 E</span></figcaption>
+        </figure>
+        <figure class="mcard" data-fade style="--r:1.5deg">
+          <img src="assets/archive/landmarks/olaya.jpg" alt="Al Olaya, Riyadh" loading="lazy">
+          <figcaption><b>Al Olaya</b><span>24.69 N · 46.68 E</span></figcaption>
+        </figure>
+      </div>
+    </div>
     <div class="mission">
       <p class="display" id="missionText" data-words>We are on a mission to make the people of Riyadh <em>fitter, healthier and happier.</em></p>
     </div>
@@ -730,7 +908,9 @@ footer .terminus{background:var(--gold)}
     return;
   }
 
-  var lenis = new Lenis({ lerp: 0.085, smoothWheel: true });
+  var isPhone   = window.matchMedia('(max-width:760px)').matches;
+  var narrowMap = window.matchMedia('(max-width:1024px)').matches;
+  var lenis = new Lenis({ lerp: isPhone ? 0.12 : 0.085, smoothWheel: true, syncTouch: false });
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add(function(t){ lenis.raf(t * 1000); });
   gsap.ticker.lagSmoothing(0);
@@ -810,16 +990,31 @@ footer .terminus{background:var(--gold)}
   /* 02 the record: pinned rail scrub */
   var rail = document.getElementById('rail');
   function railTravel(){ return Math.max(0, rail.scrollWidth - window.innerWidth + window.innerWidth * .12); }
-  gsap.fromTo(rail, {x: window.innerWidth * .06}, {x:function(){ return -railTravel(); }, ease:'none',
-    scrollTrigger:{trigger:'.record', start:'top top',
-      end:function(){ return '+=' + (railTravel() + window.innerHeight * .1); },
-      pin:true, scrub:.5, invalidateOnRefresh:true, anticipatePin:1}});
+  if (!isPhone){
+    gsap.fromTo(rail, {x: window.innerWidth * .06}, {x:function(){ return -railTravel(); }, ease:'none',
+      scrollTrigger:{trigger:'.record', start:'top top',
+        end:function(){ return '+=' + (railTravel() + window.innerHeight * .1); },
+        pin:true, scrub:.5, invalidateOnRefresh:true, anticipatePin:1}});
+  } else {
+    gsap.utils.toArray('.station').forEach(function(st){
+      gsap.fromTo(st, {opacity:0, y:26}, {opacity:1, y:0, duration:.9, ease:calm,
+        scrollTrigger:{trigger:st, start:'top 88%'}});
+    });
+  }
 
   /* 05 the map: pinned — route draws, pins pop, mission resolves */
   var route = document.getElementById('route');
   var RL = drawSetup(route);
   var pins = gsap.utils.toArray('.pin');
   var pinAt = [.13, .3, .42, .55, .68, .8];   /* fractions of route length */
+  if (narrowMap){
+    gsap.utils.toArray('.mcard').forEach(function(c,i){
+      gsap.fromTo(c, {opacity:0, y:24}, {opacity:1, y:0, duration:.8, ease:calm, delay:(i%2)*.06,
+        scrollTrigger:{trigger:c, start:'top 90%'}});
+    });
+    gsap.to('#missionText .word-mask > span', {y:0, duration:.9, ease:calm, stagger:.035,
+      scrollTrigger:{trigger:'#missionText', start:'top 86%'}});
+  } else {
   var mapTL = gsap.timeline({
     scrollTrigger:{trigger:'.mapsec', start:'top top', end:'+=250%', pin:true, scrub:.5, anticipatePin:1}
   });
@@ -831,21 +1026,35 @@ footer .terminus{background:var(--gold)}
   mapTL.to('.map-grid, #route', {opacity:.32, duration:.1}, 1.02);
   mapTL.to('.pin', {opacity:.34, duration:.1}, 1.02);
   mapTL.to('#missionText .word-mask > span', {y:0, duration:.22, ease:calm, stagger:.012}, 1.02);
+  }
   /* mission words need split state even though excluded from generic reveal */
   gsap.set('#missionText .word-mask > span', {y:'118%'});
 
-  /* header flips light over the dark hero */
+  /* header: light type over dark sections, scrim once scrolled */
   (function(){
-    var hd = document.querySelector('header'), hero = document.querySelector('.arrive');
-    ScrollTrigger.create({trigger:hero, start:'top top', end:'bottom top+=80',
-      onEnter:function(){hd.classList.add('on-dark')},
-      onLeave:function(){hd.classList.remove('on-dark')},
-      onEnterBack:function(){hd.classList.add('on-dark')},
-      onLeaveBack:function(){hd.classList.add('on-dark')}});
-    /* and again over the closing dark section */
-    ScrollTrigger.create({trigger:'.intro', start:'top top+=70', end:'bottom bottom',
-      onEnter:function(){hd.classList.add('on-dark')},
-      onLeaveBack:function(){hd.classList.remove('on-dark')}});
+    var hd = document.querySelector('header');
+    var darks = document.querySelectorAll('.arrive, .turn, .intro, footer');
+    var band = 58;
+    var lastY = 0, tuckable = window.matchMedia('(max-width:760px)').matches;
+    function update(){
+      var y = window.scrollY, dark = false;
+      darks.forEach(function(el){
+        var r = el.getBoundingClientRect();
+        if (r.top <= band && r.bottom >= 0) dark = true;
+      });
+      hd.classList.toggle('on-dark', dark);
+      hd.classList.toggle('scrolled', y > 40);
+      /* on phones the bar tucks away while you read, returns the moment you scroll up */
+      if (tuckable){
+        if (y > 160 && y > lastY + 4) hd.classList.add('tucked');
+        else if (y < lastY - 4 || y < 120) hd.classList.remove('tucked');
+      }
+      lastY = y;
+    }
+    lenis.on('scroll', update);
+    window.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update);
+    update();
   })();
 
   hookForm();
