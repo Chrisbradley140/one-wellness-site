@@ -81,6 +81,57 @@ header.scrolled.on-dark::before{
 #loader .lm .mk{height:clamp(58px,8vw,92px);width:auto;aspect-ratio:350/156;color:var(--forest)}
 .mark small{display:block;font-family:var(--sans);font-size:7.5px;font-weight:600;letter-spacing:.3em;margin-top:0;
   color:var(--taupe);transition:color .5s var(--ease)}
+.nav{display:flex;gap:clamp(18px,2.4vw,38px);align-items:center;margin-left:auto;margin-right:clamp(18px,2.6vw,42px)}
+.nav a{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+ text-decoration:none;color:var(--forest);opacity:.78;padding:6px 0;position:relative;
+ transition:opacity .35s var(--ease),color .5s var(--ease)}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;
+ transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.nav a:hover{opacity:1}
+.nav a:hover::after,.nav a[aria-current="page"]::after{transform:scaleX(1)}
+.nav a[aria-current="page"]{opacity:1}
+.nav-cta{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
+ text-decoration:none;color:var(--forest);padding-bottom:5px;border-bottom:1.5px solid var(--forest);flex:0 0 auto;
+ transition:opacity .4s var(--ease),color .5s var(--ease),border-color .5s var(--ease)}
+.nav-cta:hover{opacity:.55}
+.nav-cta .short{display:none}
+header.on-dark .mark{color:var(--cream)}
+header.on-dark .mark small{color:var(--champagne)}
+header.on-dark .nav a{color:var(--champagne)}
+header.on-dark .nav-cta{color:var(--champagne);border-color:var(--gold)}
+header.on-dark .menu-btn i{background:var(--champagne)}
+/* mobile menu */
+.menu-btn{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;
+ background:none;border:0;cursor:pointer;flex:0 0 auto;margin-left:auto}
+.menu-btn i{display:block;width:22px;height:1.5px;background:var(--forest);transition:transform .4s var(--ease),opacity .3s}
+body.menu-open .menu-btn i:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+body.menu-open .menu-btn i:nth-child(2){opacity:0}
+body.menu-open .menu-btn i:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+body.menu-open .menu-btn i{background:var(--champagne)}
+#menu{position:fixed;inset:0;z-index:55;display:flex;flex-direction:column;justify-content:center;
+ padding:0 28px;opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility .45s;
+ background:radial-gradient(ellipse 60% 50% at 78% 14%,rgba(196,164,104,.26),transparent 66%),
+  linear-gradient(168deg,#16301F,#0F2018 60%,#14291D)}
+body.menu-open{overflow:hidden}
+body.menu-open #menu{opacity:1;visibility:visible}
+#menu a{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(30px,9vw,44px);
+ color:var(--cream);text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(196,164,104,.28);
+ display:block;transform:translateY(14px);opacity:0;transition:transform .5s var(--ease),opacity .5s var(--ease)}
+body.menu-open #menu a{transform:none;opacity:1}
+#menu a:nth-child(2){transition-delay:.06s}
+#menu a:nth-child(3){transition-delay:.12s}
+#menu a:nth-child(4){transition-delay:.18s}
+#menu a.m-cta{margin-top:26px;border-bottom:0;font-family:var(--sans);font-style:normal;font-weight:600;
+ font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--forest-deep);text-align:center;
+ background:linear-gradient(135deg,var(--champagne-lt),var(--champagne) 45%,var(--gold));
+ border:1px solid var(--gold);padding:19px 24px}
+@media (max-width:1100px){
+ .nav{display:none}
+ .nav-cta{display:none}
+ .menu-btn{display:flex}
+ header{padding:16px 20px}
+ .mark .mk{height:24px}
+}
 .nav-cta{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
   text-decoration:none;color:var(--forest);padding-bottom:5px;border-bottom:1.5px solid var(--forest);
   transition:opacity .4s var(--ease), color .5s var(--ease), border-color .5s var(--ease)}
@@ -540,9 +591,23 @@ footer .terminus{background:var(--gold)}
 </div>
 
 <header class="on-dark">
-  <a class="mark" href="#top" aria-label="ONE Wellness — home"><svg class="mk" aria-hidden="true" focusable="false"><use href="#ow-mark"></use></svg><small>WELLNESS</small></a>
-  <a class="nav-cta" href="#introduction"><span class="full">Request an introduction</span><span class="short">Enquire</span></a>
+  <a class="mark" href="/" aria-label="ONE Wellness — home"><svg class="mk" aria-hidden="true" focusable="false"><use href="#ow-mark"></use></svg><small>WELLNESS</small></a>
+  <nav class="nav" aria-label="Primary">
+      <a href="/story">Their story</a>
+      <a href="/online-coaching">Online coaching</a>
+      <a href="/areas">Areas we cover</a>
+  </nav>
+  <a class="nav-cta" href="/#introduction"><span class="full">Request an introduction</span><span class="short">Enquire</span></a>
+  <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
 </header>
+
+<div id="menu" role="dialog" aria-modal="true" aria-label="Menu">
+  <a href="/">Home</a>
+  <a href="/story">Their story</a>
+  <a href="/online-coaching">Online coaching</a>
+  <a href="/areas">Areas we cover</a>
+  <a class="m-cta" href="/#introduction">Request an introduction</a>
+</div>
 
 <main id="top">
 
@@ -895,6 +960,27 @@ footer .terminus{background:var(--gold)}
   </div>
 </footer>
 
+<script>
+(function(){
+  var btn = document.querySelector('.menu-btn');
+  if (btn){
+    btn.addEventListener('click', function(){
+      var open = document.body.classList.toggle('menu-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    document.querySelectorAll('#menu a').forEach(function(a){
+      a.addEventListener('click', function(){
+        document.body.classList.remove('menu-open');
+        btn.setAttribute('aria-expanded','false');
+      });
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && document.body.classList.contains('menu-open')) btn.click();
+    });
+  }
+})();
+</script>
 <script src="vendor/gsap.min.js"></script>
 <script src="vendor/ScrollTrigger.min.js"></script>
 <script src="vendor/lenis.min.js"></script>
