@@ -1,8 +1,8 @@
 <meta charset="utf-8">
-<title>Personal Training in Al Nakheel, Riyadh | ONE Wellness</title>
+<title>Private Personal Training in Riyadh | ONE Wellness</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Private in-home personal training in Al Nakheel, Riyadh. Olympic-level coaching delivered to your door, on your schedule.">
-<link rel="canonical" href="https://golden-oath-site.lovable.app/areas/al-nakheel">
+<meta name="description" content="One-to-one private personal training in your own home in Riyadh, coached in person by Olympic medallists Aaron and Bianca Cook.">
+<link rel="canonical" href="https://golden-oath-site.lovable.app/private-coaching">
 <link rel="icon" href="assets/brand/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Karla:wght@400;500;600&display=swap">
@@ -174,12 +174,72 @@ footer{background:linear-gradient(180deg,#16301F,#0F2018);color:var(--cream);
 }
 @media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
 </style>
+<style>
+.plede{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(25px,3vw,42px);
+ color:var(--forest);max-width:20em;line-height:1.24}
+.steps{margin-top:clamp(44px,7vh,72px);border-top:1.5px solid rgba(34,31,27,.18)}
+.step{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,8fr);gap:clamp(20px,3.4vw,60px);
+ align-items:baseline;padding:clamp(24px,3.4vh,36px) 0;border-bottom:1px solid rgba(34,31,27,.15)}
+.step b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(24px,2.3vw,34px);color:var(--forest)}
+.step p{color:rgba(34,31,27,.8);max-width:32em}
+.step p+p{margin-top:10px}
+.incl3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,32px);margin-top:clamp(40px,6vh,64px)}
+.icard{position:relative;overflow:hidden;isolation:isolate;color:var(--cream);
+ padding:clamp(26px,3vw,38px) clamp(22px,2.4vw,30px) clamp(30px,3.4vw,42px);
+ box-shadow:0 20px 44px -18px rgba(15,32,24,.5)}
+.icard::before{content:"";position:absolute;inset:0;z-index:-1;
+ background:radial-gradient(ellipse 70% 60% at 78% 12%,rgba(196,164,104,.28),transparent 62%),
+  linear-gradient(158deg,#1E4030,#16301F 46%,#0F2018)}
+.icard::after{content:"";position:absolute;left:0;top:0;height:2px;width:100%;
+ background:linear-gradient(90deg,var(--gold),rgba(196,164,104,0))}
+.icard h3{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(24px,2.3vw,32px);
+ color:var(--champagne);margin-bottom:12px}
+.icard p{font-family:var(--sans);font-size:14px;line-height:1.78;color:rgba(247,243,236,.8)}
+.faq{max-width:52em;margin-top:clamp(38px,6vh,58px);border-top:1.5px solid rgba(34,31,27,.18)}
+.faq details{border-bottom:1px solid rgba(34,31,27,.15)}
+.faq summary{list-style:none;cursor:pointer;padding:clamp(20px,2.6vh,26px) 44px clamp(20px,2.6vh,26px) 0;
+ font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(20px,1.9vw,26px);color:var(--forest);
+ position:relative;transition:opacity .3s var(--ease)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{opacity:.66}
+.faq summary::after{content:"";position:absolute;right:8px;top:50%;width:11px;height:11px;
+ border-right:1.5px solid var(--taupe);border-bottom:1.5px solid var(--taupe);
+ transform:translateY(-70%) rotate(45deg);transition:transform .35s var(--ease)}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq .a{padding:0 0 clamp(22px,3vh,30px);font-family:var(--sans);font-size:14.5px;line-height:1.8;
+ color:rgba(34,31,27,.78);max-width:44em}
+.tenets{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,3.4vw,52px);margin-top:clamp(44px,7vh,72px)}
+.tenets div{padding-top:22px;border-top:1.5px solid rgba(34,31,27,.2)}
+.tenets h3{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(26px,2.5vw,36px);
+ color:var(--forest);margin-bottom:12px}
+.tenets p{font-family:var(--sans);font-size:14px;line-height:1.78;color:rgba(34,31,27,.76)}
+.thero{position:relative;min-height:80vh;display:flex;align-items:center;background:var(--forest-deep);overflow:hidden}
+.thero::before{content:"";position:absolute;inset:0;z-index:0;
+ background:radial-gradient(ellipse 55% 50% at 76% 26%,rgba(196,164,104,.3),transparent 66%),
+  radial-gradient(ellipse 70% 55% at 8% 82%,rgba(168,135,86,.22),transparent 68%),
+  linear-gradient(162deg,#16301F,#0F2018 54%,#14291D)}
+.thero .wrap{position:relative;z-index:2;padding-top:150px;padding-bottom:clamp(50px,8vh,90px)}
+.thero .k{display:block;margin-bottom:20px;color:var(--champagne)}
+.thero h1{font-size:clamp(38px,5.4vw,80px);color:var(--cream);max-width:12em}
+.thero p{margin-top:26px;font-family:var(--sans);font-size:14px;line-height:1.85;letter-spacing:.03em;
+ color:rgba(247,243,236,.78);max-width:36em}
+.founders{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,5vw,76px);
+ align-items:center;margin-top:clamp(44px,7vh,72px)}
+.founders figure{overflow:hidden;box-shadow:0 30px 60px -24px rgba(28,22,12,.5)}
+.founders img{width:100%;aspect-ratio:4/3;object-fit:cover;filter:saturate(1.1) contrast(1.05)}
+.founders h2{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(28px,3vw,42px);
+ color:var(--forest);margin-bottom:16px}
+.founders p{color:rgba(34,31,27,.82);max-width:30em}
+.founders a.more{display:inline-block;margin-top:22px;font-family:var(--sans);font-size:11px;font-weight:600;
+ letter-spacing:.26em;text-transform:uppercase;color:var(--forest);text-decoration:none;
+ border-bottom:1.5px solid var(--forest);padding-bottom:5px;transition:opacity .4s var(--ease)}
+.founders a.more:hover{opacity:.6}
+@media (max-width:1000px){.incl3,.tenets,.founders{grid-template-columns:1fr}.step{grid-template-columns:1fr;gap:8px}}
+@media (max-width:760px){.plede{font-size:24px}.thero h1{font-size:clamp(31px,8.8vw,42px)}
+ .thero .wrap{padding-top:120px}.faq summary{font-size:19px}}
+</style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HealthAndBeautyBusiness","name":"ONE Wellness",
-"description":"Private in-home personal training in Al Nakheel, Riyadh. Olympic-level coaching delivered to your door, on your schedule.","url":"https://golden-oath-site.lovable.app/areas/al-nakheel",
-"areaServed":{"@type":"Place","name":"Al Nakheel, Riyadh","address":{"@type":"PostalAddress","addressLocality":"Riyadh","addressCountry":"SA"}},
-"serviceType":"Private in-home personal training",
-"founder":[{"@type":"Person","name":"Aaron Cook"},{"@type":"Person","name":"Bianca Cook"}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need a home gym?","acceptedAnswer":{"@type":"Answer","text":"No. We have coached people in a spare room, a garage, a garden and a full basement gym, and the programme is written for whatever you actually have. Where kit is genuinely needed we bring it with us, and if you would rather train at a gym of your choice, we can do that instead."}},{"@type":"Question","name":"How long is a session, and how often?","acceptedAnswer":{"@type":"Answer","text":"Sessions are typically an hour. Most clients train two or three times a week — enough to progress properly without taking over your calendar. The schedule is set around your week, not ours."}},{"@type":"Question","name":"Who actually coaches me?","acceptedAnswer":{"@type":"Answer","text":"Aaron or Bianca, in person. This is not an agency that sends whoever is free — that is the whole point of keeping the client list short."}},{"@type":"Question","name":"I have not trained seriously in years. Is this for me?","acceptedAnswer":{"@type":"Answer","text":"Yes, and it is most of who we work with. Nobody is asking you to train like an Olympian. The first block is about building something you can repeat, not about proving anything."}},{"@type":"Question","name":"How private is it?","acceptedAnswer":{"@type":"Answer","text":"Completely. No client names, no photographs, no social posts, and no mention of who else we coach — including to you. Discretion works in both directions."}},{"@type":"Question","name":"What happens at the introduction?","acceptedAnswer":{"@type":"Answer","text":"A conversation, not a sales call. We talk about what you want, look at your space, and tell you honestly whether we are the right fit. If we are not, we will say so."}}]}
 </script>
 <div class="grain" aria-hidden="true"></div>
 <svg class="brand-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><symbol id="ow-mark" viewBox="365 462 350 156"><path fill-rule="nonzero" fill="currentColor" fill-opacity="1" d="M 460.539062 533.0625 C 460.539062 506.679688 439.152344 485.292969 412.769531 485.292969 C 386.386719 485.292969 365 506.679688 365 533.0625 C 365 559.445312 386.386719 580.832031 412.769531 580.832031 C 439.152344 580.832031 460.539062 559.445312 460.539062 533.0625 "/>
@@ -191,7 +251,7 @@ footer{background:linear-gradient(180deg,#16301F,#0F2018);color:var(--cream);
   <nav class="nav" aria-label="Primary">
       <a href="/story">Their story</a>
       <a href="/online-coaching">Online coaching</a>
-      <a href="/areas" aria-current="page">Areas we cover</a>
+      <a href="/areas">Areas we cover</a>
   </nav>
   <a class="nav-cta" href="/#introduction"><span class="full">Request an introduction</span><span class="short">Enquire</span></a>
   <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
@@ -207,45 +267,67 @@ footer{background:linear-gradient(180deg,#16301F,#0F2018);color:var(--cream);
 
 <main>
   <section class="ahero">
-    <img src="assets/archive/landmarks/nakheel.jpg" alt="Al Nakheel, Riyadh" fetchpriority="high" decoding="async">
+    <img src="assets/archive/riyadh-session.jpg" alt="A private coaching session on a Riyadh terrace" fetchpriority="high" decoding="async">
     <div class="wrap">
-      <span class="k">Areas we cover · Riyadh</span>
-      <h1 class="display">Personal training at home in Al Nakheel</h1>
-      <p class="co">24.75 N · 46.64 E</p>
+      <span class="k">Private coaching · Riyadh</span>
+      <h1 class="display">One-to-one coaching, in your own space.</h1>
+      <p class="co">By introduction · A short client list</p>
     </div>
   </section>
 
   <section class="asec">
     <div class="wrap">
-      <p class="alede">Well connected, centrally placed, and busy. Al Nakheel is the district where "I will go later" quietly becomes "I did not go".</p>
-      <div class="acols">
-        <div><h2>The district</h2><p>Al Nakheel sits in north-central Riyadh, close to King Fahd Road and within easy reach of the financial district. It is a mixed district of villas and apartment buildings, popular precisely because it is close to everything.</p></div>
-        <div><h2>Training in your space</h2><p>Being central often means less square footage, not more. That is fine — a corridor, a living room and a set of adjustable dumbbells is a real training environment when the programme is written for it.</p></div>
+      <p class="plede">We do not have a studio. We have a small number of clients, and we come to them.</p>
+
+      <div class="steps">
+        <div class="step"><b>The session</b>
+          <p>An hour, in your home or a gym of your choice, coached in person by Aaron or Bianca. Warm-up, the work that matters that day, and a proper finish — not a circuit designed to make you sweat for the sake of it.</p>
+          <p>Every session is written before we arrive and adjusted while we are there, because the plan on paper is not always the plan your body agrees to.</p></div>
+        <div class="step"><b>Your space</b>
+          <p>A spare room, a garage, a garden, a home gym — or a gym of your choice. We look at what you already have before suggesting you buy anything, and we travel with whatever the room is missing.</p></div>
+        <div class="step"><b>Your schedule</b>
+          <p>Two or three sessions a week suits most people. Times are set around your week and moved when your week moves — a programme you abandon in a fortnight is worth nothing.</p></div>
+        <div class="step"><b>Between sessions</b>
+          <p>Nutrition built around your household and your travel, and the daily habits — sleep, steps, recovery — that decide whether the training holds. Direct access to your coach when something changes.</p></div>
       </div>
-      <div class="anote"><p>Being close to a gym is not the same as going to one. The whole point of this service is removing the twenty minutes that stop you.</p></div>
-      <div class="astrip">
-        <div><h3>Training</h3><p>Sessions built around your body and your week — whether you trained yesterday or a decade ago.</p></div>
-        <div><h3>Nutrition</h3><p>We build the nutrition around you, not the other way round — a plan you can actually stick to.</p></div>
-        <div><h3>Daily habits</h3><p>Small routines — sleep, movement, recovery — that fit the life you already lead.</p></div>
+
+      <div class="incl3">
+        <div class="icard"><h3>Training</h3><p>Sessions built around your body and your week — whether you trained yesterday or a decade ago.</p></div>
+        <div class="icard"><h3>Nutrition</h3><p>We build the nutrition around you, not the other way round — a plan you can actually stick to.</p></div>
+        <div class="icard"><h3>Daily habits</h3><p>Small routines — sleep, movement, recovery — that fit the life you already lead. Nobody is asking you to train like an Olympian.</p></div>
       </div>
     </div>
   </section>
 
   <section class="near">
     <div class="wrap">
-      <span class="k">Nearby</span>
-      <div class="ngrid">
-        <a class="ncard" href="/areas/diriyah"><img src="assets/archive/landmarks/diriyah.jpg" alt="Diriyah, Riyadh" loading="lazy" decoding="async"><span>Diriyah</span></a>
-        <a class="ncard" href="/areas/diplomatic-quarter"><img src="assets/archive/landmarks/dq.jpg" alt="Diplomatic Quarter, Riyadh" loading="lazy" decoding="async"><span>Diplomatic Quarter</span></a>
-        <a class="ncard" href="/areas/hittin"><img src="assets/archive/landmarks/hittin.jpg" alt="Hittin, Riyadh" loading="lazy" decoding="async"><span>Hittin</span></a>
+      <span class="k">The first ninety days</span>
+      <div class="steps" style="margin-top:clamp(30px,5vh,48px)">
+        <div class="step"><b>Weeks 1–4</b><p>Establishing a baseline and building the habit of turning up. Load is deliberately conservative — we are finding out how you move and how you recover before we ask anything of you.</p></div>
+        <div class="step"><b>Weeks 5–8</b><p>The work gets real. Progressive loading, technique refined session by session, nutrition adjusted around what has actually been happening rather than what was planned.</p></div>
+        <div class="step"><b>Weeks 9–12</b><p>The first honest review. What has changed, what has not, and what the next block should look like. This is where most people notice the difference outside the session — sleep, energy, how they carry themselves.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="asec">
+    <div class="wrap">
+      <span class="k">Questions</span>
+      <div class="faq">
+        <details><summary>Do I need a home gym?</summary><div class="a">No. We have coached people in a spare room, a garage, a garden and a full basement gym, and the programme is written for whatever you actually have. Where kit is genuinely needed we bring it with us, and if you would rather train at a gym of your choice, we can do that instead.</div></details>
+        <details><summary>How long is a session, and how often?</summary><div class="a">Sessions are typically an hour. Most clients train two or three times a week — enough to progress properly without taking over your calendar. The schedule is set around your week, not ours.</div></details>
+        <details><summary>Who actually coaches me?</summary><div class="a">Aaron or Bianca, in person. This is not an agency that sends whoever is free — that is the whole point of keeping the client list short.</div></details>
+        <details><summary>I have not trained seriously in years. Is this for me?</summary><div class="a">Yes, and it is most of who we work with. Nobody is asking you to train like an Olympian. The first block is about building something you can repeat, not about proving anything.</div></details>
+        <details><summary>How private is it?</summary><div class="a">Completely. No client names, no photographs, no social posts, and no mention of who else we coach — including to you. Discretion works in both directions.</div></details>
+        <details><summary>What happens at the introduction?</summary><div class="a">A conversation, not a sales call. We talk about what you want, look at your space, and tell you honestly whether we are the right fit. If we are not, we will say so.</div></details>
       </div>
     </div>
   </section>
 
   <section class="acta">
     <div class="wrap">
-      <span class="k" style="color:var(--champagne)">Al Nakheel</span>
-      <h2 class="display">Coached by Olympic medallists, in your own home.</h2>
+      <span class="k" style="color:var(--champagne)">Private coaching</span>
+      <h2 class="display">We keep the list short on purpose.</h2>
       <a class="btn-gold" href="/#introduction">Request an introduction</a>
     </div>
   </section>

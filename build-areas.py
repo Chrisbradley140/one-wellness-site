@@ -111,7 +111,8 @@ img{max-width:100%;display:block}
 NAVCSS
 /* hero */
 .ahero{position:relative;min-height:74vh;display:flex;align-items:flex-end;background:var(--forest-deep);overflow:hidden}
-.ahero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:saturate(1.1) contrast(1.06)}
+.ahero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
+ filter:saturate(1.1) contrast(1.06);transform:translateZ(0)}
 .ahero::after{content:"";position:absolute;inset:0;z-index:1;
  background:linear-gradient(180deg,rgba(15,32,24,.62),rgba(15,32,24,.3) 38%,rgba(15,32,24,.9) 84%,rgba(15,32,24,.97))}
 .ahero .wrap{position:relative;z-index:2;padding-top:150px;padding-bottom:clamp(46px,8vh,86px)}
