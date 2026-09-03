@@ -147,6 +147,13 @@ header.on-dark .nav-cta{color:var(--champagne);border-color:var(--gold)}
   filter:saturate(1.22) contrast(1.14) brightness(1.03);transition:transform .7s var(--ease)}
 .station .plate:hover img,.station .plate:hover video{transform:scale(1.04)}
 .station .plate.empty img{display:none}
+.station .plate-note{margin-top:14px;margin-left:14%;width:86%;aspect-ratio:3/4;
+  display:flex;flex-direction:column;justify-content:flex-start;padding:6px 0 0;
+  border-left:1.5px solid rgba(22,46,33,.28)}
+.station .plate-note p{font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:clamp(24px,2.2vw,32px);line-height:1.15;color:var(--forest);padding-left:18px}
+.station .plate-note span{display:block;margin-top:12px;padding-left:18px;font-family:var(--sans);
+  font-size:9.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--taupe)}
 .station .ghost{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
   font-style:italic;font-weight:300;font-size:clamp(48px,4.5vw,72px);color:rgba(22,46,33,.16);pointer-events:none}
 .station .plate:not(.empty)+.ghost{display:none}
@@ -436,6 +443,9 @@ footer .terminus{background:var(--gold)}
   .station .drop{display:none}
   .station .yr{margin:0 0 4px;font-size:30px}
   .station .plate{margin-left:0;width:100%;aspect-ratio:4/3;margin-top:12px}
+  .station .plate-note{margin-left:0;width:100%;aspect-ratio:auto;margin-top:12px;padding:2px 0 4px}
+  .station .plate-note p{font-size:24px;padding-left:14px}
+  .station .plate-note span{padding-left:14px;margin-top:8px}
 
   /* the turn */
   .turn{padding:76px 0}
@@ -540,9 +550,9 @@ footer .terminus{background:var(--gold)}
           <span class="lbl">Introducing</span>
           <span class="nm">ONE Wellness — Riyadh</span>
         </div>
-        <p class="lede" data-fade>Aaron and Bianca Cook spent two decades at the very top of world taekwondo —
+        <p class="lede" data-fade>Aaron and Bianca Cook spent more than two decades at the very top of world taekwondo —
           Olympic medallists, world champions, world No.1. They now bring that standard to the people of Riyadh:
-          fitter, healthier, happier lives, coached entirely from the comfort of your own home.</p>
+          fitter, healthier, happier lives, coached in the space that suits you.</p>
       </div>
     </div>
     <div class="arrive-cue" aria-hidden="true"><span class="k" style="letter-spacing:.4em">Scroll</span><i></i></div>
@@ -553,10 +563,15 @@ footer .terminus{background:var(--gold)}
     <div class="record-head">
       <span class="k">The record</span>
       <div class="rule"></div>
-      <p class="record-intro" data-fade>Two decades at the top of world sport — and the story ends in Riyadh.</p>
+      <p class="record-intro" data-fade>More than two decades at the top of world sport — and the story ends in Riyadh.</p>
     </div>
     <div class="rail" id="rail">
       <div class="rail-line" aria-hidden="true"></div>
+      <div class="station">
+        <span class="tick"></span><span class="drop" aria-hidden="true"></span>
+        <div class="yr">2008</div><div class="cap">Beijing — Aaron’s first Olympics</div>
+        <div class="plate-note"><p>Where it started.</p><span>Two decades before Riyadh</span></div>
+      </div>
       <div class="station">
         <span class="tick"></span><span class="drop" aria-hidden="true"></span>
         <div class="yr">2016</div><div class="cap">Rio — Olympic bronze</div>
@@ -575,7 +590,7 @@ footer .terminus{background:var(--gold)}
       <div class="station">
         <span class="tick"></span><span class="drop" aria-hidden="true"></span>
         <div class="yr">Always</div><div class="cap">The daily work</div>
-        <figure class="plate"><img src="assets/archive/04.jpg" alt="Aaron Cook, head bowed, holding his headgear before competing" onerror="this.parentElement.classList.add('empty')" loading="lazy" decoding="async"><span class="note">Archive · awaiting photo</span></figure>
+        <figure class="plate"><img src="assets/archive/04.jpg" alt="Aaron Cook, head bowed, holding his headgear before competing" onerror="this.parentElement.classList.add('empty')" loading="lazy" decoding="async"><span class="note">Archive</span></figure>
       </div>
       <div class="station">
         <span class="tick"></span><span class="drop" aria-hidden="true"></span>
@@ -594,8 +609,8 @@ footer .terminus{background:var(--gold)}
   <section class="turn" aria-label="The turn">
     <div class="horizon" aria-hidden="true"></div>
     <div class="wrap">
-      <p class="display up" data-words>For twenty years, the world watched them compete.</p>
-      <p class="display down" data-words>Now the only audience is you.</p>
+      <p class="display up" data-words>For two decades, the world watched them compete.</p>
+      <p class="display down" data-words>Now the only result that matters is yours.</p>
     </div>
   </section>
 
@@ -603,14 +618,14 @@ footer .terminus{background:var(--gold)}
   <section class="home">
     <div class="vline" data-vline aria-hidden="true"></div>
     <div class="wrap">
-      <span class="k">Your home</span>
-      <h2 class="display" data-words>The best place to train is the one you wake up in.</h2>
+      <span class="k">Your space</span>
+      <h2 class="display" data-words>Your space, your schedule, your plan.</h2>
       <div class="home-grid">
         <div>
-          <p data-fade>A spare room, a garage, a garden, a full home gym — it doesn’t matter. We design around
-            whatever your home gives us, and we travel with everything it doesn’t.</p>
+          <p data-fade>A spare room, a garage, a garden, a home gym — or a gym of your choice. We design around
+            the space you have, and we bring whatever it’s missing.</p>
           <div class="fits">
-            <div class="fit" data-fitrow><span class="n" aria-hidden="true">i.</span><p>You want serious coaching without ever driving to a gym.</p><span class="u"></span></div>
+            <div class="fit" data-fitrow><span class="n" aria-hidden="true">i.</span><p>You want serious coaching without the commute or the crowd.</p><span class="u"></span></div>
             <div class="fit" data-fitrow><span class="n" aria-hidden="true">ii.</span><p>Your time is protected — the session comes to you, on your schedule.</p><span class="u"></span></div>
             <div class="fit" data-fitrow><span class="n" aria-hidden="true">iii.</span><p>You value discretion more than spectacle.</p><span class="u"></span></div>
           </div>
@@ -632,9 +647,9 @@ footer .terminus{background:var(--gold)}
         <div class="pillar" data-fade><h4>Training</h4>
           <p>Sessions built around your body and your week — whether you trained yesterday or a decade ago.</p></div>
         <div class="pillar" data-fade><h4>Nutrition</h4>
-          <p>Food that fits your household, your travel and your tastes — not a plan you abandon in a fortnight.</p></div>
-        <div class="pillar" data-fade><h4>Lifestyle &amp; habits</h4>
-          <p>The daily routines — sleep, movement, recovery — shaped around the life you actually lead.</p></div>
+          <p>We build the nutrition around you, not the other way round — a plan you can actually stick to.</p></div>
+        <div class="pillar" data-fade><h4>Daily habits</h4>
+          <p>Small routines — sleep, movement, recovery — that fit the life you already lead. Nobody is asking you to train like an Olympian.</p></div>
       </div>
         <div class="c"><b>3×</b><span>World titles</span></div>
         <div class="c"><b>No.1</b><span>World ranking</span></div>
@@ -794,16 +809,16 @@ footer .terminus{background:var(--gold)}
   <!-- 06 THE METHOD -->
   <section class="method">
     <div class="wrap">
-      <span class="k">The method</span>
+      <span class="k">How it works</span>
       <h2 class="display" data-words>Beginning is the easy part. We handle the rest.</h2>
       <div class="method-line" data-mline aria-hidden="true"></div>
       <div class="msteps">
         <div class="mstep" data-fade><span class="dot" aria-hidden="true"></span><b>01</b><h3>The introduction</h3>
           <p>A reference from someone we already coach, then an unhurried conversation about what you actually want. We keep our client list short on purpose.</p></div>
-        <div class="mstep" data-fade><span class="dot" aria-hidden="true"></span><b>02</b><h3>The home visit</h3>
+        <div class="mstep" data-fade><span class="dot" aria-hidden="true"></span><b>02</b><h3>The first visit</h3>
           <p>We come to you — your space, your equipment, your history, your mornings. We listen far more than we talk, then design around your real life.</p></div>
         <div class="mstep" data-fade><span class="dot" aria-hidden="true"></span><b>03</b><h3>The programme</h3>
-          <p>Coaching begins at home, around your week. Every session in person, every month reviewed together — and adjusted the moment life changes.</p></div>
+          <p>Coaching begins in your space, around your week. Every session in person, every month reviewed together — and adjusted the moment life changes.</p></div>
       </div>
       <p class="method-close" data-fade>From the first conversation to your hundredth session, it stays personal — and it stays yours.</p>
     </div>
