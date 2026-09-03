@@ -1,0 +1,472 @@
+<meta charset="utf-8">
+<title>Their Story — ONE Wellness</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Aaron and Bianca Cook: two decades at the top of world taekwondo, and the decision that brought them to Riyadh.">
+<link rel="icon" href="assets/brand/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Karla:wght@400;500;600&display=swap">
+
+<style>
+/* ═══ ONE Wellness — THEIR STORY ═══
+   Homepage = one line through Riyadh. Online = the phone.
+   Here = two roads that run in parallel for twenty years, then converge. */
+:root{
+  --forest:#162E21; --forest-deep:#0F2018;
+  --cream:#FBF9F5; --bone:#F7F3EC; --sand:#EDE4D6;
+  --taupe:#9F876F; --sage:#BEC3A3; --ink:#221F1B;
+  --champagne:#E3D3B3; --champagne-lt:#F2E8D5; --gold:#C4A468; --bronze:#A88756;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Karla',Arial,sans-serif;
+  --ease:cubic-bezier(.22,.9,.24,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;border-radius:0}
+html{scroll-behavior:smooth}
+body{background:var(--bone);color:var(--ink);font-family:var(--serif);font-size:19px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 55% at 12% 8%,  rgba(242,232,213,.95), transparent 62%),
+    radial-gradient(ellipse 60% 50% at 88% 22%, rgba(227,211,179,.85), transparent 64%),
+    radial-gradient(ellipse 80% 60% at 50% 62%, rgba(237,228,214,.9),  transparent 70%),
+    radial-gradient(ellipse 65% 55% at 8%  88%, rgba(196,164,104,.22), transparent 66%),
+    radial-gradient(ellipse 70% 60% at 92% 96%, rgba(168,135,86,.20),  transparent 68%),
+    linear-gradient(168deg,#FAF6EE 0%,#F4EBDB 38%,#EFE3CC 68%,#E8DAC0 100%)}
+::selection{background:var(--forest);color:var(--cream)}
+a{color:inherit}
+:focus-visible{outline:1px solid var(--forest);outline-offset:4px}
+img{max-width:100%;display:block}
+.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:70;opacity:.032;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.k{font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--taupe)}
+.display{font-family:var(--serif);font-weight:300;font-style:italic;line-height:1.06;letter-spacing:-.01em;text-wrap:balance}
+.word-mask{display:inline-block;overflow:hidden;vertical-align:bottom;padding:.06em .02em .14em;margin:-.06em -.02em -.14em}
+.word-mask>span{display:inline-block;transform:translateY(118%);will-change:transform}
+.wrap{max-width:1400px;margin:0 auto;padding:0 clamp(24px,4.5vw,64px)}
+
+/* nav + logo lockup */
+header{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:space-between;align-items:center;
+  padding:24px clamp(24px,4.5vw,64px);transition:transform .45s var(--ease)}
+header::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;
+  transition:opacity .45s var(--ease);
+  background:linear-gradient(180deg,rgba(250,246,238,.94),rgba(250,246,238,.72) 62%,rgba(250,246,238,0));
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+header.scrolled::before{opacity:1}
+header.scrolled.on-dark::before{background:linear-gradient(180deg,rgba(15,32,24,.92),rgba(15,32,24,.66) 62%,rgba(15,32,24,0))}
+header.tucked{transform:translateY(-104%)}
+.mark{display:inline-flex;flex-direction:column;align-items:flex-start;gap:6px;text-decoration:none;
+  color:var(--ink);transition:color .5s var(--ease)}
+.mark .mk{display:block;height:28px;width:auto;aspect-ratio:350/156;color:inherit;flex:0 0 auto}
+.mark .mk use{fill:currentColor}
+.mark small{font-family:var(--sans);font-size:7.5px;font-weight:600;letter-spacing:.3em;color:var(--taupe);
+  transition:color .5s var(--ease)}
+.foot .mark .mk{height:24px}
+.nav-cta{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
+  text-decoration:none;color:var(--forest);padding-bottom:5px;border-bottom:1.5px solid var(--forest);
+  transition:opacity .4s var(--ease),color .5s var(--ease),border-color .5s var(--ease)}
+.nav-cta:hover{opacity:.55}
+.nav-cta .short{display:none}
+header.on-dark .mark{color:var(--cream)}
+header.on-dark .mark small{color:var(--champagne)}
+header.on-dark .nav-cta{color:var(--champagne);border-color:var(--gold)}
+
+/* ═══ 01 hero ═══ */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;
+  background:var(--forest-deep);overflow:hidden}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 32%;
+  z-index:0;filter:saturate(1.06) contrast(1.05)}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 50% at 78% 22%, rgba(196,164,104,.24), transparent 66%),
+    linear-gradient(180deg, rgba(15,32,24,.68) 0%, rgba(15,32,24,.32) 34%, rgba(15,32,24,.86) 82%, rgba(15,32,24,.97) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-bottom:clamp(60px,10vh,110px);padding-top:140px}
+.hero .k{display:block;margin-bottom:22px;color:var(--champagne)}
+.hero h1{font-size:clamp(40px,5.4vw,80px);color:var(--cream);max-width:13em}
+.hero p{margin-top:26px;font-family:var(--sans);font-size:14px;line-height:1.85;letter-spacing:.03em;
+  color:rgba(247,243,236,.8);max-width:38em}
+
+/* ═══ 02 opening ═══ */
+.open{padding:clamp(90px,14vh,160px) 0}
+.open .lede{font-size:clamp(24px,2.6vw,36px);font-style:italic;font-weight:300;color:var(--forest);
+  max-width:22em;line-height:1.32}
+.open .body{margin-top:30px;max-width:34em;color:rgba(34,31,27,.8);font-size:18px}
+
+/* ═══ 03/04 the two roads ═══ */
+.road{position:relative;padding:clamp(70px,11vh,120px) 0}
+.road+.road{padding-top:0}
+.road-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(34px,5vw,80px);align-items:center}
+.road.rev .road-grid{direction:rtl}
+.road.rev .road-grid>*{direction:ltr}
+.road h2{font-size:clamp(34px,4vw,60px);color:var(--forest);margin:16px 0 20px}
+.road .role{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--bronze)}
+.road p{color:rgba(34,31,27,.82);max-width:32em}
+.palmares{margin-top:28px;border-top:1.5px solid rgba(34,31,27,.18)}
+.palmares div{display:flex;gap:18px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(34,31,27,.14)}
+.palmares b{flex:0 0 5.4em;font-family:var(--serif);font-style:italic;font-weight:400;font-size:21px;color:var(--forest);
+  font-variant-numeric:lining-nums}
+.palmares span{font-family:var(--sans);font-size:12.5px;letter-spacing:.06em;color:rgba(34,31,27,.72)}
+.stack{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,20px)}
+.stack figure{position:relative;overflow:hidden;box-shadow:0 26px 54px -22px rgba(28,22,12,.5)}
+.stack img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;
+  filter:saturate(1.2) contrast(1.12);transition:transform .8s var(--ease)}
+.stack figure:hover img{transform:scale(1.035)}
+.stack figure:first-child{margin-top:clamp(20px,4vw,48px)}
+.stack figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 11px;
+  font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);
+  background:linear-gradient(180deg,transparent,rgba(15,32,24,.85))}
+
+/* ═══ 05 converge ═══ */
+.converge{position:relative;padding:clamp(40px,7vh,80px) 0 clamp(70px,11vh,120px);text-align:center}
+.converge svg{display:block;width:100%;max-width:900px;margin:0 auto;height:auto}
+.converge .cpath{fill:none;stroke:var(--forest);stroke-width:1.5;opacity:.5}
+.converge p{margin-top:clamp(24px,4vh,44px);font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:clamp(26px,3.2vw,46px);color:var(--forest);max-width:16em;margin-left:auto;margin-right:auto;line-height:1.2}
+
+/* ═══ 06 gb band ═══ */
+.band{position:relative;min-height:min(72vh,620px);display:flex;align-items:flex-end;overflow:hidden;
+  background:var(--forest-deep)}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 28%;
+  z-index:0;filter:saturate(1.12) contrast(1.08)}
+.band::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(15,32,24,.5) 0%,rgba(15,32,24,.14) 40%,rgba(15,32,24,.9) 100%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 7%,#000 93%,transparent 100%);
+  mask-image:linear-gradient(180deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
+.band .wrap{position:relative;z-index:2;padding-bottom:clamp(34px,6vh,60px)}
+.band .k{color:var(--champagne)}
+.band p{margin-top:14px;font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:clamp(24px,2.8vw,40px);color:var(--cream);max-width:18em;line-height:1.18}
+
+/* ═══ 07 riyadh ═══ */
+.riyadh{padding:clamp(90px,14vh,160px) 0}
+.riyadh-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(34px,5vw,80px);align-items:center}
+.riyadh h2{font-size:clamp(30px,3.6vw,52px);color:var(--forest);margin:16px 0 22px;max-width:13em}
+.riyadh p{color:rgba(34,31,27,.82);max-width:32em}
+.riyadh p+p{margin-top:16px}
+.riyadh figure{position:relative;overflow:hidden;box-shadow:0 30px 60px -24px rgba(28,22,12,.5)}
+.riyadh figure img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:saturate(1.1) contrast(1.05)}
+.riyadh figcaption{margin-top:12px;font-family:var(--sans);font-size:9.5px;font-weight:600;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--taupe)}
+.mission{margin-top:clamp(56px,9vh,100px);padding-top:clamp(34px,5vh,54px);border-top:1.5px solid rgba(196,164,104,.5)}
+.mission p{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(28px,3.6vw,52px);
+  color:var(--forest);max-width:17em;line-height:1.16}
+
+/* ═══ 08 what they bring ═══ */
+.bring{position:relative;color:var(--cream);padding:clamp(96px,15vh,170px) 0;overflow:hidden}
+.bring::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 50% 42% at 50% 4%, rgba(196,164,104,.3), transparent 68%),
+    linear-gradient(172deg,#12271C 0%,#0F2018 55%,#16301F 100%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 8%,#000 100%);
+  mask-image:linear-gradient(180deg,transparent 0,#000 8%,#000 100%)}
+.bring .wrap{position:relative;z-index:1}
+.bring .k{color:var(--champagne);opacity:.85}
+.bring h2{font-size:clamp(30px,3.6vw,52px);color:var(--cream);margin:20px 0 clamp(38px,6vh,60px);max-width:14em}
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,44px)}
+.bgrid div{padding-top:22px;border-top:1.5px solid rgba(196,164,104,.45)}
+.bgrid h3{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(24px,2.4vw,34px);
+  color:var(--champagne);margin-bottom:12px}
+.bgrid p{font-family:var(--sans);font-size:14px;line-height:1.78;color:rgba(247,243,236,.78)}
+.bring .cta{margin-top:clamp(50px,8vh,86px)}
+.btn-gold{display:inline-block;text-decoration:none;color:var(--forest-deep);border:1px solid var(--gold);
+  background:linear-gradient(135deg,var(--champagne-lt),var(--champagne) 45%,var(--gold) 100%);
+  padding:19px 44px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
+  transition:filter .45s var(--ease),box-shadow .45s var(--ease)}
+.btn-gold:hover{filter:brightness(1.07);box-shadow:0 6px 28px rgba(196,164,104,.35)}
+
+footer{background:linear-gradient(180deg,#16301F,#0F2018);color:var(--cream);
+  border-top:1px solid rgba(196,164,104,.35);padding:clamp(34px,6vh,52px) 0}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.foot .mark{color:var(--cream)}
+.foot .mark small{color:var(--champagne)}
+.foot-meta{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--champagne);opacity:.75}
+.foot a{text-decoration:none;border-bottom:1px solid rgba(196,164,104,.5);padding-bottom:3px}
+
+@media (max-width:1000px){
+  .road-grid,.riyadh-grid,.bgrid{grid-template-columns:1fr;gap:40px}
+  .road.rev .road-grid{direction:ltr}
+  .bgrid{gap:30px}
+}
+@media (max-width:760px){
+  body{font-size:16.5px;line-height:1.62}
+  .wrap{padding:0 22px}
+  header{padding:16px 20px}
+  .mark .mk{height:24px}
+  .nav-cta{font-size:9.5px;letter-spacing:.18em;min-height:44px;display:inline-flex;align-items:center}
+  .nav-cta .full{display:none}
+  .nav-cta .short{display:inline}
+  .hero .wrap{padding-top:120px}
+  .hero h1{font-size:clamp(32px,9vw,42px)}
+  .hero p{font-size:13px}
+  .open{padding:76px 0}
+  .open .lede{font-size:24px}
+  .road{padding:60px 0}
+  .road h2{font-size:32px}
+  .stack figure:first-child{margin-top:0}
+  .converge p,.mission p{font-size:26px}
+  .band p{font-size:24px}
+  .riyadh{padding:76px 0}
+  .riyadh h2,.bring h2{font-size:28px}
+  .bring{padding:80px 0}
+  .btn-gold{display:block;text-align:center;padding:20px 24px}
+  .foot{flex-direction:column;align-items:flex-start;gap:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  .word-mask>span{transform:none!important}
+  *{transition-duration:.01ms!important}
+}
+</style>
+
+<svg class="brand-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><symbol id="ow-mark" viewBox="365 462 350 156"><path fill-rule="nonzero" fill="currentColor" fill-opacity="1" d="M 460.539062 533.0625 C 460.539062 506.679688 439.152344 485.292969 412.769531 485.292969 C 386.386719 485.292969 365 506.679688 365 533.0625 C 365 559.445312 386.386719 580.832031 412.769531 580.832031 C 439.152344 580.832031 460.539062 559.445312 460.539062 533.0625 "/>
+<path fill-rule="nonzero" fill="currentColor" fill-opacity="1" d="M 494.03125 570.515625 L 499.636719 563.378906 C 506.078125 555.175781 517.792969 553.398438 526.378906 559.320312 L 578.507812 595.277344 C 593.824219 605.84375 614.488281 592.453125 610.707031 574.234375 C 604.667969 545.097656 605.382812 515.964844 612.863281 486.828125 C 615.300781 477.335938 603.472656 470.953125 597.070312 478.371094 L 568.605469 511.335938 C 563.8125 516.886719 555.570312 517.851562 549.625 513.550781 L 498.390625 476.503906 C 485.089844 466.886719 466.828125 479.125 470.964844 495.007812 C 476.765625 517.253906 477.746094 539.5 473.910156 561.746094 C 471.921875 573.269531 486.808594 579.710938 494.03125 570.515625 "/>
+<path fill-rule="nonzero" fill="currentColor" fill-opacity="1" d="M 693.058594 617.859375 C 699.210938 617.859375 702.0625 610.273438 697.453125 606.199219 C 681.917969 592.464844 659.722656 567.953125 659.722656 540 C 659.722656 518.609375 672.722656 499.234375 685.785156 485.160156 C 693.910156 476.40625 687.488281 462.140625 675.539062 462.140625 C 646.535156 462.140625 623.019531 497 623.019531 540 C 623.019531 583 646.535156 617.859375 675.539062 617.859375 Z M 693.058594 617.859375 "/>
+<path fill-rule="nonzero" fill="currentColor" fill-opacity="1" d="M 685.199219 532.980469 C 690.675781 531.605469 698.554688 529.945312 704.945312 529.859375 C 708.730469 529.808594 712.476562 531.679688 714.164062 535.066406 C 721.953125 550.726562 672.734375 563.59375 674.933594 544.011719 C 675.542969 538.578125 679.894531 534.3125 685.199219 532.980469 "/></symbol></svg>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="on-dark">
+  <a class="mark" href="/" aria-label="ONE Wellness — home"><svg class="mk" aria-hidden="true" focusable="false"><use href="#ow-mark"></use></svg><small>WELLNESS</small></a>
+  <a class="nav-cta" href="/#introduction"><span class="full">Request an introduction</span><span class="short">Enquire</span></a>
+</header>
+
+<main>
+
+  <!-- 01 HERO -->
+  <section class="hero">
+    <img class="bg" src="assets/archive/founders-portrait.jpg" alt="Aaron and Bianca Cook" fetchpriority="high" decoding="async">
+    <div class="wrap">
+      <span class="k">Their story</span>
+      <h1 class="display" data-words>Two careers at the top of world sport. One decision.</h1>
+      <p data-fade>Aaron and Bianca Cook spent more than two decades in the hardest rooms in taekwondo —
+        Olympic medals, world titles, world No.1 rankings. Then they chose Riyadh, and a very different kind of work.</p>
+    </div>
+  </section>
+
+  <!-- 02 OPENING -->
+  <section class="open">
+    <div class="wrap">
+      <p class="lede display" data-words>Elite sport teaches you one thing above all: almost nothing about progress is dramatic.</p>
+      <p class="body" data-fade>It is the same session, done properly, on the days you feel like it and the days you
+        don't. Two decades of that is what Aaron and Bianca actually bring to a client — not the medals, but the
+        method underneath them.</p>
+    </div>
+  </section>
+
+  <!-- 03 BIANCA -->
+  <section class="road" id="bianca">
+    <div class="wrap">
+      <div class="road-grid">
+        <div>
+          <span class="role">Olympic medallist · World champion</span>
+          <h2 class="display" data-words>Bianca Cook</h2>
+          <p data-fade>Two Olympic bronze medals and three world titles, built over a career spent at or near the
+            top of the world rankings. A heavyweight who won by being harder to break than the person opposite her.</p>
+          <div class="palmares" data-fade>
+            <div><b>2016</b><span>Olympic bronze — Rio</span></div>
+            <div><b>2020</b><span>Olympic bronze — Tokyo</span></div>
+            <div><b>3×</b><span>World champion</span></div>
+            <div><b>No.1</b><span>World ranking</span></div>
+          </div>
+        </div>
+        <div class="stack" data-fade>
+          <figure><img src="assets/archive/01.jpg" alt="Bianca Cook on the podium at Rio 2016 with her Olympic bronze medal" loading="lazy" decoding="async"><figcaption>Rio · 2016</figcaption></figure>
+          <figure><img src="assets/archive/03.jpg" alt="Bianca Cook celebrating with the Union Jack after winning Olympic bronze in Tokyo" loading="lazy" decoding="async"><figcaption>Tokyo · 2020</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 AARON -->
+  <section class="road rev" id="aaron">
+    <div class="wrap">
+      <div class="road-grid">
+        <div>
+          <span class="role">World medallist · World No.1</span>
+          <h2 class="display" data-words>Aaron Cook</h2>
+          <p data-fade>A career that began at the Beijing Olympics in 2008 and ran through three Olympic Games,
+            a world No.1 ranking and a World Championship medal. Known for footwork, timing and a left leg that
+            decided fights.</p>
+          <div class="palmares" data-fade>
+            <div><b>2008</b><span>First Olympic Games — Beijing</span></div>
+            <div><b>2017</b><span>World Championship medal — Muju</span></div>
+            <div><b>2023</b><span>Saudi Games — Riyadh</span></div>
+            <div><b>No.1</b><span>World ranking</span></div>
+          </div>
+        </div>
+        <div class="stack" data-fade>
+          <figure><img src="assets/archive/04.jpg" alt="Aaron Cook competing at the Rio 2016 Olympic Games" loading="lazy" decoding="async"><figcaption>Rio · 2016</figcaption></figure>
+          <figure><img src="assets/archive/02.jpg" alt="Aaron Cook with his World Championship medal at Muju 2017" loading="lazy" decoding="async"><figcaption>Muju · 2017</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 CONVERGE -->
+  <section class="converge" id="converge">
+    <div class="wrap">
+      <svg viewBox="0 0 900 150" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+        <path class="cpath" data-draw d="M 40 8 C 300 8, 330 132, 450 132"/>
+        <path class="cpath" data-draw d="M 860 8 C 600 8, 570 132, 450 132"/>
+        <circle class="cdot" cx="450" cy="132" r="5" fill="var(--forest)" opacity="0"/>
+      </svg>
+      <p data-words>Two roads, the same discipline — and one address.</p>
+    </div>
+  </section>
+
+  <!-- 06 GB BAND -->
+  <section class="band">
+    <img src="assets/archive/team-gb.jpg" alt="Aaron and Bianca Cook in Team GB kit" loading="lazy" decoding="async">
+    <div class="wrap">
+      <span class="k">The years of being watched</span>
+      <p data-fade>Arenas, cameras, national kit. Every session measured against the next opponent.</p>
+    </div>
+  </section>
+
+  <!-- 07 RIYADH -->
+  <section class="riyadh" id="riyadh">
+    <div class="wrap">
+      <div class="riyadh-grid">
+        <div>
+          <span class="k">Why Riyadh</span>
+          <h2 class="display" data-words>They came for the sport. They stayed for the city.</h2>
+          <p data-fade>Aaron competed at the Saudi Games in Riyadh in 2023. What they found was a city rebuilding
+            itself at speed — and a lot of people who wanted to train properly but had nowhere sensible to do it.</p>
+          <p data-fade>So they stopped competing and started coaching. Not in a gym with a hundred members, but
+            privately, in people's own spaces, a small number of clients at a time.</p>
+        </div>
+        <figure data-fade>
+          <img src="assets/archive/05.jpg" alt="Aaron Cook with his medal at the Saudi Games in Riyadh, 2023" loading="lazy" decoding="async">
+          <figcaption>Saudi Games · Riyadh · 2023</figcaption>
+        </figure>
+      </div>
+      <div class="mission" data-fade>
+        <p class="display" data-words>We are on a mission to make the people of Riyadh fitter, healthier and happier.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 WHAT THEY BRING -->
+  <section class="bring" id="bring">
+    <div class="wrap">
+      <span class="k">What carries over</span>
+      <h2 class="display" data-words>What two decades of competing actually teaches you.</h2>
+      <div class="bgrid">
+        <div data-fade><h3>Patience</h3>
+          <p>Nobody peaks in six weeks. Programmes are built in blocks and judged over months, which is why they hold.</p></div>
+        <div data-fade><h3>Precision</h3>
+          <p>A coach who spent twenty years being corrected knows exactly what to look for — and what to leave alone.</p></div>
+        <div data-fade><h3>Perspective</h3>
+          <p>They have trained at the limit, so they know you don't need to. Hard enough to work, sustainable enough to keep.</p></div>
+      </div>
+      <div class="cta" data-fade><a class="btn-gold" href="/#introduction">Request an introduction</a></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span class="mark" aria-hidden="true"><svg class="mk" aria-hidden="true" focusable="false"><use href="#ow-mark"></use></svg><small>WELLNESS</small></span>
+    <span class="foot-meta"><a href="/online-coaching">Online coaching worldwide</a></span>
+    <span class="foot-meta">© 2026 ONE Wellness</span>
+  </div>
+</footer>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches || location.search.indexOf('flat') > -1;
+  gsap.registerPlugin(ScrollTrigger);
+  var calm = 'power3.out';
+
+  document.querySelectorAll('[data-words]').forEach(function(el){
+    var text = el.textContent.trim();
+    el.setAttribute('aria-label', text);
+    var frag = document.createDocumentFragment();
+    text.split(/\s+/).filter(Boolean).forEach(function(w){
+      var mask = document.createElement('span');
+      mask.className = 'word-mask'; mask.setAttribute('aria-hidden','true');
+      var inner = document.createElement('span'); inner.textContent = w;
+      mask.appendChild(inner); frag.appendChild(mask); frag.appendChild(document.createTextNode(' '));
+    });
+    el.textContent = ''; el.appendChild(frag);
+  });
+
+  /* the two roads draw themselves, then meet */
+  document.querySelectorAll('[data-draw]').forEach(function(p){
+    var len = p.getTotalLength();
+    p.style.strokeDasharray = len; p.style.strokeDashoffset = reduced ? 0 : len;
+  });
+
+  if (reduced){
+    document.querySelectorAll('.word-mask > span').forEach(function(s){ s.style.transform = 'none'; });
+    document.querySelectorAll('.cdot').forEach(function(d){ d.setAttribute('opacity','1'); });
+    hookHeader(); return;
+  }
+
+  gsap.timeline({delay:.15})
+    .to('.hero h1 .word-mask > span', {y:0, duration:1, ease:calm, stagger:.05}, .1)
+    .fromTo('.hero p', {opacity:0, y:16}, {opacity:1, y:0, duration:.9, ease:calm}, .75);
+
+  document.querySelectorAll('[data-words]').forEach(function(el){
+    if (el.closest('.hero')) return;
+    gsap.to(el.querySelectorAll('.word-mask > span'), {y:0, duration:1, ease:calm, stagger:.045,
+      scrollTrigger:{trigger:el, start:'top 84%'}});
+  });
+  document.querySelectorAll('[data-fade]').forEach(function(el){
+    if (el.closest('.hero')) return;
+    gsap.fromTo(el, {opacity:0, y:24}, {opacity:1, y:0, duration:1, ease:calm,
+      scrollTrigger:{trigger:el, start:'top 88%'}});
+  });
+  gsap.to('[data-draw]', {strokeDashoffset:0, duration:1.5, ease:'power2.inOut', stagger:.12,
+    scrollTrigger:{trigger:'.converge svg', start:'top 78%'}});
+  gsap.to('.cdot', {opacity:1, duration:.5, ease:'back.out(2)',
+    scrollTrigger:{trigger:'.converge svg', start:'top 55%'}});
+
+  window.addEventListener('scroll', function(){ ScrollTrigger.update(); }, {passive:true});
+
+  /* failsafe — nothing may ever stay invisible */
+  function rescueReveals(){
+    document.querySelectorAll('[data-fade]').forEach(function(el){
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0 && parseFloat(getComputedStyle(el).opacity) < 0.9)
+        gsap.set(el, {opacity:1, y:0});
+    });
+    document.querySelectorAll('[data-words]').forEach(function(el){
+      var r = el.getBoundingClientRect();
+      /* if the line is on screen its words belong at rest — no exceptions */
+      if (r.top < window.innerHeight && r.bottom > 0) gsap.set(el.querySelectorAll('.word-mask > span'), {y:0});
+    });
+  }
+  window.addEventListener('load', function(){ ScrollTrigger.refresh(); setTimeout(rescueReveals, 900); });
+  /* the hero animates on load, so nothing would ever rescue it — do it explicitly */
+  setTimeout(function(){
+    gsap.set('.hero h1 .word-mask > span', {y:0});
+    gsap.set('.hero p', {opacity:1, y:0});
+  }, 2600);
+  window.addEventListener('scroll', function(){ clearTimeout(window.__r); window.__r = setTimeout(rescueReveals, 700); }, {passive:true});
+
+  hookHeader();
+
+  function hookHeader(){
+    var hd = document.querySelector('header');
+    var darks = document.querySelectorAll('.hero, .band, .bring, footer');
+    var band = 58, lastY = 0, tuckable = window.matchMedia('(max-width:760px)').matches;
+    function update(){
+      var y = window.scrollY, dark = false;
+      darks.forEach(function(el){ var r = el.getBoundingClientRect(); if (r.top <= band && r.bottom >= 0) dark = true; });
+      hd.classList.toggle('on-dark', dark);
+      hd.classList.toggle('scrolled', y > 40);
+      if (tuckable){
+        if (y > 160 && y > lastY + 4) hd.classList.add('tucked');
+        else if (y < lastY - 4 || y < 120) hd.classList.remove('tucked');
+      }
+      lastY = y;
+    }
+    window.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update);
+    update();
+  }
+})();
+</script>
