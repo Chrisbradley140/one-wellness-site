@@ -79,7 +79,7 @@ def head(title, meta, canonical):
 <meta name="description" content="%s">
 <link rel="canonical" href="https://golden-oath-site.lovable.app%s">
 <link rel="icon" href="assets/brand/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>\n<link rel="dns-prefetch" href="https://raw.githubusercontent.com">\n<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Karla:wght@400;500;600&display=swap">''' % (title, meta, canonical)
 
 print("module ready")
