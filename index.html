@@ -129,8 +129,8 @@ body.menu-open #menu a{transform:none;opacity:1}
  background:linear-gradient(135deg,var(--champagne-lt),var(--champagne) 45%,var(--gold));
  border:1px solid var(--gold);padding:19px 24px}
 @media (max-width:1100px){
- .nav{display:none}
- .nav-cta{display:none}
+ .nav{display:none!important}
+ .nav-cta{display:none!important}
  .menu-btn{display:flex}
  header{padding:16px 20px}
  .mark .mk{height:24px}
@@ -469,7 +469,8 @@ footer .terminus{background:var(--gold)}
   header{padding:16px 20px}
   .mark{font-size:20px}
   .mark small{font-size:7px;letter-spacing:.34em}
-  .nav-cta{font-size:9.5px;letter-spacing:.18em;min-height:44px;display:inline-flex;align-items:center;padding:0 0 4px}
+  /* the hamburger owns the phone header — the inline CTA stays hidden */
+  .nav-cta{font-size:9.5px;letter-spacing:.18em;min-height:44px;align-items:center;padding:0 0 4px}
   .mark{min-height:44px;display:flex;flex-direction:column;justify-content:center}
   .nav-cta .full{display:none}
   .nav-cta .short{display:inline}
@@ -503,7 +504,8 @@ footer .terminus{background:var(--gold)}
   .station .tick{left:-28px;top:6px}
   .station .drop{display:none}
   .station .yr{margin:0 0 4px;font-size:30px}
-  .station .plate{margin-left:0;width:100%;aspect-ratio:4/3;margin-top:12px}
+  .station .plate{margin-left:0;width:100%;aspect-ratio:4/5;margin-top:12px}
+  .station .plate img{object-position:50% 22%}
   .station .plate-note{margin-left:0;width:100%;aspect-ratio:auto;margin-top:12px;padding:2px 0 4px}
   .station .plate-note p{font-size:24px;padding-left:14px}
   .station .plate-note span{padding-left:14px;margin-top:8px}
@@ -642,7 +644,7 @@ footer .terminus{background:var(--gold)}
     <div class="record-head">
       <span class="k">The record</span>
       <div class="rule"></div>
-      <p class="record-intro" data-fade>More than two decades at the top of world sport — and the story ends in Riyadh.</p>
+      <p class="record-intro" data-fade>More than two decades at the top of world sport — and the story continues in Riyadh.</p>
     </div>
     <div class="rail" id="rail">
       <div class="rail-line" aria-hidden="true"></div>
@@ -650,6 +652,11 @@ footer .terminus{background:var(--gold)}
         <span class="tick"></span><span class="drop" aria-hidden="true"></span>
         <div class="yr">2008</div><div class="cap">Beijing — Aaron’s first Olympics</div>
         <div class="plate-note"><p>Where it started.</p><span>Two decades before Riyadh</span></div>
+      </div>
+      <div class="station">
+        <span class="tick"></span><span class="drop" aria-hidden="true"></span>
+        <div class="yr">2015</div><div class="cap">Bianca — first world title</div>
+        <div class="plate-note"><p>Gold.</p><span>World Champion</span></div>
       </div>
       <div class="station">
         <span class="tick"></span><span class="drop" aria-hidden="true"></span>
@@ -701,12 +708,13 @@ footer .terminus{background:var(--gold)}
       <h2 class="display" data-words>Your space, your schedule, your plan.</h2>
       <div class="home-grid">
         <div>
-          <p data-fade>A spare room, a garage, a garden, a home gym — or a gym of your choice. We design around
-            the space you have, and we bring whatever it’s missing.</p>
+          <p data-fade>A truly personal training experience, designed around your lifestyle, your goals and your
+            environment. From your private residence to a carefully selected training space, every detail is
+            tailored to you — with expert coaching brought directly to you.</p>
           <div class="fits">
             <div class="fit" data-fitrow><span class="n" aria-hidden="true">i.</span><p>You want serious coaching without the commute or the crowd.</p><span class="u"></span></div>
             <div class="fit" data-fitrow><span class="n" aria-hidden="true">ii.</span><p>Your time is protected — the session comes to you, on your schedule.</p><span class="u"></span></div>
-            <div class="fit" data-fitrow><span class="n" aria-hidden="true">iii.</span><p>You value discretion more than spectacle.</p><span class="u"></span></div>
+            <div class="fit" data-fitrow><span class="n" aria-hidden="true">iii.</span><p>A personalised programme built around your goals, progress and performance.</p><span class="u"></span></div>
           </div>
         </div>
         <div class="home-photo" data-fade>
@@ -724,16 +732,13 @@ footer .terminus{background:var(--gold)}
       </div>
       <div class="pillars">
         <div class="pillar" data-fade><h4>Training</h4>
-          <p>Sessions built around your body and your week — whether you trained yesterday or a decade ago.</p></div>
+          <p>Sessions built around your body and your week — whether you trained yesterday, a decade ago or never before.</p></div>
         <div class="pillar" data-fade><h4>Nutrition</h4>
           <p>We build the nutrition around you, not the other way round — a plan you can actually stick to.</p></div>
         <div class="pillar" data-fade><h4>Daily habits</h4>
-          <p>Small routines — sleep, movement, recovery — that fit the life you already lead. Nobody is asking you to train like an Olympian.</p></div>
-      </div>
-        <div class="c"><b>3×</b><span>World titles</span></div>
-        <div class="c"><b>No.1</b><span>World ranking</span></div>
-        <span class="who">Aaron and Bianca Cook coach every session themselves — the same discipline that survived
-          Olympic finals, applied quietly to your Tuesday morning.</span>
+          <p>Better habits, built around your life. From sleep and movement to recovery and performance,
+            we focus on the small things that move you forward — whether you’re starting from day one or
+            striving for Olympic level.</p></div>
       </div>
     </div>
   </section>
@@ -893,9 +898,9 @@ footer .terminus{background:var(--gold)}
       <div class="method-line" data-mline aria-hidden="true"></div>
       <div class="msteps">
         <div class="mstep" data-fade><span class="dot" aria-hidden="true"></span><b>01</b><h3>The introduction</h3>
-          <p>A reference from someone we already coach, then an unhurried conversation about what you actually want. We keep our client list short on purpose.</p></div>
+          <p>It starts with a conversation. We take the time to understand you, your lifestyle and what you want to achieve, before anything is planned.</p></div>
         <div class="mstep" data-fade><span class="dot" aria-hidden="true"></span><b>02</b><h3>The first visit</h3>
-          <p>We come to you — your space, your equipment, your history, your mornings. We listen far more than we talk, then design around your real life.</p></div>
+          <p>We come to you — your space, your equipment, your history, your time. We listen far more than we talk, then design around your real life.</p></div>
         <div class="mstep" data-fade><span class="dot" aria-hidden="true"></span><b>03</b><h3>The programme</h3>
           <p>Coaching begins in your space, around your week. Every session in person, every month reviewed together — and adjusted the moment life changes.</p></div>
       </div>
@@ -907,10 +912,10 @@ footer .terminus{background:var(--gold)}
   <section class="quiet">
     <div class="thin" aria-hidden="true"></div>
     <div class="wrap">
-      <span class="k">Discretion, assured</span>
-      <p data-fade>We arrive quietly, on time, alone.</p>
-      <p data-fade>We never photograph your home, and we never post.</p>
-      <p data-fade>Your name stays yours.</p>
+      <span class="k">Privacy, by design</span>
+      <p data-fade>Your home is your private space. We treat it that way.</p>
+      <p data-fade>Professional, punctual and discreet, always.</p>
+      <p data-fade>What happens in your session stays with you.</p>
     </div>
   </section>
 
@@ -919,9 +924,9 @@ footer .terminus{background:var(--gold)}
     <div class="wrap">
       <div class="intro-grid">
         <div>
-          <span class="k">By introduction only</span>
+          <span class="k">Start here</span>
           <h2 class="display" data-words>The line ends with your name on it.</h2>
-          <p class="intro-note" data-fade>Tell us who introduced you and what you are trying to achieve.
+          <p class="intro-note" data-fade>Tell us a little about what you are trying to achieve.
             Every enquiry is read and answered personally by Aaron or Bianca, within two days.</p>
         </div>
         <div>
@@ -936,12 +941,7 @@ footer .terminus{background:var(--gold)}
               <input id="f-contact" name="contact" type="text" autocomplete="email">
               <span class="err-msg">We need one way to reach you.</span>
             </div>
-            <div class="field">
-              <label for="f-intro">Introduced by</label>
-              <input id="f-intro" name="introduced" type="text">
-              <span class="err-msg">Introductions come through existing clients.</span>
-            </div>
-            <button class="submit" type="submit">Request an introduction</button>
+            <button class="submit" type="submit">Start now</button>
           </form>
           <div class="form-done" id="formDone" role="status">
             <div class="fullstop" aria-hidden="true"></div>
@@ -1205,7 +1205,7 @@ footer .terminus{background:var(--gold)}
     form.addEventListener('submit', function(e){
       e.preventDefault();
       var ok = true;
-      ['f-name','f-contact','f-intro'].forEach(function(id){
+      ['f-name','f-contact'].forEach(function(id){
         var input = document.getElementById(id), field = input.closest('.field');
         if (!input.value.trim()){ field.classList.add('err'); ok = false; }
         else field.classList.remove('err');
@@ -1219,7 +1219,7 @@ footer .terminus{background:var(--gold)}
         gsap.from(done.querySelector('.fullstop'), {scale:0, duration:.5, ease:'back.out(2)', delay:.3});
       }
     });
-    ['f-name','f-contact','f-intro'].forEach(function(id){
+    ['f-name','f-contact'].forEach(function(id){
       var input = document.getElementById(id);
       input.addEventListener('input', function(){ input.closest('.field').classList.remove('err'); });
     });

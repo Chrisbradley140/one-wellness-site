@@ -109,8 +109,8 @@ body.menu-open #menu a{transform:none;opacity:1}
  background:linear-gradient(135deg,var(--champagne-lt),var(--champagne) 45%,var(--gold));
  border:1px solid var(--gold);padding:19px 24px}
 @media (max-width:1100px){
- .nav{display:none}
- .nav-cta{display:none}
+ .nav{display:none!important}
+ .nav-cta{display:none!important}
  .menu-btn{display:flex}
  header{padding:16px 20px}
  .mark .mk{height:24px}
@@ -247,7 +247,7 @@ footer{background:linear-gradient(180deg,#16301F,#0F2018);color:var(--cream);
   .wrap{padding:0 22px}
   header{padding:16px 20px}
   .mark .mk{height:24px}
-  .nav-cta{font-size:9.5px;letter-spacing:.18em;min-height:44px;display:inline-flex;align-items:center}
+  .nav-cta{font-size:9.5px;letter-spacing:.18em;min-height:44px;align-items:center}
   .nav-cta .full{display:none}
   .nav-cta .short{display:inline}
   .hero .wrap{padding-top:120px}
@@ -304,66 +304,71 @@ footer{background:linear-gradient(180deg,#16301F,#0F2018);color:var(--cream);
     <img class="bg" src="assets/archive/founders-portrait.jpg" alt="Aaron and Bianca Cook" fetchpriority="high" decoding="async">
     <div class="wrap">
       <span class="k">Their story</span>
-      <h1 class="display" data-words>Two careers at the top of world sport. One decision.</h1>
-      <p data-fade>Aaron and Bianca Cook spent more than two decades in the hardest rooms in taekwondo —
-        Olympic medals, world titles, world No.1 rankings. Then they chose Riyadh, and a very different kind of work.</p>
+      <h1 class="display" data-words>From world-class sport to personal coaching.</h1>
+      <p data-fade>Aaron and Bianca Cook spent more than two decades at the highest level of sport. Now, they
+        bring that experience to ONE, helping people at every level move, feel and perform better.</p>
     </div>
   </section>
 
   <!-- 02 OPENING -->
   <section class="open">
     <div class="wrap">
-      <p class="lede display" data-words>Elite sport teaches you one thing above all: almost nothing about progress is dramatic.</p>
-      <p class="body" data-fade>It is the same session, done properly, on the days you feel like it and the days you
-        don't. Two decades of that is what Aaron and Bianca actually bring to a client — not the medals, but the
-        method underneath them.</p>
+      <p class="lede display" data-words>Elite sport teaches you one thing above all: there is no single definition of progress.</p>
+      <p class="body" data-fade>For one person, it is feeling stronger. For another, moving better. For someone
+        else, performing at the highest level. ONE begins with what progress means to you.</p>
     </div>
   </section>
 
   <!-- 03 BIANCA -->
-  <section class="road" id="bianca">
+  <section class="road" id="aaron">
     <div class="wrap">
       <div class="road-grid">
         <div>
-          <span class="role">Olympic medallist · World champion</span>
-          <h2 class="display" data-words>Bianca Cook</h2>
-          <p data-fade>Two Olympic bronze medals and three world titles, built over a career spent at or near the
-            top of the world rankings. A heavyweight who won by being harder to break than the person opposite her.</p>
+          <span class="role">Junior World Champion · World No.1</span>
+          <h2 class="display" data-words>Aaron Cook</h2>
+          <p data-fade>From becoming Junior World Champion and competing at his first Olympic Games at just 17,
+            Aaron went on to become a six-time European Champion, World Grand Prix Champion and World No.1.</p>
+          <p data-fade style="margin-top:14px">A career built at the highest level of international sport now
+            brings its experience, discipline and standards to ONE.</p>
           <div class="palmares" data-fade>
-            <div><b>2016</b><span>Olympic bronze — Rio</span></div>
-            <div><b>2020</b><span>Olympic bronze — Tokyo</span></div>
-            <div><b>3×</b><span>World champion</span></div>
+            <div><b>2008</b><span>Junior World Champion · First Olympic Games, aged 17</span></div>
+            <div><b>2009</b><span>Mexico — World Taekwondo Pro Tour Champion</span></div>
+            <div><b>2010–12</b><span>World No.1 · Two-time Senior European Champion</span></div>
+            <div><b>2014</b><span>Three-time Senior European Champion · World Grand Prix Champion</span></div>
+            <div><b>2015</b><span>Senior World Championship bronze</span></div>
+            <div><b>2016</b><span>Rio — Second Olympic Games</span></div>
+            <div><b>2017</b><span>Second Senior World Championship bronze</span></div>
+            <div><b>2022</b><span>Riyadh — Head Taekwondo Coach, Mahd Sports Academy</span></div>
+          </div>
+        </div>
+        <div class="stack" data-fade>
+          <figure><img src="assets/archive/04.jpg" alt="Aaron Cook competing at the Rio 2016 Olympic Games" loading="lazy" decoding="async"><figcaption>Rio · 2016</figcaption></figure>
+          <figure><img src="assets/archive/02.jpg" alt="Aaron Cook with his World Championship medal at Muju 2017" loading="lazy" decoding="async"><figcaption>Muju · 2017</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="road rev" id="bianca">
+    <div class="wrap">
+      <div class="road-grid">
+        <div>
+          <span class="role">Olympic medallist · Three-time World Champion</span>
+          <h2 class="display" data-words>Bianca Cook</h2>
+          <p data-fade>Two-time Olympic bronze medallist and three-time World Champion. Bianca was one of the best
+            in the world for years, dominating the heavyweight division and earning her place as a true heavyweight
+            champion of the world.</p>
+          <div class="palmares" data-fade>
+            <div><b>2015</b><span>First world title — World Champion</span></div>
+            <div><b>2016</b><span>Rio — Olympic bronze</span></div>
+            <div><b>2020</b><span>Tokyo — Olympic bronze</span></div>
+            <div><b>3×</b><span>World Champion</span></div>
             <div><b>No.1</b><span>World ranking</span></div>
           </div>
         </div>
         <div class="stack" data-fade>
           <figure><img src="assets/archive/01.jpg" alt="Bianca Cook on the podium at Rio 2016 with her Olympic bronze medal" loading="lazy" decoding="async"><figcaption>Rio · 2016</figcaption></figure>
           <figure><img src="assets/archive/03.jpg" alt="Bianca Cook celebrating with the Union Jack after winning Olympic bronze in Tokyo" loading="lazy" decoding="async"><figcaption>Tokyo · 2020</figcaption></figure>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 04 AARON -->
-  <section class="road rev" id="aaron">
-    <div class="wrap">
-      <div class="road-grid">
-        <div>
-          <span class="role">World medallist · World No.1</span>
-          <h2 class="display" data-words>Aaron Cook</h2>
-          <p data-fade>A career that began at the Beijing Olympics in 2008 and ran through three Olympic Games,
-            a world No.1 ranking and a World Championship medal. Known for footwork, timing and a left leg that
-            decided fights.</p>
-          <div class="palmares" data-fade>
-            <div><b>2008</b><span>First Olympic Games — Beijing</span></div>
-            <div><b>2017</b><span>World Championship medal — Muju</span></div>
-            <div><b>2023</b><span>Saudi Games — Riyadh</span></div>
-            <div><b>No.1</b><span>World ranking</span></div>
-          </div>
-        </div>
-        <div class="stack" data-fade>
-          <figure><img src="assets/archive/04.jpg" alt="Aaron Cook competing at the Rio 2016 Olympic Games" loading="lazy" decoding="async"><figcaption>Rio · 2016</figcaption></figure>
-          <figure><img src="assets/archive/02.jpg" alt="Aaron Cook with his World Championship medal at Muju 2017" loading="lazy" decoding="async"><figcaption>Muju · 2017</figcaption></figure>
         </div>
       </div>
     </div>
