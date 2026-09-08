@@ -77,7 +77,7 @@ def head(title, meta, canonical):
 <title>%s</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="%s">
-<link rel="canonical" href="https://golden-oath-site.lovable.app%s">
+<link rel="canonical" href="https://www.onewellness-online.com%s">
 <link rel="icon" href="assets/brand/favicon.png">
 <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>\n<link rel="dns-prefetch" href="https://raw.githubusercontent.com">\n<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Karla:wght@400;500;600&display=swap">''' % (title, meta, canonical)
@@ -332,7 +332,7 @@ RAW = 'assets/archive/landmarks/'
 def schema(d):
     return '''<script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HealthAndBeautyBusiness","name":"ONE Wellness",
-"description":"%s","url":"https://golden-oath-site.lovable.app/areas/%s",
+"description":"%s","url":"https://www.onewellness-online.com/areas/%s",
 "areaServed":{"@type":"Place","name":"%s, Riyadh","address":{"@type":"PostalAddress","addressLocality":"Riyadh","addressCountry":"SA"}},
 "serviceType":"Private in-home personal training",
 "founder":[{"@type":"Person","name":"Aaron Cook"},{"@type":"Person","name":"Bianca Cook"}]}
@@ -414,7 +414,7 @@ areas_index = '''%s
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HealthAndBeautyBusiness","name":"ONE Wellness",
 "description":"Private in-home personal training across Riyadh with Olympic medallists Aaron and Bianca Cook.",
-"url":"https://golden-oath-site.lovable.app/areas","serviceType":"Private in-home personal training",
+"url":"https://www.onewellness-online.com/areas","serviceType":"Private in-home personal training",
 "areaServed":[%s]}
 </script>
 <div class="grain" aria-hidden="true"></div>
