@@ -1,4 +1,20 @@
 User-agent: *
 Allow: /
 
+# AI assistants. Blocking these is the same as not existing to AI search.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 Sitemap: https://www.onewellness-online.com/sitemap.xml
