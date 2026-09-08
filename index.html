@@ -208,13 +208,17 @@ header.on-dark .nav-cta{color:var(--champagne);border-color:var(--gold)}
   filter:saturate(1.22) contrast(1.14) brightness(1.03);transition:transform .7s var(--ease)}
 .station .plate:hover img,.station .plate:hover video{transform:scale(1.04)}
 .station .plate.empty img{display:none}
-.station .plate-note{margin-top:14px;margin-left:14%;width:86%;aspect-ratio:3/4;
-  display:flex;flex-direction:column;justify-content:flex-start;padding:6px 0 0;
-  border-left:1.5px solid rgba(22,46,33,.28)}
+.station .plate-note{margin-top:14px;margin-left:14%;width:86%;aspect-ratio:3/4;position:relative;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  padding:24px 22px;border:1.5px solid rgba(196,164,104,.55);
+  background:linear-gradient(168deg,rgba(196,164,104,.14),rgba(237,228,214,.28));
+  box-shadow:0 24px 50px -22px rgba(28,22,12,.42)}
+.station .plate-note::before{content:"";position:absolute;left:50%;top:26px;transform:translateX(-50%);
+  width:34px;height:1.5px;background:var(--gold)}
 .station .plate-note p{font-family:var(--serif);font-style:italic;font-weight:300;
-  font-size:clamp(24px,2.2vw,32px);line-height:1.15;color:var(--forest);padding-left:18px}
-.station .plate-note span{display:block;margin-top:12px;padding-left:18px;font-family:var(--sans);
-  font-size:9.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--taupe)}
+  font-size:clamp(30px,2.8vw,44px);line-height:1.1;color:var(--forest)}
+.station .plate-note span{display:block;margin-top:14px;font-family:var(--sans);
+  font-size:9.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze)}
 .station .ghost{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
   font-style:italic;font-weight:300;font-size:clamp(48px,4.5vw,72px);color:rgba(22,46,33,.16);pointer-events:none}
 .station .plate:not(.empty)+.ghost{display:none}
@@ -506,9 +510,9 @@ footer .terminus{background:var(--gold)}
   .station .yr{margin:0 0 4px;font-size:30px}
   .station .plate{margin-left:0;width:100%;aspect-ratio:4/5;margin-top:12px}
   .station .plate img{object-position:50% 22%}
-  .station .plate-note{margin-left:0;width:100%;aspect-ratio:auto;margin-top:12px;padding:2px 0 4px}
-  .station .plate-note p{font-size:24px;padding-left:14px}
-  .station .plate-note span{padding-left:14px;margin-top:8px}
+  .station .plate-note{margin-left:0;width:100%;aspect-ratio:4/5;margin-top:12px;padding:24px}
+  .station .plate-note p{font-size:32px}
+  .station .plate-note span{margin-top:12px}
 
   /* the turn */
   .turn{padding:76px 0}
