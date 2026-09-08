@@ -277,7 +277,16 @@ header.on-dark .nav-cta{color:var(--champagne);border-color:var(--gold)}
 .fit p{font-style:italic;font-size:clamp(20px,1.9vw,26px)}
 .fit .k{font-size:9.5px}
 .fit .u{position:absolute;left:0;bottom:0;height:1.5px;width:100%;background:var(--forest);opacity:.35;transform-origin:left}
-.pillars{margin-top:clamp(52px,8vh,84px);display:grid;grid-template-columns:repeat(3,1fr);
+.pillar-block{margin-top:clamp(52px,8vh,84px);display:grid;
+  grid-template-columns:minmax(0,0.62fr) minmax(0,1fr);gap:clamp(30px,4.5vw,68px);align-items:center}
+.train-vid{position:relative;overflow:hidden;background:var(--forest-deep);
+  box-shadow:0 34px 70px -26px rgba(28,22,12,.55)}
+.train-vid video{width:100%;display:block;aspect-ratio:9/16;object-fit:cover;
+  filter:saturate(1.08) contrast(1.04)}
+.train-vid figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 20px 16px;
+  font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--cream);background:linear-gradient(180deg,transparent,rgba(15,32,24,.88))}
+.pillars{display:grid;grid-template-columns:1fr;
   gap:clamp(22px,3vw,44px);align-items:start}
 .pillar{position:relative;padding-top:20px;border-top:1.5px solid rgba(196,164,104,.55)}
 .pillar h4{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
@@ -448,6 +457,8 @@ footer .terminus{background:var(--gold)}
   .mstep .dot{display:none}
   .turn p.down{justify-self:center;text-align:center}
   .home-grid{grid-template-columns:1fr;gap:34px}
+  .pillar-block{grid-template-columns:1fr;gap:34px}
+  .train-vid video{aspect-ratio:4/5}
   .pillars{grid-template-columns:1fr;gap:26px}
   .arrive-grid{grid-template-columns:1fr}
 }
@@ -735,6 +746,13 @@ footer .terminus{background:var(--gold)}
           </div>
         </div>
       </div>
+      <div class="pillar-block">
+        <figure class="train-vid" data-fade>
+          <video src="assets/archive/training.mp4" poster="assets/archive/training-poster.webp"
+                 autoplay muted loop playsinline preload="none"
+                 aria-label="Aaron and Bianca Cook training"></video>
+          <figcaption>Aaron &amp; Bianca, training</figcaption>
+        </figure>
       <div class="pillars">
         <div class="pillar" data-fade><h4>Training</h4>
           <p>Sessions built around your body and your week — whether you trained yesterday, a decade ago or never before.</p></div>
@@ -744,6 +762,7 @@ footer .terminus{background:var(--gold)}
           <p>Better habits, built around your life. From sleep and movement to recovery and performance,
             we focus on the small things that move you forward — whether you’re starting from day one or
             striving for Olympic level.</p></div>
+      </div>
       </div>
     </div>
   </section>
