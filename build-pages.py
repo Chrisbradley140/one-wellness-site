@@ -87,13 +87,13 @@ FAQ = [
  ("Do I need a home gym?",
   "No. We have coached people in a spare room, a garage, a garden and a full basement gym, and the programme is written for whatever you actually have. Where kit is genuinely needed we bring it with us, and if you would rather train at a gym of your choice, we can do that instead."),
  ("How long is a session, and how often?",
-  "Sessions are typically an hour. Most clients train two or three times a week — enough to progress properly without taking over your calendar. The schedule is set around your week, not ours."),
+  "Sessions are typically an hour. Most clients train two or three times a week, enough to progress properly without taking over your calendar. The schedule is set around your week, not ours."),
  ("Who actually coaches me?",
-  "Aaron or Bianca, in person. This is not an agency that sends whoever is free — that is the whole point of keeping the client list short."),
+  "Aaron or Bianca, in person. This is not an agency that sends whoever is free, that is the whole point of keeping the client list short."),
  ("I have not trained seriously in years. Is this for me?",
   "Yes, and it is most of who we work with. Nobody is asking you to train like an Olympian. The first block is about building something you can repeat, not about proving anything."),
  ("How private is it?",
-  "Completely. No client names, no photographs, no social posts, and no mention of who else we coach — including to you. Discretion works in both directions."),
+  "Completely. No client names, no photographs, no social posts, and no mention of who else we coach, including to you. Discretion works in both directions."),
  ("What happens at the introduction?",
   "A conversation, not a sales call. We talk about what you want, look at your space, and tell you honestly whether we are the right fit. If we are not, we will say so."),
 ]
@@ -129,20 +129,20 @@ PRIVATE = '''%s
 
       <div class="steps">
         <div class="step"><b>The session</b>
-          <p>An hour, in your home or a gym of your choice, coached in person by Aaron or Bianca. Warm-up, the work that matters that day, and a proper finish — not a circuit designed to make you sweat for the sake of it.</p>
+          <p>An hour, in your home or a gym of your choice, coached in person by Aaron or Bianca. Warm-up, the work that matters that day, and a proper finish, not a circuit designed to make you sweat for the sake of it.</p>
           <p>Every session is written before we arrive and adjusted while we are there, because the plan on paper is not always the plan your body agrees to.</p></div>
         <div class="step"><b>Your space</b>
-          <p>A spare room, a garage, a garden, a home gym — or a gym of your choice. We look at what you already have before suggesting you buy anything, and we travel with whatever the room is missing.</p></div>
+          <p>A spare room, a garage, a garden, a home gym, or a gym of your choice. We look at what you already have before suggesting you buy anything, and we travel with whatever the room is missing.</p></div>
         <div class="step"><b>Your schedule</b>
-          <p>Two or three sessions a week suits most people. Times are set around your week and moved when your week moves — a programme you abandon in a fortnight is worth nothing.</p></div>
+          <p>Two or three sessions a week suits most people. Times are set around your week and moved when your week moves, a programme you abandon in a fortnight is worth nothing.</p></div>
         <div class="step"><b>Between sessions</b>
-          <p>Nutrition built around your household and your travel, and the daily habits — sleep, steps, recovery — that decide whether the training holds. Direct access to your coach when something changes.</p></div>
+          <p>Nutrition built around your household and your travel, and the daily habits, sleep, steps, recovery, that decide whether the training holds. Direct access to your coach when something changes.</p></div>
       </div>
 
       <div class="incl3">
-        <div class="icard"><h3>Training</h3><p>Sessions built around your body and your week — whether you trained yesterday or a decade ago.</p></div>
-        <div class="icard"><h3>Nutrition</h3><p>We build the nutrition around you, not the other way round — a plan you can actually stick to.</p></div>
-        <div class="icard"><h3>Daily habits</h3><p>Small routines — sleep, movement, recovery — that fit the life you already lead. Nobody is asking you to train like an Olympian.</p></div>
+        <div class="icard"><h3>Training</h3><p>Sessions built around your body and your week, whether you trained yesterday or a decade ago.</p></div>
+        <div class="icard"><h3>Nutrition</h3><p>We build the nutrition around you, not the other way round, a plan you can actually stick to.</p></div>
+        <div class="icard"><h3>Daily habits</h3><p>Small routines, sleep, movement, recovery, that fit the life you already lead. Nobody is asking you to train like an Olympian.</p></div>
       </div>
     </div>
   </section>
@@ -151,9 +151,9 @@ PRIVATE = '''%s
     <div class="wrap">
       <span class="k">The first ninety days</span>
       <div class="steps" style="margin-top:clamp(30px,5vh,48px)">
-        <div class="step"><b>Weeks 1–4</b><p>Establishing a baseline and building the habit of turning up. Load is deliberately conservative — we are finding out how you move and how you recover before we ask anything of you.</p></div>
-        <div class="step"><b>Weeks 5–8</b><p>The work gets real. Progressive loading, technique refined session by session, nutrition adjusted around what has actually been happening rather than what was planned.</p></div>
-        <div class="step"><b>Weeks 9–12</b><p>The first honest review. What has changed, what has not, and what the next block should look like. This is where most people notice the difference outside the session — sleep, energy, how they carry themselves.</p></div>
+        <div class="step"><b>Weeks 1, 4</b><p>Establishing a baseline and building the habit of turning up. Load is deliberately conservative, we are finding out how you move and how you recover before we ask anything of you.</p></div>
+        <div class="step"><b>Weeks 5, 8</b><p>The work gets real. Progressive loading, technique refined session by session, nutrition adjusted around what has actually been happening rather than what was planned.</p></div>
+        <div class="step"><b>Weeks 9, 12</b><p>The first honest review. What has changed, what has not, and what the next block should look like. This is where most people notice the difference outside the session, sleep, energy, how they carry themselves.</p></div>
       </div>
     </div>
   </section>
@@ -206,8 +206,7 @@ ABOUT = '''%s
     <div class="wrap">
       <span class="k">About</span>
       <h1 class="display">A very small practice, run to a very high standard.</h1>
-      <p>ONE Wellness is private in-home coaching in Riyadh. No studio, no membership, no class timetable —
-        two coaches who spent their careers at the top of world sport, working with a deliberately short list
+      <p>ONE Wellness is private in-home coaching in Riyadh. No studio, no membership, no class timetable, two coaches who spent their careers at the top of world sport, working with a deliberately short list
         of clients in their own homes.</p>
     </div>
   </section>
@@ -217,11 +216,11 @@ ABOUT = '''%s
       <p class="plede">Most coaching fails for boring reasons: the gym is too far, the plan is too rigid, and nobody notices when you stop.</p>
       <div class="acols">
         <div><h2>What we do differently</h2><p>We remove the friction that ends most programmes. The session comes to you, at a time that fits your week, written for the space and equipment you actually have. And because the list is short, we notice immediately when something slips.</p></div>
-        <div><h2>What we are not</h2><p>We are not an agency with a roster of trainers, and we are not a transformation programme with a countdown on it. If you want to be shouted at for six weeks and then left alone, we are the wrong choice — and we will tell you so at the introduction.</p></div>
+        <div><h2>What we are not</h2><p>We are not an agency with a roster of trainers, and we are not a transformation programme with a countdown on it. If you want to be shouted at for six weeks and then left alone, we are the wrong choice, and we will tell you so at the introduction.</p></div>
       </div>
 
       <div class="tenets">
-        <div><h3>Discretion</h3><p>No client names, no photographs, no social posts — including about you, and including to you about anyone else. It works in both directions or it is not discretion.</p></div>
+        <div><h3>Discretion</h3><p>No client names, no photographs, no social posts, including about you, and including to you about anyone else. It works in both directions or it is not discretion.</p></div>
         <div><h3>Patience</h3><p>Nobody peaks in six weeks. Programmes are built in blocks and judged over months, which is exactly why they hold when life gets busy.</p></div>
         <div><h3>Honesty</h3><p>If we are not the right fit, we say so at the introduction rather than taking the work. If something is not progressing, you hear it from us first.</p></div>
       </div>
@@ -232,7 +231,7 @@ ABOUT = '''%s
     <div class="wrap">
       <span class="k">Who we work with</span>
       <div class="steps" style="margin-top:clamp(28px,4.5vh,44px)">
-        <div class="step"><b>Beginners</b><p>Most of our clients have not trained seriously in years, and several never have. Nobody is asking you to train like an Olympian — the first block is about building something you can repeat.</p></div>
+        <div class="step"><b>Beginners</b><p>Most of our clients have not trained seriously in years, and several never have. Nobody is asking you to train like an Olympian, the first block is about building something you can repeat.</p></div>
         <div class="step"><b>The time-poor</b><p>Executives, founders and parents whose calendars move without warning. The programme is designed to bend rather than break when your week changes.</p></div>
         <div class="step"><b>The private</b><p>People who would simply rather not train in public. That is a perfectly good reason, and it is the reason this service exists.</p></div>
       </div>
@@ -245,8 +244,8 @@ ABOUT = '''%s
         <figure><img src="%sfounders-portrait.jpg" alt="Aaron and Bianca Cook" loading="lazy" decoding="async"></figure>
         <div>
           <h2>Aaron &amp; Bianca Cook</h2>
-          <p>More than two decades at the very top of world taekwondo between them — Olympic medals, world
-            titles and world No.1 rankings — and now a practice in Riyadh built on the method underneath all of it
+          <p>More than two decades at the very top of world taekwondo between them, Olympic medals, world
+            titles and world No.1 rankings, and now a practice in Riyadh built on the method underneath all of it
             rather than the medals themselves.</p>
           <p>They coach every session personally.</p>
           <a class="more" href="/story">Read their story</a>
@@ -273,7 +272,7 @@ ABOUT = '''%s
        SPRITE + '\n' + header(''),
        RAW, FOOT, ba.HEADER_JS)
 
-# the about hero is typographic, not a photo — teach the header which sections are dark
+# the about hero is typographic, not a photo, teach the header which sections are dark
 ABOUT = ABOUT.replace(".ahero, .acta, footer", ".thero, .acta, footer")
 open('about.html','w').write(ABOUT)
 print('wrote about.html', os.path.getsize('about.html'), 'bytes')

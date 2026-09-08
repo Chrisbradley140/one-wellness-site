@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Generates the /areas index and one page per Riyadh district we name on the site.
-Each page is written by hand below — no spun text — because thin near-duplicate
+Each page is written by hand below, no spun text, because thin near-duplicate
 location pages are exactly what search engines discount."""
 import re, io, os
 
@@ -12,35 +12,35 @@ D = [
    title='Personal Training in Diriyah, Riyadh | ONE Wellness',
    meta='Private in-home personal training in Diriyah with Olympic medallists Aaron and Bianca Cook. We bring the session to your door.',
    lede='Heritage on one side, one of the most ambitious developments in the Kingdom on the other. Diriyah is changing fast, and the people moving into it tend to be building something themselves.',
-   character='Diriyah holds At-Turaif, the mud-brick quarter where the first Saudi state began and now a UNESCO World Heritage Site. Around it, Bujairi Terrace and a wave of new residences have brought a very different pace. Wadi Hanifah runs alongside, which means residents here already have somewhere green to walk and run — a rarity in the city.',
+   character='Diriyah holds At-Turaif, the mud-brick quarter where the first Saudi state began and now a UNESCO World Heritage Site. Around it, Bujairi Terrace and a wave of new residences have brought a very different pace. Wadi Hanifah runs alongside, which means residents here already have somewhere green to walk and run, a rarity in the city.',
    space='Homes here range from established family villas to brand-new residences still being fitted out. If your gym is not built yet, that is not a problem: we have programmed around an empty garage and a set of dumbbells more than once, and we bring what the room is missing.',
-   note='If you already walk Wadi Hanifah, we will build around it rather than ignore it — the easiest habit to keep is the one you already have.'),
+   note='If you already walk Wadi Hanifah, we will build around it rather than ignore it, the easiest habit to keep is the one you already have.'),
 
  dict(slug='diplomatic-quarter', file='area-dq.html', name='Diplomatic Quarter', img='dq.jpg',
    co='24.68 N · 46.62 E',
-   title='Personal Training in the Diplomatic Quarter, Riyadh | ONE Wellness',
+   title='Personal Training in the Diplomatic Quarter | ONE Wellness',
    meta='Discreet private personal training in the Diplomatic Quarter (DQ), Riyadh. Olympic-level coaching in your own home, on your schedule.',
    article='the ',
    lede='The DQ was designed for privacy, and the people who live here expect it. So do we.',
    character='Low-rise, walled, landscaped and green, the Diplomatic Quarter is unlike anywhere else in Riyadh. Its walking paths and parks are among the best in the city, and the district is built at a human scale rather than a motorway one. Residents include diplomatic staff and families who value not being on display.',
    space='Housing in the DQ is a mix of compound villas, townhouses and apartments, often with shared facilities. We can work in your own home or in your compound gym, and we are used to arranging access quietly and in advance.',
-   note='Discretion is not an add-on here. No cameras, no social posts, no client names — the same standard we apply everywhere, but it matters more in this postcode.'),
+   note='Discretion is not an add-on here. No cameras, no social posts, no client names, the same standard we apply everywhere, but it matters more in this postcode.'),
 
  dict(slug='hittin', file='area-hittin.html', name='Hittin', img='hittin.jpg',
    co='24.76 N · 46.60 E',
    title='Personal Training in Hittin, Riyadh | ONE Wellness',
    meta='Private in-home personal training in Hittin, Riyadh, with Olympic medallists Aaron and Bianca Cook. Training, nutrition and habits built around you.',
    lede='Large homes, young families, and not much spare time. Hittin is where the commute to a gym costs more than the session.',
-   character='One of north-west Riyadh’s newer affluent districts, Hittin is largely low-density villa housing, close to Wadi Hanifah and a short drive from the Diriyah developments. It is residential in the truest sense — people come home here rather than pass through.',
+   character='One of north-west Riyadh’s newer affluent districts, Hittin is largely low-density villa housing, close to Wadi Hanifah and a short drive from the Diriyah developments. It is residential in the truest sense, people come home here rather than pass through.',
    space='Most Hittin homes have more usable space than their owners realise: a majlis that is empty on weekday mornings, a garage, a shaded stretch of garden. We look at what you have before suggesting you buy anything.',
-   note='Families are common here, and so are split sessions — one parent early, one later, same programme logic, different execution.'),
+   note='Families are common here, and so are split sessions, one parent early, one later, same programme logic, different execution.'),
 
  dict(slug='al-malqa', file='area-malqa.html', name='Al Malqa', img='malqa.jpg',
    co='24.80 N · 46.61 E',
    title='Personal Training in Al Malqa, Riyadh | ONE Wellness',
    meta='Private personal training in Al Malqa, Riyadh. In-home coaching from Olympic medallists, built around your equipment and your week.',
    lede='Close to KAFD, full of people whose calendars move without warning. Al Malqa needs training that survives a changed schedule.',
-   character='Al Malqa sits in northern Riyadh, near the King Abdullah Financial District, and has grown quickly into a district of modern villas and newer apartment buildings. It attracts professionals and young families — people early in a long career rather than at the end of one.',
+   character='Al Malqa sits in northern Riyadh, near the King Abdullah Financial District, and has grown quickly into a district of modern villas and newer apartment buildings. It attracts professionals and young families, people early in a long career rather than at the end of one.',
    space='A newer build often means a compact but well-specified space: a home gym room with a rack and not much else, or an apartment with a shared facility downstairs. Both work. We programme for the equipment in front of us.',
    note='If your week genuinely cannot be predicted, say so at the introduction. We would rather design a programme that bends than one you abandon in a fortnight.'),
 
@@ -50,7 +50,7 @@ D = [
    meta='Private in-home personal training in Al Nakheel, Riyadh. Olympic-level coaching delivered to your door, on your schedule.',
    lede='Well connected, centrally placed, and busy. Al Nakheel is the district where "I will go later" quietly becomes "I did not go".',
    character='Al Nakheel sits in north-central Riyadh, close to King Fahd Road and within easy reach of the financial district. It is a mixed district of villas and apartment buildings, popular precisely because it is close to everything.',
-   space='Being central often means less square footage, not more. That is fine — a corridor, a living room and a set of adjustable dumbbells is a real training environment when the programme is written for it.',
+   space='Being central often means less square footage, not more. That is fine, a corridor, a living room and a set of adjustable dumbbells is a real training environment when the programme is written for it.',
    note='Being close to a gym is not the same as going to one. The whole point of this service is removing the twenty minutes that stop you.'),
 
  dict(slug='al-olaya', file='area-olaya.html', name='Al Olaya', img='olaya.jpg',
@@ -58,7 +58,7 @@ D = [
    title='Personal Training in Al Olaya, Riyadh | ONE Wellness',
    meta='Private personal training in Al Olaya, Riyadh. Apartment and penthouse coaching from Olympic medallists Aaron and Bianca Cook.',
    lede='Kingdom Centre, Al Faisaliah, and a lot of people working hours that make a gym membership decorative.',
-   character='Al Olaya is central Riyadh’s business district — towers, hotels, offices and high-rise residential, with the Kingdom Centre and Al Faisaliah Tower on its skyline. Residents here are more likely to live in an apartment than a villa, and more likely to be time-poor than space-rich.',
+   character='Al Olaya is central Riyadh’s business district, towers, hotels, offices and high-rise residential, with the Kingdom Centre and Al Faisaliah Tower on its skyline. Residents here are more likely to live in an apartment than a villa, and more likely to be time-poor than space-rich.',
    space='Apartment training is its own discipline. Downstairs facilities are often better than people assume, and where they are not, a well-chosen kit list and a floor plan will do more than a membership. Noise and neighbours are part of the design, not an afterthought.',
    note='Early mornings and late evenings are normal here. Sessions are booked around your working day, not the other way round.'),
 ]
@@ -72,15 +72,24 @@ def nav_html(active=''):
         out.append('<a href="%s"%s>%s</a>' % (href, cur, label))
     return '\n      '.join(out)
 
+OG_IMG = "https://raw.githubusercontent.com/Chrisbradley140/one-wellness-site/main/assets/archive/founders-portrait.webp"
+
 def head(title, meta, canonical):
     return '''<meta charset="utf-8">
 <title>%s</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="%s">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ONE Wellness">
+<meta property="og:title" content="%s">
+<meta property="og:description" content="%s">
+<meta property="og:url" content="https://www.onewellness-online.com%s">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrisbradley140/one-wellness-site/main/assets/archive/founders-portrait.webp">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://www.onewellness-online.com%s">
 <link rel="icon" href="assets/brand/favicon.png">
 <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>\n<link rel="dns-prefetch" href="https://raw.githubusercontent.com">\n<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Karla:wght@400;500;600&display=swap">''' % (title, meta, canonical)
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Karla:wght@400;500;600&display=swap">''' % (title, meta, title, meta, canonical, canonical)
 
 print("module ready")
 
@@ -262,7 +271,7 @@ NAVCSS_ADDON = NAVCSS[NAVCSS.index('.nav{display:flex'):]
 
 def header_html(active=''):
     return '''<header class="on-dark">
-  <a class="mark" href="/" aria-label="ONE Wellness — home"><svg class="mk" aria-hidden="true" focusable="false"><use href="#ow-mark"></use></svg><small>WELLNESS</small></a>
+  <a class="mark" href="/" aria-label="ONE Wellness, home"><svg class="mk" aria-hidden="true" focusable="false"><use href="#ow-mark"></use></svg><small>WELLNESS</small></a>
   <nav class="nav" aria-label="Primary">
       %s
   </nav>
@@ -368,9 +377,9 @@ def area_page(d, others):
       </div>
       <div class="anote"><p>%s</p></div>
       <div class="astrip">
-        <div><h3>Training</h3><p>Sessions built around your body and your week — whether you trained yesterday or a decade ago.</p></div>
-        <div><h3>Nutrition</h3><p>We build the nutrition around you, not the other way round — a plan you can actually stick to.</p></div>
-        <div><h3>Daily habits</h3><p>Small routines — sleep, movement, recovery — that fit the life you already lead.</p></div>
+        <div><h3>Training</h3><p>Sessions built around your body and your week, whether you trained yesterday or a decade ago.</p></div>
+        <div><h3>Nutrition</h3><p>We build the nutrition around you, not the other way round, a plan you can actually stick to.</p></div>
+        <div><h3>Daily habits</h3><p>Small routines, sleep, movement, recovery, that fit the life you already lead.</p></div>
       </div>
     </div>
   </section>
@@ -436,7 +445,7 @@ areas_index = '''%s
       <div class="ngrid" style="margin-top:clamp(40px,6vh,64px)">
         %s
       </div>
-      <div class="anote" style="margin-top:clamp(44px,7vh,72px)"><p>Not on this list? We cover the whole city — tell us where you are at the introduction and we will tell you honestly whether we can do it justice.</p></div>
+      <div class="anote" style="margin-top:clamp(44px,7vh,72px)"><p>Not on this list? We cover the whole city, tell us where you are at the introduction and we will tell you honestly whether we can do it justice.</p></div>
     </div>
   </section>
 
@@ -452,7 +461,7 @@ areas_index = '''%s
 %s
 %s
 ''' % (head('Areas We Cover in Riyadh | ONE Wellness',
-            'Private in-home personal training across Riyadh — Diriyah, the Diplomatic Quarter, Hittin, Al Malqa, Al Nakheel and Al Olaya.',
+            'Private in-home personal training across Riyadh, Diriyah, the Diplomatic Quarter, Hittin, Al Malqa, Al Nakheel and Al Olaya.',
             '/areas'),
        CSS.replace('NAVCSS', NAVCSS),
        ','.join('{"@type":"Place","name":"%s, Riyadh"}' % d['name'] for d in D),
@@ -477,4 +486,4 @@ for f, active in (('index.html','/'), ('online.html','/online-coaching'), ('stor
     s = s.replace('<script src="vendor/gsap.min.js"></script>',
                   '<script>\n(function(){\n%s\n})();\n</script>\n<script src="vendor/gsap.min.js"></script>' % MENU_JS, 1)
     open(f,'w').write(s)
-    print(f, 'nav injected — nav:', s.count('class="nav"'), 'menu:', s.count('id="menu"'))
+    print(f, 'nav injected, nav:', s.count('class="nav"'), 'menu:', s.count('id="menu"'))
