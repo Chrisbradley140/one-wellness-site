@@ -18,6 +18,9 @@
 "serviceType":"Private in-home personal training",
 "founder":[{"@type":"Person","name":"Aaron Cook"},{"@type":"Person","name":"Bianca Cook"}]}
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need a gym to do this?","acceptedAnswer":{"@type":"Answer","text":"No. Your programme is written around whatever you have, whether that is a full gym, a set of dumbbells at home, or nothing but the floor. Tell us what you have access to at the start and we build from there."}},{"@type":"Question","name":"How is this different from an app or a training plan I could download?","acceptedAnswer":{"@type":"Answer","text":"An app gives everybody the same programme. This is written for you by Aaron or Bianca, adjusted every block as you progress, and you send your lifts in so they can correct your technique. You are talking to a person, not a piece of software."}},{"@type":"Question","name":"How often do I actually speak to my coach?","acceptedAnswer":{"@type":"Answer","text":"You have direct messaging with Aaron or Bianca throughout, plus a scheduled video call each month to review what is working and change what is not. You are not left on your own between calls."}},{"@type":"Question","name":"I travel a lot for work. Does that break the programme?","acceptedAnswer":{"@type":"Answer","text":"It is designed to survive travel. Tell us your schedule and the programme bends around it, including hotel gym sessions and weeks where the plan has to be simpler. A programme you abandon the moment life gets busy is worth nothing."}},{"@type":"Question","name":"Can I choose Aaron or Bianca?","acceptedAnswer":{"@type":"Answer","text":"Yes. You pick when you join, or you can leave it to them and they will match you to whoever fits your goal best."}},{"@type":"Question","name":"What if I have never trained properly before?","acceptedAnswer":{"@type":"Answer","text":"That describes most of the people we work with. Nobody is asking you to train like an Olympian. The first block is about building something you can repeat, not proving anything."}}]}
+</script>
 <link rel="canonical" href="https://www.onewellness-online.com/online-coaching">
 <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
 <link rel="dns-prefetch" href="https://raw.githubusercontent.com">
@@ -338,6 +341,27 @@ footer{background:linear-gradient(180deg,#16301F,#0F2018);color:var(--cream);
   *{transition-duration:.01ms!important}
 }
 </style>
+<style>
+.faqsec{position:relative;padding:clamp(80px,12vh,140px) 0}
+.faqsec::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+ background:linear-gradient(180deg,rgba(232,218,192,0),rgba(228,212,183,.55) 22%,rgba(228,212,183,.55) 78%,rgba(232,218,192,0))}
+.faqsec .wrap{position:relative;z-index:1}
+.faqsec h2{font-size:clamp(28px,3.2vw,46px);color:var(--forest);margin:20px 0 0;max-width:14em}
+.faq{max-width:52em;margin-top:clamp(34px,5vh,52px);border-top:1.5px solid rgba(34,31,27,.18)}
+.faq details{border-bottom:1px solid rgba(34,31,27,.15)}
+.faq summary{list-style:none;cursor:pointer;padding:clamp(20px,2.6vh,26px) 44px clamp(20px,2.6vh,26px) 0;
+ font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(20px,1.9vw,26px);color:var(--forest);
+ position:relative;transition:opacity .3s var(--ease)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{opacity:.66}
+.faq summary::after{content:"";position:absolute;right:8px;top:50%;width:11px;height:11px;
+ border-right:1.5px solid var(--taupe);border-bottom:1.5px solid var(--taupe);
+ transform:translateY(-70%) rotate(45deg);transition:transform .35s var(--ease)}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq .a{padding:0 0 clamp(22px,3vh,30px);font-family:var(--sans);font-size:14.5px;line-height:1.8;
+ color:rgba(34,31,27,.78);max-width:44em}
+@media (max-width:760px){.faqsec{padding:70px 0}.faqsec h2{font-size:27px}.faq summary{font-size:19px}}
+</style>
 
 <svg class="brand-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><symbol id="ow-mark" viewBox="365 462 350 156"><path fill-rule="nonzero" fill="currentColor" fill-opacity="1" d="M 460.539062 533.0625 C 460.539062 506.679688 439.152344 485.292969 412.769531 485.292969 C 386.386719 485.292969 365 506.679688 365 533.0625 C 365 559.445312 386.386719 580.832031 412.769531 580.832031 C 439.152344 580.832031 460.539062 559.445312 460.539062 533.0625 "/>
 <path fill-rule="nonzero" fill="currentColor" fill-opacity="1" d="M 494.03125 570.515625 L 499.636719 563.378906 C 506.078125 555.175781 517.792969 553.398438 526.378906 559.320312 L 578.507812 595.277344 C 593.824219 605.84375 614.488281 592.453125 610.707031 574.234375 C 604.667969 545.097656 605.382812 515.964844 612.863281 486.828125 C 615.300781 477.335938 603.472656 470.953125 597.070312 478.371094 L 568.605469 511.335938 C 563.8125 516.886719 555.570312 517.851562 549.625 513.550781 L 498.390625 476.503906 C 485.089844 466.886719 466.828125 479.125 470.964844 495.007812 C 476.765625 517.253906 477.746094 539.5 473.910156 561.746094 C 471.921875 573.269531 486.808594 579.710938 494.03125 570.515625 "/>
@@ -494,6 +518,22 @@ footer{background:linear-gradient(180deg,#16301F,#0F2018);color:var(--cream);
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faqsec">
+    <div class="wrap">
+      <span class="k">Questions</span>
+      <h2 class="display" data-words>The things people ask before they join.</h2>
+      <div class="faq">
+        <details><summary>Do I need a gym to do this?</summary><div class="a">No. Your programme is written around whatever you have, whether that is a full gym, a set of dumbbells at home, or nothing but the floor. Tell us what you have access to at the start and we build from there.</div></details>
+        <details><summary>How is this different from an app or a training plan I could download?</summary><div class="a">An app gives everybody the same programme. This is written for you by Aaron or Bianca, adjusted every block as you progress, and you send your lifts in so they can correct your technique. You are talking to a person, not a piece of software.</div></details>
+        <details><summary>How often do I actually speak to my coach?</summary><div class="a">You have direct messaging with Aaron or Bianca throughout, plus a scheduled video call each month to review what is working and change what is not. You are not left on your own between calls.</div></details>
+        <details><summary>I travel a lot for work. Does that break the programme?</summary><div class="a">It is designed to survive travel. Tell us your schedule and the programme bends around it, including hotel gym sessions and weeks where the plan has to be simpler. A programme you abandon the moment life gets busy is worth nothing.</div></details>
+        <details><summary>Can I choose Aaron or Bianca?</summary><div class="a">Yes. You pick when you join, or you can leave it to them and they will match you to whoever fits your goal best.</div></details>
+        <details><summary>What if I have never trained properly before?</summary><div class="a">That describes most of the people we work with. Nobody is asking you to train like an Olympian. The first block is about building something you can repeat, not proving anything.</div></details>
+      </div>
+    </div>
+  </section>
+
   <!-- 06 JOIN -->
   <section class="join" id="join">
     <div class="wrap">
@@ -547,6 +587,8 @@ footer{background:linear-gradient(180deg,#16301F,#0F2018);color:var(--cream);
       </div>
     </div>
   </section>
+
+
 
 </main>
 
