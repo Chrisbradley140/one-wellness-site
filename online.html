@@ -622,8 +622,22 @@ footer{background:linear-gradient(180deg,#16301F,#0F2018);color:var(--cream);
   }
 })();
 </script>
-<script src="vendor/gsap.min.js"></script>
-<script src="vendor/ScrollTrigger.min.js"></script>
+<style>
+/* pure CSS backstop: even with no JavaScript at all, the loader clears itself */
+#loader{animation:loaderBail .01s linear 4.5s forwards}
+@keyframes loaderBail{to{opacity:0;visibility:hidden;pointer-events:none}}
+</style>
+<script>
+/* if the animation library never arrives, show the page anyway */
+window.addEventListener('load', function(){
+  if (window.gsap) return;
+  var l = document.getElementById('loader'); if (l) l.remove();
+  document.querySelectorAll('.word-mask > span').forEach(function(s){ s.style.transform = 'none'; });
+  document.querySelectorAll('[data-fade]').forEach(function(e){ e.style.opacity = '1'; e.style.transform = 'none'; });
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
 (function(){
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches || location.search.indexOf('flat') > -1;
