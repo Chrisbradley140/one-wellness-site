@@ -1,14 +1,14 @@
 <meta charset="utf-8">
 <title>Personal Training in Riyadh | ONE Wellness</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Olympic-level coaching, delivered at home across Riyadh. By introduction only.">
+<meta name="description" content="Private personal training in Riyadh. One-to-one coaching in your home or gym, on your schedule, from Olympic medallists Aaron and Bianca Cook.">
 <link rel="icon" href="assets/brand/favicon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ONE Wellness">
 <meta property="og:title" content="Personal Training in Riyadh | ONE Wellness">
-<meta property="og:description" content="Olympic-level coaching, delivered at home across Riyadh. By introduction only.">
+<meta property="og:description" content="Private personal training in Riyadh. One-to-one coaching in your home or gym, on your schedule, from Olympic medallists Aaron and Bianca Cook.">
 <meta property="og:url" content="https://www.onewellness-online.com/">
-<meta property="og:image" content="https://raw.githubusercontent.com/Chrisbradley140/one-wellness-site/main/assets/archive/founders-portrait.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrisbradley140/one-wellness-site/main/assets/pt/terrace-session.webp">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -95,8 +95,8 @@
 <style>
 /* ═══════ ONE Wellness, ONE LINE ═══════
    One continuous forest line runs the site:
-   arrival → record timeline → the turn → your home →
-   the map of Riyadh → method stations → quiet → signature. */
+   arrival → your space → your coaches → across Riyadh →
+   how it works → quiet → signature. */
 :root{
   --forest:#162E21; --forest-deep:#0F2018; --forest-warm:#1C3A2A;
   --cream:#FBF9F5; --bone:#F7F3EC; --sand:#EDE4D6;
@@ -227,109 +227,55 @@ header.on-dark .mark{color:var(--cream)}
 header.on-dark .mark small{color:var(--champagne)}
 header.on-dark .nav-cta{color:var(--champagne);border-color:var(--gold)}
 
-/* ═══ 01 arrival ═══ */
+/* ═══ 01 arrival: the client first, the coaches on the plate ═══ */
 .arrive{min-height:100vh;min-height:100svh;position:relative;display:flex;align-items:center;
   background:var(--forest-deep);overflow:hidden}
-.hero-video{position:absolute;inset:0;z-index:0;overflow:hidden}
-.hero-video video{width:100%;height:100%;object-fit:cover;object-position:50% 32%;
-  transform:scale(1.18);filter:blur(16px) saturate(1.35) contrast(1.08) brightness(.92)}
-.hero-scrim{position:absolute;inset:0;pointer-events:none;
+.hero-field{position:absolute;inset:0;z-index:0;pointer-events:none;
   background:
-    linear-gradient(100deg, rgba(15,32,24,.90) 0%, rgba(18,39,28,.78) 34%, rgba(22,46,33,.46) 62%, rgba(22,46,33,.30) 100%),
-    radial-gradient(ellipse 60% 50% at 82% 26%, rgba(196,164,104,.30), transparent 66%),
-    linear-gradient(180deg, rgba(15,32,24,.55) 0%, transparent 26%, transparent 62%, rgba(15,32,24,.75) 100%)}
+    radial-gradient(ellipse 60% 50% at 82% 30%, rgba(196,164,104,.30), transparent 66%),
+    radial-gradient(ellipse 70% 60% at 10% 92%, rgba(168,135,86,.18), transparent 66%),
+    linear-gradient(168deg, #16301F 0%, #0F2018 52%, #14291D 100%)}
 .arrive-one{position:absolute;right:-3vw;bottom:-4vh;z-index:1;font-weight:300;line-height:.75;
   font-size:clamp(170px,24vw,360px);letter-spacing:.02em;color:transparent;-webkit-text-stroke:1px rgba(227,211,179,.5);
   opacity:.28;user-select:none;pointer-events:none}
 .arrive-grid{position:relative;z-index:2;width:100%;max-width:1400px;margin:0 auto;
-  padding:120px clamp(24px,4.5vw,64px) 90px;display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);
-  gap:clamp(32px,4vw,72px);align-items:center}
-.arrive-copy{position:relative;max-width:780px}
+  padding:130px clamp(24px,4.5vw,64px) 100px;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);
+  gap:clamp(32px,5vw,90px);align-items:center}
+.arrive-copy{position:relative;max-width:680px}
 .arrive-copy .k{display:block;margin-bottom:26px;color:var(--champagne)}
-.arrive-copy h1{font-size:clamp(38px,4.4vw,64px);color:var(--cream);text-wrap:balance}
-.arrive-intro{margin-top:26px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
-.arrive-intro .lbl{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.34em;
-  text-transform:uppercase;color:var(--gold)}
-.arrive-intro .nm{font-family:var(--serif);font-style:italic;font-weight:300;
-  font-size:clamp(24px,2.4vw,36px);color:var(--champagne)}
-.arrive-copy p.lede{margin-top:26px;font-family:var(--sans);font-size:14px;line-height:1.85;letter-spacing:.03em;
-  color:rgba(247,243,236,.78);max-width:44em}
-.arrive-cue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:3;
-  display:flex;flex-direction:column;align-items:center;gap:10px;opacity:.75}
-.arrive-cue .k{color:var(--champagne)}
-.arrive-cue i{width:1.5px;height:52px;display:block;
-  background:linear-gradient(var(--champagne),transparent);animation:cue 2.6s var(--ease) infinite}
-@keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.arrive-copy h1{font-size:clamp(40px,4.8vw,70px);color:var(--cream);text-wrap:balance}
+.arrive-copy p.lede{margin-top:26px;font-family:var(--sans);font-size:15px;line-height:1.85;letter-spacing:.03em;
+  color:rgba(247,243,236,.8);max-width:40em}
+.arrive-actions{margin-top:36px;display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.btn-gold{display:inline-block;text-decoration:none;color:var(--forest-deep);border:1px solid var(--gold);
+  background:linear-gradient(135deg,var(--champagne-lt),var(--champagne) 45%,var(--gold) 100%);
+  padding:18px 38px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
+  transition:filter .45s var(--ease),box-shadow .45s var(--ease)}
+.btn-gold:hover{filter:brightness(1.07);box-shadow:0 6px 28px rgba(196,164,104,.35)}
+.btn-line{display:inline-block;text-decoration:none;font-family:var(--sans);font-size:11px;font-weight:600;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--forest);padding:6px 0;border-bottom:1.5px solid currentColor;
+  transition:opacity .4s var(--ease)}
+.btn-line:hover{opacity:.55}
+.btn-line.light{color:var(--champagne)}
+.hero-plate{justify-self:end;width:min(380px,100%);margin:0;position:relative}
+.plate-frame{position:relative;aspect-ratio:9/16;overflow:hidden;background:#0B140F;
+  border:1px solid rgba(196,164,104,.45);
+  box-shadow:0 40px 80px -30px rgba(0,0,0,.7), 18px 18px 0 rgba(196,164,104,.12)}
+.plate-frame video{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.08) contrast(1.04)}
+.sound{position:absolute;left:14px;right:14px;bottom:14px;display:flex;align-items:center;gap:12px;cursor:pointer;
+  border:1px solid rgba(227,211,179,.55);background:rgba(15,32,24,.74);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--cream);padding:13px 16px;
+  font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;text-align:left;
+  transition:background .35s var(--ease),border-color .35s var(--ease)}
+.sound:hover{background:rgba(22,46,33,.92);border-color:var(--gold)}
+.sound .ic{width:10px;height:10px;border-radius:50%;background:var(--gold);flex:0 0 auto;
+  box-shadow:0 0 0 0 rgba(196,164,104,.6);animation:pulse 2.2s ease-out infinite}
+.sound[aria-pressed="true"] .ic{animation:none;background:var(--cream)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(196,164,104,.6)}100%{box-shadow:0 0 0 12px rgba(196,164,104,0)}}
+.hero-plate figcaption{margin-top:12px;font-family:var(--sans);font-size:9.5px;font-weight:600;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--champagne);opacity:.8}
 
-/* ═══ 02 the record, plates hung on the line ═══ */
-.record{position:relative;height:100vh;height:100svh;overflow:hidden;background:transparent}
-.record::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-  background:
-    radial-gradient(ellipse 70% 55% at 20% 12%, rgba(252,249,242,.9), transparent 64%),
-    radial-gradient(ellipse 65% 60% at 88% 78%, rgba(196,164,104,.16), transparent 66%)}
-.record-head, .rail{z-index:2}
-.record-head{position:absolute;top:clamp(120px,15vh,168px);left:clamp(24px,4.5vw,64px);z-index:5;max-width:560px}
-.record-head .rule{width:72px;height:1.5px;background:linear-gradient(90deg,var(--gold),rgba(196,164,104,0));margin-top:12px}
-.record-head .record-intro{margin-top:18px;font-family:var(--serif);font-style:italic;font-weight:300;
-  font-size:clamp(24px,2.3vw,36px);line-height:1.15;color:var(--ink)}
-.rail{position:absolute;top:42%;left:0;display:flex;align-items:flex-start;will-change:transform}
-.rail-line{position:absolute;top:0;left:-100vw;right:-100vw;height:1.5px;
-  background:linear-gradient(90deg,rgba(22,46,33,0),var(--forest) 8%,var(--forest) 92%,rgba(22,46,33,0))}
-.station{position:relative;flex:0 0 auto;width:clamp(250px,24vw,340px);margin-right:clamp(48px,6vw,96px);padding-top:0}
-.station .tick{position:absolute;top:-7px;left:0;width:14px;height:14px;border-radius:50%;background:var(--cream);border:2px solid var(--forest)}
-.station .yr{margin:26px 0 4px;font-style:italic;font-weight:300;font-size:clamp(34px,3vw,46px);line-height:1;font-variant-numeric:lining-nums}
-.station .cap{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--taupe)}
-.station .drop{position:absolute;top:7px;left:56%;width:1.5px;height:56px;background:var(--forest);opacity:.5}
-.station .plate{margin-top:14px;margin-left:14%;width:86%;aspect-ratio:3/4;position:relative;overflow:hidden;
-  border:0;background:linear-gradient(178deg,#EFE8DB,#E2D7C3 92%);
-  box-shadow:0 22px 48px -14px rgba(28,22,12,.45), 0 3px 10px rgba(28,22,12,.18);
-  transition:box-shadow .6s var(--ease)}
-.station .plate::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(185deg, rgba(196,164,104,.10) 0%, transparent 34%, rgba(15,32,24,.34) 100%)}
-.station .plate:hover{box-shadow:0 30px 60px -14px rgba(28,22,12,.55), 0 4px 12px rgba(28,22,12,.22)}
-.station .plate img,.station .plate video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  filter:saturate(1.22) contrast(1.14) brightness(1.03);transition:transform .7s var(--ease)}
-.station .plate:hover img,.station .plate:hover video{transform:scale(1.04)}
-.station .plate.empty img{display:none}
-.station .plate-note{margin-top:14px;margin-left:14%;width:86%;aspect-ratio:3/4;position:relative;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
-  padding:24px 22px;border:1.5px solid rgba(196,164,104,.55);
-  background:linear-gradient(168deg,rgba(196,164,104,.14),rgba(237,228,214,.28));
-  box-shadow:0 24px 50px -22px rgba(28,22,12,.42)}
-.station .plate-note::before{content:"";position:absolute;left:50%;top:26px;transform:translateX(-50%);
-  width:34px;height:1.5px;background:var(--gold)}
-.station .plate-note p{font-family:var(--serif);font-style:italic;font-weight:300;
-  font-size:clamp(30px,2.8vw,44px);line-height:1.1;color:var(--forest)}
-.station .plate-note span{display:block;margin-top:14px;font-family:var(--sans);
-  font-size:9.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze)}
-.station .ghost{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  font-style:italic;font-weight:300;font-size:clamp(48px,4.5vw,72px);color:rgba(22,46,33,.16);pointer-events:none}
-.station .plate:not(.empty)+.ghost{display:none}
-.station .note{position:absolute;left:0;right:0;bottom:10px;text-align:center;
-  font-family:var(--sans);font-size:8.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:rgba(22,46,33,.4)}
-.station .plate:not(.empty)~.note{display:none}
-.station .plate:not(.empty) .note{display:none}
-
-/* ═══ 03 the turn ═══ */
-.turn{position:relative;background:transparent;color:var(--cream);padding:clamp(84px,12vh,130px) 0;overflow:hidden}
-.turn::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-  background:
-    radial-gradient(ellipse 60% 50% at 24% 18%, rgba(196,164,104,.28), transparent 62%),
-    radial-gradient(ellipse 70% 60% at 82% 86%, rgba(168,135,86,.22), transparent 66%),
-    linear-gradient(168deg, #16301F 0%, #0F2018 45%, #12271C 100%);
-  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);
-  mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%)}
-.turn .wrap, .turn .horizon{position:relative;z-index:1}
-.turn .horizon{position:absolute;left:12%;right:12%;top:50%;height:1px;
-  background:linear-gradient(90deg,transparent,var(--champagne) 18%,var(--gold) 50%,var(--champagne) 82%,transparent);
-  opacity:.85;box-shadow:0 0 24px rgba(196,164,104,.4)}
-.turn .wrap{display:grid;gap:clamp(22px,3vh,34px);justify-items:center;text-align:center}
-.turn p{font-size:clamp(25px,2.9vw,42px);max-width:20em}
-.turn p.up{align-self:auto}
-.turn p.down{justify-self:center;text-align:center;max-width:18em;color:var(--champagne)}
-.turn .k{color:var(--sage)}
-
-/* ═══ 04 your home ═══ */
+/* ═══ 02 your space, the main event ═══ */
 .home{background:transparent;padding:clamp(100px,15vh,180px) 0;position:relative}
 .home::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
   background:radial-gradient(ellipse 60% 70% at 82% 45%, rgba(196,164,104,.15), transparent 64%)}
@@ -339,95 +285,86 @@ header.on-dark .nav-cta{color:var(--champagne);border-color:var(--gold)}
 .home .wrap{padding-left:clamp(60px,9vw,130px)}
 .home-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(40px,5vw,90px);align-items:start}
 .home-photo{position:relative;margin-top:clamp(20px,4vh,52px)}
-.home-photo figure{position:relative;aspect-ratio:3/4;overflow:hidden;
+.home-photo figure{position:relative;aspect-ratio:3/4;overflow:hidden;margin:0;
   border:1px solid rgba(196,164,104,.45);box-shadow:18px 18px 0 rgba(168,135,86,.14)}
-.home-photo img{width:100%;height:100%;object-fit:cover;object-position:52% 42%;
-  filter:sepia(.08) saturate(.94) contrast(1.03)}
+.home-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;
+  filter:saturate(1.02) contrast(1.03)}
 .home-photo figure::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(200deg, rgba(196,164,104,.12) 0%, transparent 42%, rgba(15,32,24,.22) 100%)}
+  background:linear-gradient(200deg, rgba(196,164,104,.10) 0%, transparent 42%, rgba(15,32,24,.18) 100%)}
 .home-photo figcaption{margin-top:12px;font-family:var(--sans);font-size:9.5px;font-weight:600;
   letter-spacing:.26em;text-transform:uppercase;color:var(--taupe)}
-.coach-portrait{flex:0 0 auto;width:108px;height:108px;border-radius:50%;overflow:hidden;
-  border:1px solid rgba(196,164,104,.5);box-shadow:0 6px 24px rgba(168,135,86,.22)}
-.coach-portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;filter:sepia(.08) saturate(.95)}
-.home h2{font-size:clamp(32px,3.8vw,56px);max-width:15em;margin:26px 0 18px}
+.home h2{font-size:clamp(36px,4.4vw,66px);max-width:13em;margin:26px 0 18px}
 .home>.wrap>p{font-size:clamp(19px,1.6vw,23px);max-width:28em;color:rgba(34,31,27,.8)}
+.home-grid>div>p{font-size:clamp(19px,1.6vw,23px);max-width:28em;color:rgba(34,31,27,.8)}
 .fits{margin-top:clamp(40px,6vh,60px);max-width:860px}
 .fit{position:relative;padding:22px 0 22px 58px}
 .fit .n{position:absolute;left:0;top:22px;font-family:var(--serif);font-style:italic;font-weight:300;
   font-size:clamp(26px,2.2vw,34px);line-height:1;color:var(--taupe)}
 .fit p{font-style:italic;font-size:clamp(20px,1.9vw,26px)}
-.fit .k{font-size:9.5px}
 .fit .u{position:absolute;left:0;bottom:0;height:1.5px;width:100%;background:var(--forest);opacity:.35;transform-origin:left}
 .pillar-block{margin-top:clamp(52px,8vh,84px);display:grid;
   grid-template-columns:minmax(0,0.62fr) minmax(0,1fr);gap:clamp(30px,4.5vw,68px);align-items:center}
-.train-vid{position:relative;overflow:hidden;background:var(--forest-deep);
+.train-pic{position:relative;overflow:hidden;margin:0;background:var(--forest-deep);
   box-shadow:0 34px 70px -26px rgba(28,22,12,.55)}
-.train-vid video{width:100%;display:block;aspect-ratio:9/16;object-fit:cover;
-  filter:saturate(1.08) contrast(1.04)}
-.train-vid figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 20px 16px;
+.train-pic img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;object-position:50% 42%;
+  filter:saturate(1.04) contrast(1.04)}
+.train-pic figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 20px 16px;
   font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
   color:var(--cream);background:linear-gradient(180deg,transparent,rgba(15,32,24,.88))}
-.pillars{display:grid;grid-template-columns:1fr;
-  gap:clamp(22px,3vw,44px);align-items:start}
+.pillars{display:grid;grid-template-columns:1fr;gap:clamp(22px,3vw,44px);align-items:start}
 .pillar{position:relative;padding-top:20px;border-top:1.5px solid rgba(196,164,104,.55)}
 .pillar h4{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
   color:var(--bronze);margin-bottom:12px}
 .pillar p{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(19px,1.7vw,24px);
   line-height:1.35;color:var(--ink)}
-.scrapbook{position:relative;margin-top:clamp(26px,4vh,44px);width:min(100%,320px);
-  transform:rotate(-2.2deg);transition:transform .6s var(--ease)}
-.scrapbook:hover{transform:rotate(-.6deg)}
-.scrapbook figure{background:#FCFAF4;padding:12px 12px 0;box-shadow:0 18px 40px -12px rgba(28,22,12,.34)}
-.scrapbook img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;display:block;
-  filter:saturate(1.08) contrast(1.04)}
-.scrapbook figcaption{font-family:var(--serif);font-style:italic;font-size:17px;color:rgba(34,31,27,.7);
-  text-align:center;padding:12px 6px 16px}
-.scrapbook::before{content:"";position:absolute;top:-13px;left:50%;transform:translateX(-50%) rotate(-3deg);
-  width:92px;height:26px;background:rgba(227,211,179,.75);
-  box-shadow:0 1px 3px rgba(28,22,12,.16);border-left:1px solid rgba(255,255,255,.5);border-right:1px solid rgba(255,255,255,.5)}
-.coach-strip .c{display:flex;align-items:baseline;gap:12px}
-.coach-strip b{font-style:italic;font-weight:300;font-size:clamp(28px,2.4vw,40px);font-variant-numeric:lining-nums;color:var(--forest)}
-.coach-strip .c span{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--taupe)}
-.coach-strip .who{flex-basis:100%;font-family:var(--serif);font-style:italic;font-weight:300;
-  font-size:clamp(19px,1.7vw,24px);color:rgba(34,31,27,.85);line-height:1.5;max-width:30em}
 
-/* ═══ 05 the map of riyadh ═══ */
-.mapsec{position:relative;height:100vh;height:100svh;overflow:hidden;background:transparent}
+/* ═══ 03 your coaches, the proof, kept short ═══ */
+.coaches{position:relative;color:var(--cream);padding:clamp(100px,14vh,170px) 0;overflow:hidden}
+.coaches::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 50% at 24% 18%, rgba(196,164,104,.28), transparent 62%),
+    radial-gradient(ellipse 70% 60% at 82% 86%, rgba(168,135,86,.22), transparent 66%),
+    linear-gradient(168deg, #16301F 0%, #0F2018 45%, #12271C 100%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 9%,#000 91%,transparent 100%);
+  mask-image:linear-gradient(180deg,transparent 0,#000 9%,#000 91%,transparent 100%)}
+.coaches .wrap{position:relative;z-index:1}
+.coaches-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(40px,6vw,110px);align-items:center}
+.coaches-pics{display:grid;grid-template-columns:repeat(12,1fr)}
+.cp{overflow:hidden;margin:0;border:1px solid rgba(196,164,104,.45);box-shadow:0 34px 70px -26px rgba(0,0,0,.7)}
+.cp img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.06) contrast(1.04)}
+.cp.a{grid-column:1/11;grid-row:1;aspect-ratio:4/3}
+.cp.b{grid-column:6/13;grid-row:2;aspect-ratio:4/5;margin-top:-24%;position:relative;z-index:1}
+.cp.b img{object-position:62% 30%}
+.coaches .k{color:var(--champagne);display:block}
+.coaches h2{font-size:clamp(32px,3.8vw,56px);margin:24px 0 22px;color:var(--cream)}
+.coaches-copy p{font-family:var(--sans);font-size:15px;line-height:1.85;letter-spacing:.03em;
+  color:rgba(247,243,236,.78);max-width:36em}
+.coaches-copy .btn-line{margin-top:30px}
+
+/* ═══ 04 across riyadh, six doors ═══ */
+.mapsec{position:relative;padding:clamp(90px,13vh,150px) 0;background:transparent}
 .mapsec::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
   background:
     radial-gradient(ellipse 80% 60% at 50% 20%, rgba(250,246,238,.85), transparent 66%),
     radial-gradient(ellipse 70% 65% at 20% 92%, rgba(196,164,104,.22), transparent 68%),
     radial-gradient(ellipse 60% 55% at 90% 60%, rgba(168,135,86,.18), transparent 64%)}
-.map-stage{z-index:2}
-.mapsec-head{position:absolute;top:clamp(72px,10vh,110px);left:clamp(24px,4.5vw,64px);z-index:5;max-width:520px;
-  padding:20px 30px 24px 0}
-.mapsec-head::before{content:"";position:absolute;inset:-16px -40px -16px -40px;z-index:-1;pointer-events:none;
-  background:radial-gradient(ellipse 70% 100% at 26% 50%, rgba(250,246,238,.95) 0%, rgba(250,246,238,.72) 52%, transparent 80%)}
+.mapsec .wrap{position:relative;z-index:1}
+.mapsec-head{max-width:620px}
 .mapsec-head .city-line{margin-top:16px;font-family:var(--serif);font-style:italic;font-weight:300;
-  font-size:clamp(22px,2.1vw,32px);line-height:1.2;color:var(--ink)}
-.map-stage{position:absolute;inset:0}
-.map-stage svg{width:100%;height:100%}
-.map-grid line{stroke:rgba(34,31,27,.06);stroke-width:1}
-#route{stroke:var(--forest);stroke-width:2.5;fill:none}
-.pin{opacity:0;transform-origin:center}
-.pin circle.dot{fill:var(--forest)}
-.pin circle.halo{fill:none;stroke:var(--forest);stroke-opacity:.3;stroke-width:1}
-.pin text{font-family:var(--sans);font-weight:600;letter-spacing:.18em;text-transform:uppercase;fill:var(--ink)}
-.pin text.co{font-weight:500;letter-spacing:.12em;fill:var(--taupe)}
-.pin .card-bg{fill:#FCFAF4;stroke:rgba(28,22,12,.10)}
-.pin .card-slot{fill:url(#slotGrad)}
-.pin text.slot-note{font-family:var(--sans);font-weight:600;letter-spacing:.2em;
-  text-transform:uppercase;fill:rgba(28,22,12,.34)}
-.pin text.card-name{font-family:var(--serif);font-style:italic;font-weight:300;letter-spacing:0;
-  text-transform:none;fill:var(--ink)}
-.pin .tape{fill:rgba(227,211,179,.85)}
-.pin .lead{stroke:var(--forest);stroke-width:1;stroke-dasharray:3 4;opacity:.5}
-.compass{font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:.2em;fill:var(--taupe)}
-.mission{position:absolute;left:0;right:0;bottom:clamp(40px,7vh,84px);z-index:6;text-align:center;padding:26px 24px}
-.mission::before{content:"";position:absolute;inset:-10% -6%;z-index:-1;pointer-events:none;
-  background:radial-gradient(ellipse 60% 100% at 50% 50%, rgba(250,246,238,.94) 0%, rgba(250,246,238,.7) 46%, transparent 78%)}
-.mission .display{font-size:clamp(26px,3.4vw,50px);max-width:22em;margin:0 auto;color:var(--ink)}
+  font-size:clamp(24px,2.3vw,36px);line-height:1.2;color:var(--ink)}
+.map-mobile{margin-top:clamp(36px,5vh,56px)}
+.mcards{display:grid;grid-template-columns:repeat(6,1fr);gap:22px 18px}
+.mcard-link{display:block;text-decoration:none;color:inherit}
+.mcard{background:#FCFAF4;padding:9px 9px 0;margin:0;transform:rotate(var(--r,0deg));
+  box-shadow:0 14px 30px -10px rgba(28,22,12,.34);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.mcard-link:hover .mcard{transform:rotate(0deg) translateY(-4px);box-shadow:0 22px 40px -12px rgba(28,22,12,.4)}
+.mcard img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;filter:saturate(1.08) contrast(1.04)}
+.mcard figcaption{padding:9px 2px 12px;text-align:center}
+.mcard b{display:block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:16px;color:var(--ink)}
+.mcard span{display:block;margin-top:3px;font-family:var(--sans);font-size:8px;font-weight:600;
+  letter-spacing:.16em;color:var(--taupe)}
+.mission{margin-top:clamp(48px,7vh,80px);display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
+.mission .display{font-size:clamp(26px,3vw,44px);max-width:20em;color:var(--ink)}
 .mission .display em{color:var(--forest)}
 
 /* ═══ 06 method stations ═══ */
@@ -521,40 +458,19 @@ footer .terminus{background:var(--gold)}
 @media (max-width:1250px){
   .arrive-one{--one-op:.22}
 }
-/* mobile scrapbook grid, desktop hides it, the SVG map takes over */
-.map-mobile{display:none}
-.mcards{display:grid;grid-template-columns:1fr 1fr;gap:18px 14px}
-.mcard{background:#FCFAF4;padding:9px 9px 0;transform:rotate(var(--r,0deg));
-  box-shadow:0 14px 30px -10px rgba(28,22,12,.34)}
-.mcard img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;filter:saturate(1.08) contrast(1.04)}
-.mcard figcaption{padding:9px 2px 12px;text-align:center}
-.mcard b{display:block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:16px;color:var(--ink)}
-.mcard span{display:block;margin-top:3px;font-family:var(--sans);font-size:8px;font-weight:600;
-  letter-spacing:.16em;color:var(--taupe)}
 
 @media (max-width:900px){
   body{font-size:17px}
   .intro-grid{grid-template-columns:1fr;gap:44px}
   .msteps{grid-template-columns:1fr;gap:18px}
   .mstep .dot{display:none}
-  .turn p.down{justify-self:center;text-align:center}
   .home-grid{grid-template-columns:1fr;gap:34px}
   .pillar-block{grid-template-columns:1fr;gap:34px}
-  .train-vid video{aspect-ratio:4/5}
+  .train-pic img{aspect-ratio:4/5}
   .pillars{grid-template-columns:1fr;gap:26px}
-  .arrive-grid{grid-template-columns:1fr}
-}
-
-/* tablets & small laptops: the wide SVG map would crop, so use the scrapbook wall */
-@media (max-width:1024px){
-  .mapsec{height:auto;padding:clamp(80px,11vh,120px) 0 clamp(72px,10vh,104px);overflow:visible}
-  .map-stage{display:none}
-  .map-mobile{display:block;padding:0 clamp(22px,4.5vw,64px);margin-top:34px}
-  .mapsec-head{position:static;max-width:none;padding:0 clamp(22px,4.5vw,64px)}
-  .mapsec-head::before{display:none}
-  .mission{position:static;padding:38px clamp(22px,4.5vw,64px) 0;text-align:left}
-  .mission::before{display:none}
-  .mission .display{max-width:26em;margin:0}
+  .arrive-grid{grid-template-columns:1fr;gap:48px}
+  .hero-plate{justify-self:center;width:min(320px,78vw)}
+  .coaches-grid{grid-template-columns:1fr;gap:48px}
   .mcards{grid-template-columns:repeat(3,1fr)}
 }
 
@@ -573,73 +489,45 @@ footer .terminus{background:var(--gold)}
   .nav-cta .full{display:none}
   .nav-cta .short{display:inline}
 
-  /* hero: one column, no video (battery + GPU), rich gradient instead */
+  /* hero: one column, the plate under the words */
   .arrive{min-height:100svh}
-  .hero-video video{display:none}
-  .hero-video{background:
-    radial-gradient(ellipse 90% 55% at 70% 22%, rgba(196,164,104,.34), transparent 66%),
-    radial-gradient(ellipse 80% 50% at 20% 78%, rgba(168,135,86,.24), transparent 68%),
-    linear-gradient(168deg,#16301F 0%, #0F2018 52%, #14291D 100%)}
-  .arrive-grid{padding:104px 22px 96px;align-items:center}
+  .arrive-grid{padding:104px 22px 72px;gap:40px}
   .arrive-copy .k{font-size:9.5px;letter-spacing:.24em;margin-bottom:18px}
-  .arrive-copy h1{font-size:clamp(30px,8.4vw,38px);line-height:1.1}
-  .arrive-intro{margin-top:20px;gap:8px}
-  .arrive-intro .lbl{font-size:9px;letter-spacing:.26em}
-  .arrive-intro .nm{font-size:21px}
-  .arrive-copy p.lede{margin-top:20px;font-size:13px;line-height:1.8}
+  .arrive-copy h1{font-size:clamp(32px,9vw,40px);line-height:1.08}
+  .arrive-copy p.lede{margin-top:20px;font-size:13.5px;line-height:1.8}
+  .arrive-actions{margin-top:28px;gap:22px}
+  .btn-gold{padding:17px 28px;font-size:10.5px;letter-spacing:.24em}
+  .hero-plate{width:min(280px,76vw)}
+  .sound{padding:12px 14px;font-size:9px;letter-spacing:.18em}
   .arrive-one{font-size:44vw;bottom:-2vh;right:-6vw;opacity:.2}
-  .arrive-cue{bottom:22px}
-  .arrive-cue i{height:38px}
 
-  /* the record: pinned rail becomes a vertical timeline */
-  .record{height:auto;padding:96px 0 84px}
-  .record-head{position:static;max-width:none;padding:0 22px;margin-bottom:36px}
-  .record-head .record-intro{font-size:23px}
-  .rail{position:static;transform:none!important;flex-direction:column;gap:34px;padding:0 22px 0 40px}
-  .rail-line{left:18px;right:auto;top:0;bottom:0;width:1.5px;height:auto;
-    background:linear-gradient(180deg,rgba(22,46,33,0),var(--forest) 6%,var(--bronze) 94%,rgba(168,135,86,0))}
-  .station{width:100%;margin-right:0}
-  .station .tick{left:-28px;top:6px}
-  .station .drop{display:none}
-  .station .yr{margin:0 0 4px;font-size:30px}
-  .station .plate{margin-left:0;width:100%;aspect-ratio:4/5;margin-top:12px}
-  .station .plate img{object-position:50% 22%}
-  .station .plate-note{margin-left:0;width:100%;aspect-ratio:4/5;margin-top:12px;padding:24px}
-  .station .plate-note p{font-size:32px}
-  .station .plate-note span{margin-top:12px}
-
-  /* the turn */
-  .turn{padding:76px 0}
-  .turn .wrap{gap:18px}
-  .turn p{font-size:24px;max-width:none}
-  .turn .horizon{left:22px;right:22px}
-
-  /* your home */
+  /* your space */
   .home{padding:84px 0 76px}
   .home .wrap{padding-left:44px;padding-right:22px}
   .home .vline{left:20px}
-  .home h2{font-size:30px;margin:18px 0 14px}
-  .home>.wrap>.home-grid p{font-size:17px}
+  .home h2{font-size:32px;margin:18px 0 14px}
+  .home-grid>div>p{font-size:17px}
   .fits{margin-top:30px}
   .fit{padding:16px 0 16px 34px}
   .fit .n{font-size:21px;top:17px}
   .fit p{font-size:18px}
   .home-photo{margin-top:6px}
   .home-photo figure{aspect-ratio:4/5}
-  .scrapbook{width:74%;margin:26px auto 0}
-  .scrapbook figcaption{font-size:15px}
   .pillar p{font-size:18px}
 
-  /* the map: swap the pinned SVG for a scrapbook wall */
-  .mapsec{height:auto;padding:88px 0 76px;overflow:visible}
-  .map-stage{display:none}
-  .map-mobile{display:block;padding:0 22px;margin-top:30px}
-  .mapsec-head{position:static;max-width:none;padding:0 22px}
-  .mapsec-head::before{display:none}
+  /* your coaches */
+  .coaches{padding:76px 0}
+  .coaches h2{font-size:30px;margin:16px 0 16px}
+  .coaches-copy p{font-size:14px}
+  .cp.b{margin-top:-18%}
+
+  /* across riyadh */
+  .mapsec{padding:80px 0 72px}
   .mapsec-head .city-line{font-size:23px}
-  .mission{position:static;padding:34px 22px 0;text-align:left}
-  .mission::before{display:none}
-  .mission .display{font-size:26px;max-width:none;margin:0}
+  .map-mobile{margin-top:28px}
+  .mcards{grid-template-columns:1fr 1fr;gap:18px 14px}
+  .mission{margin-top:40px}
+  .mission .display{font-size:26px;max-width:none}
 
   /* method */
   .method{padding:80px 0 76px}
@@ -715,90 +603,37 @@ footer .terminus{background:var(--gold)}
 <main id="top">
 
   <!-- 01 ARRIVAL -->
-  <section class="arrive" aria-label="ONE Wellness, Riyadh">
-    <div class="hero-video" aria-hidden="true">
-      <video src="assets/archive/reel.mp4" autoplay muted loop playsinline preload="auto"></video>
-      <div class="hero-scrim"></div>
-    </div>
+  <section class="arrive" aria-label="Personal training in Riyadh">
+    <div class="hero-field" aria-hidden="true"></div>
     <div class="arrive-one" aria-hidden="true">ONE</div>
     <div class="arrive-grid">
       <div class="arrive-copy">
-        <span class="k">Private in-home coaching · Riyadh</span>
-        <h1 class="display" data-words>Riyadh’s newest and most exclusive personal training is here.</h1>
-        <div class="arrive-intro" data-fade>
-          <span class="lbl">Introducing</span>
-          <span class="nm">ONE Wellness, Riyadh</span>
+        <span class="k">Private personal training · Riyadh</span>
+        <h1 class="display" data-words>Personal training in Riyadh, in your space.</h1>
+        <p class="lede">One-to-one coaching that comes to you. Your home, your gym or a space chosen for you,
+          at a time that suits your week. A programme written for your goals, coached in person by
+          Aaron and Bianca Cook.</p>
+        <div class="arrive-actions" data-fade>
+          <a class="btn-gold" href="#introduction">Start now</a>
+          <a class="btn-line light" href="#how">How it works</a>
         </div>
-        <p class="lede" data-fade>Aaron and Bianca Cook spent more than two decades at the very top of world taekwondo, Olympic medallists, world champions, world No.1. They now bring that standard to the people of Riyadh:
-          fitter, healthier, happier lives, coached in the space that suits you.</p>
       </div>
-    </div>
-    <div class="arrive-cue" aria-hidden="true"><span class="k" style="letter-spacing:.4em">Scroll</span><i></i></div>
-  </section>
-
-  <!-- 02 THE RECORD -->
-  <section class="record" aria-label="The record">
-    <div class="record-head">
-      <span class="k">The record</span>
-      <div class="rule"></div>
-      <p class="record-intro" data-fade>More than two decades at the top of world sport, and the story continues in Riyadh.</p>
-    </div>
-    <div class="rail" id="rail">
-      <div class="rail-line" aria-hidden="true"></div>
-      <div class="station">
-        <span class="tick"></span><span class="drop" aria-hidden="true"></span>
-        <div class="yr">2008</div><div class="cap">Beijing, Aaron’s first Olympics</div>
-        <figure class="plate"><img src="assets/archive/aaron-beijing-2008.webp" alt="Aaron Cook at the Beijing 2008 Olympic Games, aged 17" onerror="this.parentElement.classList.add('empty')" loading="lazy" decoding="async"><span class="note">Archive</span></figure>
-      </div>
-      <div class="station">
-        <span class="tick"></span><span class="drop" aria-hidden="true"></span>
-        <div class="yr">2015</div><div class="cap">Chelyabinsk, Bianca's first world title</div>
-        <figure class="plate"><img src="assets/archive/worlds-2015.webp" alt="Bianca Cook with her gold medal at the 2015 World Taekwondo Championships in Chelyabinsk" style="object-position:50% 30%" onerror="this.parentElement.classList.add('empty')" loading="lazy" decoding="async"><span class="note">Archive</span></figure>
-      </div>
-      <div class="station">
-        <span class="tick"></span><span class="drop" aria-hidden="true"></span>
-        <div class="yr">2016</div><div class="cap">Rio, Olympic bronze</div>
-        <figure class="plate"><img src="assets/archive/01.webp" alt="Bianca Cook on the podium at Rio 2016 with her Olympic bronze medal" onerror="this.parentElement.classList.add('empty')" loading="lazy" decoding="async"><span class="note">Archive · awaiting photo</span></figure>
-      </div>
-      <div class="station">
-        <span class="tick"></span><span class="drop" aria-hidden="true"></span>
-        <div class="yr">2017</div><div class="cap">Muju, World Championships</div>
-        <figure class="plate"><img src="assets/archive/02.webp" alt="Aaron Cook with his World Championship medal at Muju 2017" onerror="this.parentElement.classList.add('empty')" loading="lazy" decoding="async"><span class="note">Archive · awaiting photo</span></figure>
-      </div>
-      <div class="station">
-        <span class="tick"></span><span class="drop" aria-hidden="true"></span>
-        <div class="yr">2020</div><div class="cap">Tokyo, Olympic bronze</div>
-        <figure class="plate"><img src="assets/archive/03.webp" alt="Bianca Cook celebrating with the Union Jack after winning Olympic bronze in Tokyo" onerror="this.parentElement.classList.add('empty')" loading="lazy" decoding="async"><span class="note">Archive · awaiting photo</span></figure>
-      </div>
-      <div class="station">
-        <span class="tick"></span><span class="drop" aria-hidden="true"></span>
-        <div class="yr">Always</div><div class="cap">The daily work</div>
-        <figure class="plate"><img src="assets/archive/04.webp" alt="Aaron Cook, head bowed, holding his headgear before competing" onerror="this.parentElement.classList.add('empty')" loading="lazy" decoding="async"><span class="note">Archive</span></figure>
-      </div>
-      <div class="station">
-        <span class="tick"></span><span class="drop" aria-hidden="true"></span>
-        <div class="yr">Motion</div><div class="cap">Two careers, eighteen seconds</div>
-        <figure class="plate"><video src="assets/archive/reel.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Highlight reel of Bianca Cook competing"></video></figure>
-      </div>
-      <div class="station">
-        <span class="tick"></span><span class="drop" aria-hidden="true"></span>
-        <div class="yr">2023</div><div class="cap">Riyadh, Saudi Games</div>
-        <figure class="plate"><img src="assets/archive/05.webp" alt="Aaron Cook with his Saudi Games medal in Riyadh, 2023" onerror="this.parentElement.classList.add('empty')" loading="lazy" decoding="async"><span class="note">Archive · awaiting photo</span></figure>
-      </div>
+      <figure class="hero-plate" data-fade>
+        <div class="plate-frame">
+          <video id="heroVid" src="assets/pt/founders-lite.mp4" poster="assets/pt/founders-poster.webp"
+                 autoplay muted loop playsinline preload="metadata"
+                 aria-label="Aaron and Bianca Cook introduce ONE Wellness from a Riyadh rooftop"></video>
+          <button class="sound" id="soundBtn" type="button" aria-pressed="false">
+            <span class="ic" aria-hidden="true"></span><span class="t">Hear from your coaches</span>
+          </button>
+        </div>
+        <figcaption>Aaron &amp; Bianca · Riyadh</figcaption>
+      </figure>
     </div>
   </section>
 
-  <!-- 03 THE TURN -->
-  <section class="turn" aria-label="The turn">
-    <div class="horizon" aria-hidden="true"></div>
-    <div class="wrap">
-      <p class="display up" data-words>For two decades, the world watched them compete.</p>
-      <p class="display down" data-words>Now the only result that matters is yours.</p>
-    </div>
-  </section>
-
-  <!-- 04 YOUR HOME -->
-  <section class="home">
+  <!-- 02 YOUR SPACE -->
+  <section class="home" id="space">
     <div class="vline" data-vline aria-hidden="true"></div>
     <div class="wrap">
       <span class="k">Your space</span>
@@ -816,23 +651,15 @@ footer .terminus{background:var(--gold)}
         </div>
         <div class="home-photo" data-fade>
           <figure>
-            <img src="assets/archive/riyadh-session.webp" alt="A private coaching session on a Riyadh terrace, the city skyline behind" loading="lazy" decoding="async">
+            <img src="assets/pt/terrace-session.webp" alt="A one-to-one personal training session on a private terrace in Riyadh, the city skyline behind" loading="lazy" decoding="async">
           </figure>
-          <figcaption>A morning session · Riyadh</figcaption>
-          <div class="scrapbook" data-fade>
-            <figure>
-              <img src="assets/archive/founders-portrait.webp" alt="Aaron and Bianca Cook" loading="lazy" decoding="async">
-              <figcaption>Aaron &amp; Bianca</figcaption>
-            </figure>
-          </div>
+          <figcaption>A private session · Riyadh</figcaption>
         </div>
       </div>
       <div class="pillar-block">
-        <figure class="train-vid" data-fade>
-          <video src="assets/archive/training.mp4" poster="assets/archive/training-poster.webp"
-                 autoplay muted loop playsinline preload="none"
-                 aria-label="Aaron and Bianca Cook training"></video>
-          <figcaption>Aaron &amp; Bianca, training</figcaption>
+        <figure class="train-pic" data-fade>
+          <img src="assets/pt/bianca-mat-riyadh.webp" alt="Bianca Cook coaching on a mat under a shaded walkway in Riyadh" loading="lazy" decoding="async">
+          <figcaption>Coached in person, wherever suits you</figcaption>
         </figure>
       <div class="pillars">
         <div class="pillar" data-fade><h4>Training</h4>
@@ -848,155 +675,70 @@ footer .terminus{background:var(--gold)}
     </div>
   </section>
 
-  <!-- 05 THE MAP OF RIYADH -->
-  <section class="mapsec" aria-label="The map, we come to you across Riyadh">
-    <div class="mapsec-head">
-      <span class="k">The city, we come to you</span>
-      <p class="city-line" data-fade>From Diriyah to Al Olaya, we bring the session to your door.</p>
-    </div>
-    <div class="map-stage">
-      <svg viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
-        <defs>
-          <linearGradient id="slotGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#EFE5D2"/><stop offset="100%" stop-color="#E2D4BA"/>
-          </linearGradient>
-          <filter id="cardShadow" x="-30%" y="-30%" width="170%" height="170%">
-            <feDropShadow dx="0" dy="9" stdDeviation="11" flood-color="#1C160C" flood-opacity="0.26"/>
-          </filter>
-        </defs>
-        <g class="map-grid" aria-hidden="true">
-          <line x1="180" y1="0" x2="180" y2="800"/><line x1="360" y1="0" x2="360" y2="800"/>
-          <line x1="540" y1="0" x2="540" y2="800"/><line x1="720" y1="0" x2="720" y2="800"/>
-          <line x1="900" y1="0" x2="900" y2="800"/><line x1="1080" y1="0" x2="1080" y2="800"/>
-          <line x1="1260" y1="0" x2="1260" y2="800"/>
-          <line x1="0" y1="330" x2="1440" y2="330"/><line x1="0" y1="470" x2="1440" y2="470"/>
-          <line x1="0" y1="610" x2="1440" y2="610"/>
-        </g>
-        <text class="compass" x="1368" y="58">N ↑</text>
-        <path id="route" d="M -20 480 C 60 470 120 466 175 470 C 260 476 330 520 400 530
-          C 480 541 550 470 620 455 C 700 438 780 505 845 520 C 925 538 995 462 1055 450
-          C 1140 433 1205 490 1258 505 C 1330 525 1400 515 1460 508" aria-hidden="true"/>
-      <g class="pin" data-pin>
-        <line class="lead" x1="162" y1="402" x2="175" y2="470"/>
-        <g transform="translate(100 252) rotate(-3.2)">
-          <rect class="card-bg" x="0" y="0" width="124" height="146" filter="url(#cardShadow)"/>
-          <rect class="card-slot" x="9" y="9" width="106" height="96"/>
-          <image href="assets/archive/landmarks/diriyah.webp" x="9" y="9" width="106" height="96"
-                 preserveAspectRatio="xMidYMid slice" onerror="this.style.display='none'"/>
-          <rect class="tape" x="34" y="-9" width="56" height="17" transform="rotate(-3 62 -1)"/>
-          <text class="card-name" x="62" y="128" font-size="16" text-anchor="middle">Diriyah</text>
-        </g>
-        <circle class="halo" cx="175" cy="470" r="19"/>
-        <circle class="dot" cx="175" cy="470" r="6.5"/>
-        <text class="co" x="189" y="496" font-size="9">24.73 N · 46.57 E</text>
-      </g>
-      <g class="pin" data-pin>
-        <line class="lead" x1="382" y1="346" x2="400" y2="530"/>
-        <g transform="translate(320 196) rotate(2.4)">
-          <rect class="card-bg" x="0" y="0" width="124" height="146" filter="url(#cardShadow)"/>
-          <rect class="card-slot" x="9" y="9" width="106" height="96"/>
-          <image href="assets/archive/landmarks/dq.webp" x="9" y="9" width="106" height="96"
-                 preserveAspectRatio="xMidYMid slice" onerror="this.style.display='none'"/>
-          <rect class="tape" x="34" y="-9" width="56" height="17" transform="rotate(-3 62 -1)"/>
-          <text class="card-name" x="62" y="128" font-size="16" text-anchor="middle">Diplomatic Quarter</text>
-        </g>
-        <circle class="halo" cx="400" cy="530" r="19"/>
-        <circle class="dot" cx="400" cy="530" r="6.5"/>
-        <text class="co" x="414" y="556" font-size="9">24.68 N · 46.62 E</text>
-      </g>
-      <g class="pin" data-pin>
-        <line class="lead" x1="607" y1="392" x2="620" y2="455"/>
-        <g transform="translate(545 242) rotate(-2.0)">
-          <rect class="card-bg" x="0" y="0" width="124" height="146" filter="url(#cardShadow)"/>
-          <rect class="card-slot" x="9" y="9" width="106" height="96"/>
-          <image href="assets/archive/landmarks/hittin.webp" x="9" y="9" width="106" height="96"
-                 preserveAspectRatio="xMidYMid slice" onerror="this.style.display='none'"/>
-          <rect class="tape" x="34" y="-9" width="56" height="17" transform="rotate(-3 62 -1)"/>
-          <text class="card-name" x="62" y="128" font-size="16" text-anchor="middle">Hittin</text>
-        </g>
-        <circle class="halo" cx="620" cy="455" r="19"/>
-        <circle class="dot" cx="620" cy="455" r="6.5"/>
-        <text class="co" x="634" y="481" font-size="9">24.76 N · 46.60 E</text>
-      </g>
-      <g class="pin" data-pin>
-        <line class="lead" x1="832" y1="338" x2="845" y2="520"/>
-        <g transform="translate(770 188) rotate(2.8)">
-          <rect class="card-bg" x="0" y="0" width="124" height="146" filter="url(#cardShadow)"/>
-          <rect class="card-slot" x="9" y="9" width="106" height="96"/>
-          <image href="assets/archive/landmarks/malqa.webp" x="9" y="9" width="106" height="96"
-                 preserveAspectRatio="xMidYMid slice" onerror="this.style.display='none'"/>
-          <rect class="tape" x="34" y="-9" width="56" height="17" transform="rotate(-3 62 -1)"/>
-          <text class="card-name" x="62" y="128" font-size="16" text-anchor="middle">Al Malqa</text>
-        </g>
-        <circle class="halo" cx="845" cy="520" r="19"/>
-        <circle class="dot" cx="845" cy="520" r="6.5"/>
-        <text class="co" x="859" y="546" font-size="9">24.80 N · 46.61 E</text>
-      </g>
-      <g class="pin" data-pin>
-        <line class="lead" x1="1052" y1="386" x2="1055" y2="450"/>
-        <g transform="translate(990 236) rotate(-2.6)">
-          <rect class="card-bg" x="0" y="0" width="124" height="146" filter="url(#cardShadow)"/>
-          <rect class="card-slot" x="9" y="9" width="106" height="96"/>
-          <image href="assets/archive/landmarks/nakheel.webp" x="9" y="9" width="106" height="96"
-                 preserveAspectRatio="xMidYMid slice" onerror="this.style.display='none'"/>
-          <rect class="tape" x="34" y="-9" width="56" height="17" transform="rotate(-3 62 -1)"/>
-          <text class="card-name" x="62" y="128" font-size="16" text-anchor="middle">Al Nakheel</text>
-        </g>
-        <circle class="halo" cx="1055" cy="450" r="19"/>
-        <circle class="dot" cx="1055" cy="450" r="6.5"/>
-        <text class="co" x="1069" y="476" font-size="9">24.75 N · 46.64 E</text>
-      </g>
-      <g class="pin" data-pin>
-        <line class="lead" x1="1277" y1="342" x2="1258" y2="505"/>
-        <g transform="translate(1215 192) rotate(2.1)">
-          <rect class="card-bg" x="0" y="0" width="124" height="146" filter="url(#cardShadow)"/>
-          <rect class="card-slot" x="9" y="9" width="106" height="96"/>
-          <image href="assets/archive/landmarks/olaya.webp" x="9" y="9" width="106" height="96"
-                 preserveAspectRatio="xMidYMid slice" onerror="this.style.display='none'"/>
-          <rect class="tape" x="34" y="-9" width="56" height="17" transform="rotate(-3 62 -1)"/>
-          <text class="card-name" x="62" y="128" font-size="16" text-anchor="middle">Al Olaya</text>
-        </g>
-        <circle class="halo" cx="1258" cy="505" r="19"/>
-        <circle class="dot" cx="1258" cy="505" r="6.5"/>
-        <text class="co" x="1272" y="531" font-size="9">24.69 N · 46.68 E</text>
-      </g>
-      </svg>
-    </div>
-    <div class="map-mobile" aria-label="The districts we cover">
-      <div class="mcards">
-        <figure class="mcard" data-fade style="--r:-2.4deg">
-          <img src="assets/archive/landmarks/diriyah.webp" alt="Diriyah, Riyadh" loading="lazy">
-          <figcaption><b>Diriyah</b><span>24.73 N · 46.57 E</span></figcaption>
-        </figure>
-        <figure class="mcard" data-fade style="--r:1.8deg">
-          <img src="assets/archive/landmarks/dq.webp" alt="Diplomatic Quarter, Riyadh" loading="lazy">
-          <figcaption><b>Diplomatic Quarter</b><span>24.68 N · 46.62 E</span></figcaption>
-        </figure>
-        <figure class="mcard" data-fade style="--r:-1.6deg">
-          <img src="assets/archive/landmarks/hittin.webp" alt="Hittin, Riyadh" loading="lazy">
-          <figcaption><b>Hittin</b><span>24.76 N · 46.60 E</span></figcaption>
-        </figure>
-        <figure class="mcard" data-fade style="--r:2.2deg">
-          <img src="assets/archive/landmarks/malqa.webp" alt="Al Malqa, Riyadh" loading="lazy">
-          <figcaption><b>Al Malqa</b><span>24.80 N · 46.61 E</span></figcaption>
-        </figure>
-        <figure class="mcard" data-fade style="--r:-2.0deg">
-          <img src="assets/archive/landmarks/nakheel.webp" alt="Al Nakheel, Riyadh" loading="lazy">
-          <figcaption><b>Al Nakheel</b><span>24.75 N · 46.64 E</span></figcaption>
-        </figure>
-        <figure class="mcard" data-fade style="--r:1.5deg">
-          <img src="assets/archive/landmarks/olaya.webp" alt="Al Olaya, Riyadh" loading="lazy">
-          <figcaption><b>Al Olaya</b><span>24.69 N · 46.68 E</span></figcaption>
-        </figure>
+  <!-- 03 YOUR COACHES -->
+  <section class="coaches" aria-label="Your coaches">
+    <div class="wrap">
+      <div class="coaches-grid">
+        <div class="coaches-pics" data-fade>
+          <figure class="cp a"><img src="assets/pt/padwork.webp" alt="Bianca Cook holding pads for a client in a one-to-one session" loading="lazy" decoding="async"></figure>
+          <figure class="cp b"><img src="assets/pt/bianca-guard.webp" alt="Bianca Cook, gloves up, mid session" loading="lazy" decoding="async"></figure>
+        </div>
+        <div class="coaches-copy">
+          <span class="k">Your coaches</span>
+          <h2 class="display" data-words>Coached by Olympians. Built around you.</h2>
+          <p data-fade>Aaron and Bianca Cook spent more than two decades at the top of world taekwondo: Olympic medallists,
+            world champions, world No.1. Nobody is asking you to train like one. That experience goes into reading
+            your body, pacing your progress and knowing exactly what to ask of you on any given day.</p>
+          <a class="btn-line light" href="/story" data-fade>Their story</a>
+        </div>
       </div>
-    </div>
-    <div class="mission">
-      <p class="display" id="missionText" data-words>We are on a mission to make the people of Riyadh <em>fitter, healthier and happier.</em></p>
     </div>
   </section>
 
-  <!-- 06 THE METHOD -->
-  <section class="method">
+  <!-- 04 ACROSS RIYADH -->
+  <section class="mapsec" aria-label="Where we come to across Riyadh">
+    <div class="wrap">
+      <div class="mapsec-head">
+        <span class="k">Across Riyadh, we come to you</span>
+        <p class="city-line" data-fade>From Diriyah to Al Olaya, the session comes to your door.</p>
+      </div>
+      <div class="map-mobile" aria-label="The districts we cover">
+        <div class="mcards">
+          <a class="mcard-link" href="/areas/diriyah"><figure class="mcard" data-fade style="--r:-2.4deg">
+            <img src="assets/archive/landmarks/diriyah.webp" alt="Diriyah, Riyadh" loading="lazy">
+            <figcaption><b>Diriyah</b><span>24.73 N · 46.57 E</span></figcaption>
+          </figure></a>
+          <a class="mcard-link" href="/areas/diplomatic-quarter"><figure class="mcard" data-fade style="--r:1.8deg">
+            <img src="assets/archive/landmarks/dq.webp" alt="Diplomatic Quarter, Riyadh" loading="lazy">
+            <figcaption><b>Diplomatic Quarter</b><span>24.68 N · 46.62 E</span></figcaption>
+          </figure></a>
+          <a class="mcard-link" href="/areas/hittin"><figure class="mcard" data-fade style="--r:-1.6deg">
+            <img src="assets/archive/landmarks/hittin.webp" alt="Hittin, Riyadh" loading="lazy">
+            <figcaption><b>Hittin</b><span>24.76 N · 46.60 E</span></figcaption>
+          </figure></a>
+          <a class="mcard-link" href="/areas/al-malqa"><figure class="mcard" data-fade style="--r:2.2deg">
+            <img src="assets/archive/landmarks/malqa.webp" alt="Al Malqa, Riyadh" loading="lazy">
+            <figcaption><b>Al Malqa</b><span>24.80 N · 46.61 E</span></figcaption>
+          </figure></a>
+          <a class="mcard-link" href="/areas/al-nakheel"><figure class="mcard" data-fade style="--r:-2.0deg">
+            <img src="assets/archive/landmarks/nakheel.webp" alt="Al Nakheel, Riyadh" loading="lazy">
+            <figcaption><b>Al Nakheel</b><span>24.75 N · 46.64 E</span></figcaption>
+          </figure></a>
+          <a class="mcard-link" href="/areas/al-olaya"><figure class="mcard" data-fade style="--r:1.5deg">
+            <img src="assets/archive/landmarks/olaya.webp" alt="Al Olaya, Riyadh" loading="lazy">
+            <figcaption><b>Al Olaya</b><span>24.69 N · 46.68 E</span></figcaption>
+          </figure></a>
+        </div>
+      </div>
+      <div class="mission">
+        <p class="display" id="missionText" data-words>We are on a mission to make the people of Riyadh <em>fitter, healthier and happier.</em></p>
+        <a class="btn-line" href="/areas" data-fade>All areas we cover</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 HOW IT WORKS -->
+  <section class="method" id="how">
     <div class="wrap">
       <span class="k">How it works</span>
       <h2 class="display" data-words>Beginning is the easy part. We handle the rest.</h2>
@@ -1013,7 +755,7 @@ footer .terminus{background:var(--gold)}
     </div>
   </section>
 
-  <!-- 07 QUIET -->
+  <!-- 06 QUIET -->
   <section class="quiet">
     <div class="thin" aria-hidden="true"></div>
     <div class="wrap">
@@ -1024,7 +766,7 @@ footer .terminus{background:var(--gold)}
     </div>
   </section>
 
-  <!-- 08 THE INTRODUCTION -->
+  <!-- 07 THE INTRODUCTION -->
   <section class="intro" id="introduction">
     <div class="wrap">
       <div class="intro-grid">
@@ -1088,6 +830,26 @@ footer .terminus{background:var(--gold)}
       if (e.key === 'Escape' && document.body.classList.contains('menu-open')) btn.click();
     });
   }
+  /* the hero plate: muted on arrival, one tap brings the coaches' voices in from the top */
+  var vid = document.getElementById('heroVid'), sb = document.getElementById('soundBtn');
+  if (vid && sb){
+    var lbl = sb.querySelector('.t');
+    function setMuted(m){
+      vid.muted = m;
+      sb.setAttribute('aria-pressed', m ? 'false' : 'true');
+      lbl.textContent = m ? 'Hear from your coaches' : 'Mute';
+    }
+    sb.addEventListener('click', function(){
+      if (vid.muted){ vid.currentTime = 0; setMuted(false); vid.play().catch(function(){}); }
+      else setMuted(true);
+    });
+    /* scrolled away with the sound on: mute again rather than talk over the page */
+    if ('IntersectionObserver' in window){
+      new IntersectionObserver(function(en){
+        if (!en[0].isIntersecting && !vid.muted) setMuted(true);
+      }, {threshold:.2}).observe(vid);
+    }
+  }
 })();
 </script>
 <style>
@@ -1147,7 +909,6 @@ var k="1.1.14";function w(r,t,e){return Math.max(r,Math.min(t,e))}function _(r,t
   }
 
   var isPhone   = window.matchMedia('(max-width:760px)').matches;
-  var narrowMap = window.matchMedia('(max-width:1024px)').matches;
   /* Smooth scroll is a DESKTOP nicety only. On touch devices native scrolling is
      better anyway, and running Lenis there starved ScrollTrigger of updates, which left every reveal stuck at opacity 0 below the fold. */
   var lenis = null;
@@ -1225,12 +986,11 @@ var k="1.1.14";function w(r,t,e){return Math.max(r,Math.min(t,e))}function _(r,t
   gsap.timeline({delay:.7})
     .to('.arrive h1 .word-mask > span', {y:0, duration:1.05, ease:calm, stagger:.06}, .15)
     .fromTo('.arrive-copy p', {opacity:0, y:16}, {opacity:1, y:0, duration:.9, ease:calm}, .8)
-        .fromTo('.arrive-cue', {opacity:0}, {opacity:.75, duration:.8, ease:calm}, 1.2)
     .fromTo('.arrive-one', {opacity:0}, {opacity:.28, duration:1.6, ease:calm}, .5);
 
   /* generic reveals */
   document.querySelectorAll('[data-words]').forEach(function(el){
-    if (el.closest('.arrive') || el.closest('.mission')) return;
+    if (el.closest('.arrive')) return;
     gsap.to(el.querySelectorAll('.word-mask > span'), {y:0, duration:1, ease:calm, stagger:.045,
       scrollTrigger:{trigger:el, start:'top 80%'}});
   });
@@ -1251,53 +1011,10 @@ var k="1.1.14";function w(r,t,e){return Math.max(r,Math.min(t,e))}function _(r,t
       scrollTrigger:{trigger:el, start:'top 82%'}});
   });
 
-  /* 02 the record: pinned rail scrub */
-  var rail = document.getElementById('rail');
-  function railTravel(){ return Math.max(0, rail.scrollWidth - window.innerWidth + window.innerWidth * .12); }
-  if (!isPhone){
-    gsap.fromTo(rail, {x: window.innerWidth * .06}, {x:function(){ return -railTravel(); }, ease:'none',
-      scrollTrigger:{trigger:'.record', start:'top top',
-        end:function(){ return '+=' + (railTravel() + window.innerHeight * .1); },
-        pin:true, scrub:.5, invalidateOnRefresh:true, anticipatePin:1}});
-  } else {
-    gsap.utils.toArray('.station').forEach(function(st){
-      gsap.fromTo(st, {opacity:0, y:26}, {opacity:1, y:0, duration:.9, ease:calm,
-        scrollTrigger:{trigger:st, start:'top 88%'}});
-    });
-  }
-
-  /* 05 the map: pinned, route draws, pins pop, mission resolves */
-  var route = document.getElementById('route');
-  var RL = drawSetup(route);
-  var pins = gsap.utils.toArray('.pin');
-  var pinAt = [.13, .3, .42, .55, .68, .8];   /* fractions of route length */
-  if (narrowMap){
-    gsap.utils.toArray('.mcard').forEach(function(c,i){
-      gsap.fromTo(c, {opacity:0, y:24}, {opacity:1, y:0, duration:.8, ease:calm, delay:(i%2)*.06,
-        scrollTrigger:{trigger:c, start:'top 90%'}});
-    });
-    gsap.to('#missionText .word-mask > span', {y:0, duration:.9, ease:calm, stagger:.035,
-      scrollTrigger:{trigger:'#missionText', start:'top 86%'}});
-  } else {
-  var mapTL = gsap.timeline({
-    scrollTrigger:{trigger:'.mapsec', start:'top top', end:'+=250%', pin:true, scrub:.5, anticipatePin:1}
-  });
-  mapTL.to(route, {strokeDashoffset:0, duration:1, ease:'none'}, 0);
-  pins.forEach(function(p, i){
-    gsap.set(p, {scale:.2, transformOrigin:'center'});
-    mapTL.to(p, {opacity:1, scale:1, duration:.05, ease:'back.out(2.2)'}, pinAt[i]);
-  });
-  mapTL.to('.map-grid, #route', {opacity:.32, duration:.1}, 1.02);
-  mapTL.to('.pin', {opacity:.34, duration:.1}, 1.02);
-  mapTL.to('#missionText .word-mask > span', {y:0, duration:.22, ease:calm, stagger:.012}, 1.02);
-  }
-  /* mission words need split state even though excluded from generic reveal */
-  gsap.set('#missionText .word-mask > span', {y:'118%'});
-
   /* header: light type over dark sections, scrim once scrolled */
   (function(){
     var hd = document.querySelector('header');
-    var darks = document.querySelectorAll('.arrive, .turn, .intro, footer');
+    var darks = document.querySelectorAll('.arrive, .coaches, .intro, footer');
     var band = 58;
     var lastY = 0, tuckable = window.matchMedia('(max-width:760px)').matches;
     function update(){
